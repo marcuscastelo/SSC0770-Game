@@ -9,39 +9,24 @@ public class Movement : MonoBehaviour
     public float maxSpeed = 20;
     public float friction = 0.9f;
 
-    public Vector2 Velocity { get; protected set; }
-    protected Vector2 controllerInput;
+    public Vector2 Velocity { get; set; }
 
+    private Vector2 _moveWill;
+    public Vector2 MoveWill { 
+        get { return _moveWill; }
+        set { _moveWill = value.normalized; }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        controllerInput = Vector2.zero;
+        MoveWill = Vector2.zero;
         Velocity = Vector2.zero;
     }
 
-    // Update is called once per frame
-    void Update()
-    {   
-        controllerInput = Vector2.zero;
-        if (Input.GetKey(KeyCode.W)) {
-            controllerInput.y += 1;
-        }
-        if (Input.GetKey(KeyCode.S)) {
-            controllerInput.y -= 1;
-        }
-        if (Input.GetKey(KeyCode.A)) {
-            controllerInput.x -= 1;
-        }
-        if (Input.GetKey(KeyCode.D)) {
-            controllerInput.x += 1;
-        }
-    }
-
     void FixedUpdate() {    
-
         // Apply acceleration
-        Velocity += controllerInput * acceleration * Time.fixedDeltaTime;
+        Velocity += MoveWill * acceleration * Time.fixedDeltaTime;
 
         // Apply friction
         Velocity *= friction;
