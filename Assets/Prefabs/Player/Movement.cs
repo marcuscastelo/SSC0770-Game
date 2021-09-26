@@ -9,8 +9,8 @@ public class Movement : MonoBehaviour
     public float maxSpeed = 20;
     public float friction = 0.9f;
 
-    public Vector2 Velocity { get; private set; }
-    private Vector2 controllerInput;
+    public Vector2 Velocity { get; protected set; }
+    protected Vector2 controllerInput;
 
 
     // Start is called before the first frame update
