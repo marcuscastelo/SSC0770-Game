@@ -342,7 +342,7 @@ AudioSource:
   m_Volume: 0.275
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -543,10 +543,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 9122351667875415747, guid: 8faf349f3adca8459af06633af0eeaa1, type: 3}
-      propertyPath: acceleration
-      value: 25
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8faf349f3adca8459af06633af0eeaa1, type: 3}
 --- !u!1 &1314642955
@@ -595,7 +591,7 @@ AudioSource:
   m_Volume: 0.275
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
