@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class EntityController : MonoBehaviour
 {
-    public Movement movement;
+    public EntityState state;
 }

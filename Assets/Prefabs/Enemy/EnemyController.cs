@@ -7,6 +7,6 @@ public class EnemyController : EntityController
     public Transform player;
     void Update()
     {
-        this.movement.MoveWill = player.position - transform.position;
+        this.state.movementWill = player.position - transform.position;
     }
 }

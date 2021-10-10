@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: ec79e9534ce526b4fbcc3c93a6a8d1be
+guid: 610d6169957bdc056b57836a0d3e36bf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -801348365374054586
-    second: HypnosWalk_0
+      213: -3527258874066880107
+    second: HypnosPunch_0
   - first:
-      213: -3348332970304759948
-    second: HypnosWalk_1
+      213: 1660855416621994307
+    second: HypnosPunch_1
   - first:
-      213: 4044191673091552956
-    second: HypnosWalk_2
+      213: 8397434467283634315
+    second: HypnosPunch_2
   - first:
-      213: -6858815800975643475
-    second: HypnosWalk_3
+      213: 1248534517914915809
+    second: HypnosPunch_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HypnosWalk_0
+      name: HypnosPunch_0
       rect:
         serializedVersion: 2
         x: 0
@@ -117,14 +117,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64f1a8c48e901e4f0800000000000000
-      internalID: -801348365374054586
+      spriteID: 59936640eb8ac0fc0800000000000000
+      internalID: -3527258874066880107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HypnosWalk_1
+      name: HypnosPunch_1
       rect:
         serializedVersion: 2
         x: 64
@@ -138,14 +138,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 477914b57e45881d0800000000000000
-      internalID: -3348332970304759948
+      spriteID: 341990ba33b8c0710800000000000000
+      internalID: 1660855416621994307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HypnosWalk_2
+      name: HypnosPunch_2
       rect:
         serializedVersion: 2
         x: 128
@@ -159,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb6f63e46eadf1830800000000000000
-      internalID: 4044191673091552956
+      spriteID: b88001f082ea98470800000000000000
+      internalID: 8397434467283634315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HypnosWalk_3
+      name: HypnosPunch_3
       rect:
         serializedVersion: 2
         x: 192
@@ -180,8 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daca20b5e5790d0a0800000000000000
-      internalID: -6858815800975643475
+      spriteID: 1e3d12e678fa35110800000000000000
+      internalID: 1248534517914915809
       vertices: []
       indices: 
       edges: []
