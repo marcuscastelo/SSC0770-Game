@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5032741315902372025
+--- !u!1001 &1574530269889007057
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -18,34 +18,22 @@ PrefabInstance:
     - target: {fileID: 1853764778356375311, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a424ebca7f87ef297a17aeed48aec757, type: 3}
-    - target: {fileID: 2996110811739395952, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
-      propertyPath: isSelected
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: b0fb0edd5a483997c98b40ff56711924, type: 3}
     - target: {fileID: 2996110811739395952, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: spriteWhenSelected
       value: 
-      objectReference: {fileID: 21300000, guid: d9e33c38b7985329c83264d73c5a3163, type: 3}
+      objectReference: {fileID: 21300000, guid: 3c46e6775efd822e9aa604581809ca9d, type: 3}
     - target: {fileID: 2996110811739395952, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: spriteWhenUnselected
       value: 
-      objectReference: {fileID: 21300000, guid: a424ebca7f87ef297a17aeed48aec757, type: 3}
-    - target: {fileID: 3120547531337318226, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
-      propertyPath: m_Size.x
-      value: 0.5312829
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: b0fb0edd5a483997c98b40ff56711924, type: 3}
     - target: {fileID: 3120547531337318226, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: m_Size.y
-      value: 0.07803345
-      objectReference: {fileID: 0}
-    - target: {fileID: 3120547531337318226, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.013463974
+      value: 0.16132635
       objectReference: {fileID: 0}
     - target: {fileID: 3120547531337318226, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: m_Offset.y
-      value: -0.50984514
+      value: -0.53242815
       objectReference: {fileID: 0}
     - target: {fileID: 4582325647221960260, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: m_Enabled
@@ -57,11 +45,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5936505354990694104, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.006
+      value: 1.679
       objectReference: {fileID: 0}
     - target: {fileID: 5936505354990694104, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.277
+      value: 0.288
       objectReference: {fileID: 0}
     - target: {fileID: 5936505354990694104, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: m_LocalPosition.z
@@ -97,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6545600855929423107, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: m_Name
-      value: wc Variant
+      value: door Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6545600855929423107, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: m_Layer

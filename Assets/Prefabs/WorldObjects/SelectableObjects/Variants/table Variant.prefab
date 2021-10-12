@@ -7,10 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1606651275563418315, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853764778356375309, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1853764778356375311, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: dbef24496aafd7c13bedd5c4ac9db629, type: 3}
+    - target: {fileID: 1853764778356375311, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2996110811739395952, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: spriteWhenSelected
       value: 
@@ -98,6 +110,14 @@ PrefabInstance:
     - target: {fileID: 6545600855929423107, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: m_Name
       value: table Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545600855929423107, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020208196795805904, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}

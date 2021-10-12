@@ -9,7 +9,8 @@ public class EntityState : MonoBehaviour
     // User input indicators
     public Vector2 movementWill = Vector2.zero;
     public bool wantsToAttack = false;
-
+    public bool wantsToInteract = false;
+    
     // Actual entity stats
     public Vector2 currentVelocity = Vector2.zero;
     public bool attackAnimTriggerPending = false;

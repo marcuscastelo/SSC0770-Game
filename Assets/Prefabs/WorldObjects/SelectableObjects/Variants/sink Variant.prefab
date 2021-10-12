@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1606651275563418315, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853764778356375309, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1853764778356375310, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.031
@@ -18,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 1853764778356375311, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e11f5cb5b6c66c75ca3ea36584e628e6, type: 3}
+      objectReference: {fileID: 21300000, guid: 33676d3f61c670a5f901cd28368f657f, type: 3}
     - target: {fileID: 2996110811739395952, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: isSelected
       value: 0
@@ -102,6 +110,14 @@ PrefabInstance:
     - target: {fileID: 6545600855929423107, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: m_Name
       value: sink Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545600855929423107, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020208196795805904, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
