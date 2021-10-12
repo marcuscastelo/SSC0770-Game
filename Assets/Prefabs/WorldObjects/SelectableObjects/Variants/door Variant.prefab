@@ -20,6 +20,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: b0fb0edd5a483997c98b40ff56711924, type: 3}
     - target: {fileID: 2996110811739395952, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+      propertyPath: id
+      value: door
+      objectReference: {fileID: 0}
+    - target: {fileID: 2996110811739395952, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: spriteWhenSelected
       value: 
       objectReference: {fileID: 21300000, guid: 3c46e6775efd822e9aa604581809ca9d, type: 3}
