@@ -17,6 +17,8 @@ public class PlayerController : EntityController
         //Checks if player is pressing E (interact key)
         if (Input.GetKeyDown(KeyCode.E))
             state.wantsToInteract = true;
+        if (Input.GetKeyUp(KeyCode.E))
+            state.wantsToInteract = false;
 
         //Gets player movement will.
         Vector2 controllerInput = Vector2.zero;

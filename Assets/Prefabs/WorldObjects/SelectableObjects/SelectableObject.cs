@@ -38,8 +38,11 @@ public class SelectableObject : MonoBehaviour
         if (collider2D.gameObject.tag == "Player")
         {
             Debug.Log("Collision Enter detected");
-            SetSelected(true);
-            _UpdateSprite();
+            if (!isSelected)
+            {
+                SetSelected(true);
+                _UpdateSprite();
+            }
         }
     }
 
