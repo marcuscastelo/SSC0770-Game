@@ -11,9 +11,9 @@ public class EntityAnimator : MonoBehaviour
     private void FixedUpdate() {
         animator.SetFloat("speedX", state.currentVelocity.x);
         animator.SetFloat("speedY", state.currentVelocity.y);
-        if (state.attackTriggerPending) {
-            state.attackTriggerPending = false;
+        if (state.attackAnimTriggerPending) {
             animator.SetTrigger("attackTrigger");
+            state.attackAnimTriggerPending = false;
         }
         if (state.currentVelocity.x < 0) {
             transformToFlip.localScale = new Vector3(-1, 1, 1);

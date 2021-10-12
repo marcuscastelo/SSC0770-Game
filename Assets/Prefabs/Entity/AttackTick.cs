@@ -8,7 +8,7 @@ public class AttackTick : MonoBehaviour
 
     public bool CanAttack() {
         //In the future, jump will block attacking
-        return !state.IsAttacking;
+        return !state.IsAttacking && !state.attackAnimTriggerPending;
     }
 
     void FixedUpdate()
@@ -16,8 +16,8 @@ public class AttackTick : MonoBehaviour
         if (CanAttack() && state.wantsToAttack)
         {
             state.currentVelocity = Vector2.zero;
-            state.wantsToAttack = false;
-            state.attackTriggerPending = true;
+            state.attackAnimTriggerPending = true;
         }
+        state.wantsToAttack = false;
     }
 }

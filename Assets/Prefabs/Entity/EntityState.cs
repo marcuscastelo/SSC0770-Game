@@ -12,7 +12,7 @@ public class EntityState : MonoBehaviour
 
     // Actual entity stats
     public Vector2 currentVelocity = Vector2.zero;
-    public bool attackTriggerPending = false;
+    public bool attackAnimTriggerPending = false;
 
     // Animation Controller Gets
     public bool IsAttacking { get { return animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"); } }
