@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Testing25DCollisions.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 286233b7b4e42d74f907daa685dc2a8e
+  - enabled: 1
+    path: Assets/Scenes/Street.unity
+    guid: e2e1af0c6c26398a084c58437d5b6134
+  - enabled: 1
+    path: Assets/Scenes/House.unity
+    guid: 84e60587009a40966b1464e09565836f
   m_configObjects: {}
