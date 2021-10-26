@@ -782,7 +782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 32
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
@@ -1519,7 +1519,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711228828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.044, y: 0.024, z: 0}
+  m_LocalPosition: {x: -0.252, y: 0.419, z: 0}
   m_LocalScale: {x: 8.5558, y: 3.590651, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1728,11 +1728,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3463575972210980096, guid: 6e5088abacfabd0b6946afad6215f40b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.157
+      value: 1.207
       objectReference: {fileID: 0}
     - target: {fileID: 3463575972210980096, guid: 6e5088abacfabd0b6946afad6215f40b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.814
+      value: -0.645
       objectReference: {fileID: 0}
     - target: {fileID: 3463575972210980096, guid: 6e5088abacfabd0b6946afad6215f40b, type: 3}
       propertyPath: m_LocalPosition.z

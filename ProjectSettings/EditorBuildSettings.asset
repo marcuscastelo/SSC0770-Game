@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Testing25DCollisions.unity
+    path: Assets/Scenes/Tests/Testing25DCollisions.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/Menus/MainMenu.unity
     guid: 286233b7b4e42d74f907daa685dc2a8e
   - enabled: 1
     path: Assets/Scenes/Street.unity
