@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementTick : MovementTick
+public interface IState
 {
+    void Enter();
+    void Execute();
+    void Exit();
 }

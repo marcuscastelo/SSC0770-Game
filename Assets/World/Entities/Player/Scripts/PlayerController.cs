@@ -12,13 +12,13 @@ public class PlayerController : EntityController
 
         //Checks if player is pressing Z (attack key)
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.F))
-            state.wantsToAttack = true; 
+            this.wantsToAttack = true; 
 
         //Checks if player is pressing E (interact key)
         if (Input.GetKeyDown(KeyCode.E))
-            state.wantsToInteract = true;
+            this.wantsToInteract = true;
         if (Input.GetKeyUp(KeyCode.E))
-            state.wantsToInteract = false;
+            this.wantsToInteract = false;
 
         //Gets player movement will.
         Vector2 controllerInput = Vector2.zero;
@@ -35,6 +35,6 @@ public class PlayerController : EntityController
             controllerInput.x += 1;
         }
 
-        state.movementWill = controllerInput.normalized;
+        this.movementWill = controllerInput.normalized;
     }
 }

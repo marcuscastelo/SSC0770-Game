@@ -6,7 +6,7 @@ using UnityEngine.Scripting;
 
 public class DamageTick : MonoBehaviour
 {
-    public EntityState state;
+    public EntityData state;
     public Collider2D damageCollider;
 
     void TakeDamage(Vector2 enemyPos, int damage = 1) {
@@ -16,7 +16,7 @@ public class DamageTick : MonoBehaviour
         }
         else {
             transform.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-            var es = transform.gameObject.GetComponent<EntityState>();
+            var es = transform.gameObject.GetComponent<EntityData>();
             var mt = transform.gameObject.GetComponent<MovementTick>();
 
             mt.maxSpeed = 100f;
