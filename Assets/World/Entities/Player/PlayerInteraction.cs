@@ -35,4 +35,26 @@ public class InteractionController : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("PLAYER: Collision with " + collision.gameObject.name);
+        if (collision.gameObject.tag == "SelectableObject")
+        {
+            SelectableObject selObj = collision.gameObject.GetComponent<SelectableObject>();
+            if (selObj != null)
+                OnObjectSelected(selObj);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("PLAYER: Exit collision with " + collision.gameObject.name);
+        if (collision.gameObject.tag == "SelectableObject")
+        {
+            SelectableObject selObj = collision.gameObject.GetComponent<SelectableObject>();
+            if (selObj != null)
+                OnObjectUnselected();
+        }
+    }
 }
