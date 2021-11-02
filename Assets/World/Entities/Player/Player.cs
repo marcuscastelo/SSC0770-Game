@@ -15,10 +15,23 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Vector2 velocity;
 
+    public UnityEvent<Buff> onBuffChanged;
+
     [SerializeField]
     private Buff activeBuff;
 
-    public UnityEvent<Buff> onBuffChanged;
+    public Buff ActiveBuff
+    {
+        get
+        {
+            return activeBuff;
+        }
+        set
+        {
+            activeBuff = value;
+            onBuffChanged.Invoke(activeBuff);
+        }
+    }
 
     private void Awake()
     {
