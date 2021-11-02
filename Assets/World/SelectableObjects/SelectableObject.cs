@@ -18,23 +18,26 @@ public class SelectableObject : MonoBehaviour
         isSelected = selected;
         _UpdateSprite();
     
-        if (!selected) {
-            if (GameState.Instance.selectedObject == this) {
-                GameState.Instance.selectedObject = null;
-            }
-        }
+        // if (!selected) {
+        //     if (GameState.Instance.selectedObject == this) {
+        //         GameState.Instance.selectedObject = null;
+        //     }
+        // }
 
-        else {
-            if (GameState.Instance.selectedObject != null && GameState.Instance.selectedObject != this) {
-                GameState.Instance.selectedObject.SetSelected(false);
-            }
-            GameState.Instance.selectedObject = this;
-        }
+        // else {
+        //     if (GameState.Instance.selectedObject != null && GameState.Instance.selectedObject != this) {
+        //         GameState.Instance.selectedObject.SetSelected(false);
+        //     }
+        //     GameState.Instance.selectedObject = this;
+        // }
 
     }
 
     void OnTriggerEnter2D(Collider2D collider2D)
     {
+        Debug.Log("OnTriggerEnter2D");
+        Debug.Log(collider2D.gameObject.name);
+        Debug.Log(collider2D.gameObject.tag);
         if (collider2D.gameObject.tag == "Player")
         {
             Debug.Log("Collision Enter detected");
@@ -48,6 +51,9 @@ public class SelectableObject : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collider2D)
     {
+        Debug.Log("OnTriggerExit2D");
+        Debug.Log(collider2D.gameObject.name);
+        Debug.Log(collider2D.gameObject.tag);
         if (collider2D.gameObject.tag == "Player")
         {
             Debug.Log("Collision Exit detected");

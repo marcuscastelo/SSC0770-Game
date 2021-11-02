@@ -114,8 +114,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2048232955
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0bd375aa18a93d771ad8b941ee4b1277, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.16862746}
@@ -191,12 +191,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affectedTransform: {fileID: 0}
+  affectedRigidbody: {fileID: 0}
   entityStats: {fileID: 0}
   onMoveWillChanged:
     m_PersistentCalls:
       m_Calls: []
   movementWill: {x: 0, y: 0}
-  currentVelocity: {x: 0, y: 0}
 --- !u!1 &8165957565077548319
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1271602020425799815}
+  - component: {fileID: 8301457229456361580}
   m_Layer: 0
   m_Name: BaseEntity
   m_TagString: Untagged
@@ -231,6 +232,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &8301457229456361580
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8165957565077548319}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: 47ce3049f3957ff9d88a1d8c41651186, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1001 &191386556698876654
 PrefabInstance:
   m_ObjectHideFlags: 0

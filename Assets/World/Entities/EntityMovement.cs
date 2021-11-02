@@ -8,10 +8,10 @@ public class EntityMovement : MonoBehaviour
     [Header("References")]
     
     public Transform affectedTransform;
+    public Rigidbody2D affectedRigidbody;
 
     [SerializeField]
     protected EntityStats entityStats;
-
 
     [Space(10)]
 
@@ -26,10 +26,7 @@ public class EntityMovement : MonoBehaviour
     [SerializeField]
     protected Vector2 movementWill = Vector2.zero;
 
-    [SerializeField]
-    protected Vector2 currentVelocity = Vector2.zero;
-
-    public Vector2 CurrentVelocity { get { return currentVelocity; } }
+    public Vector2 CurrentVelocity { get { return affectedRigidbody.velocity; } }
 
     public void UpdateMovementWill(Vector2 movementWill)
     {
@@ -53,6 +50,8 @@ public class EntityMovement : MonoBehaviour
         float maxSpeed = entityStats.maxSpeed;
         float friction = entityStats.friction;
 
+        Vector2 currentVelocity = affectedRigidbody.velocity;
+
         Vector2 accelVector = movementWill * accel;
         Vector2 newVelocity = (currentVelocity + accelVector * Time.fixedDeltaTime);
 
@@ -69,9 +68,7 @@ public class EntityMovement : MonoBehaviour
             newVelocity = Vector2.zero;
         }
 
-        currentVelocity = newVelocity;
+        affectedRigidbody.velocity = newVelocity;
 
-        //TODO: search for a better way to do this
-        affectedTransform.position += (Vector3)currentVelocity * Time.fixedDeltaTime;
     }
 }
