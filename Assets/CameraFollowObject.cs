@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraFollowObject : MonoBehaviour
 {
-    public Transform player;
+    public Transform obj;
 
     public bool followX = true;
     public bool followY = true;
@@ -21,8 +21,8 @@ public class CameraFollowObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float newX = player.position.x;
-        float newY = player.position.y;
+        float newX = obj.position.x;
+        float newY = obj.position.y;
 
         newX = Mathf.Clamp(newX, minX, maxX);
 

@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TroubleMaker
       objectReference: {fileID: 0}
+    - target: {fileID: 506751427035309853, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: affectedTransform
+      value: 
+      objectReference: {fileID: 4906372546668565393}
     - target: {fileID: 7382652399878320185, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -57,3 +61,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+--- !u!4 &4906372546668565393 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7382652399878320185, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+  m_PrefabInstance: {fileID: 2477715265941808040}
+  m_PrefabAsset: {fileID: 0}

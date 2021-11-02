@@ -53,7 +53,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8165957565077548319, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: BaseEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782710088674685883, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782710088674685883, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782710088674685883, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
