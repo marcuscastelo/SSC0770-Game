@@ -17,6 +17,6 @@ public class Clock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animator.SetBool("late", late);
+        // animator.SetBool("late", late);
     }
 }
