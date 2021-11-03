@@ -13,47 +13,12 @@ public class SelectableObject : MonoBehaviour
 
     private bool isSelected;
 
-    void SetSelected(bool selected)
+    public void SetSelected(bool selected)
     {
+        if (isSelected == selected) return;
+
         isSelected = selected;
         _UpdateSprite();
-    
-        if (!selected) {
-            if (GameState.Instance.selectedObject == this) {
-                GameState.Instance.selectedObject = null;
-            }
-        }
-
-        else {
-            if (GameState.Instance.selectedObject != null && GameState.Instance.selectedObject != this) {
-                GameState.Instance.selectedObject.SetSelected(false);
-            }
-            GameState.Instance.selectedObject = this;
-        }
-
-    }
-
-    void OnTriggerEnter2D(Collider2D collider2D)
-    {
-        if (collider2D.gameObject.tag == "Player")
-        {
-            Debug.Log("Collision Enter detected");
-            if (!isSelected)
-            {
-                SetSelected(true);
-                _UpdateSprite();
-            }
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D collider2D)
-    {
-        if (collider2D.gameObject.tag == "Player")
-        {
-            Debug.Log("Collision Exit detected");
-            SetSelected(false);
-            _UpdateSprite();
-        }
     }
 
     private void _UpdateSprite()

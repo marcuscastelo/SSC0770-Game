@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public EntityState playerState;
+    // public PlayerData playerData;
 
     private bool __hack_interacted = false;
     private bool __hack_ok_pressed = false;
-
 
     private static GameManager instance;
     public static GameManager Instance
@@ -38,13 +37,13 @@ public class GameManager : MonoBehaviour
             __hack_interacted = false;
         }
 
-        if (playerState.wantsToInteract) 
-        {
-            if (GameState.Instance.selectedObject != null) {
-                OnInteract(GameState.Instance.selectedObject);
-                playerState.wantsToInteract = false;
-            }
-        }
+        // // if (playerData.wantsToInteract) 
+        // {
+        //     if (GameState.Instance.selectedObject != null) {
+        //         OnInteract(GameState.Instance.selectedObject);
+        //         // playerData.wantsToInteract = false;
+        //     }
+        // }
     }
 
     void OnGUI()
