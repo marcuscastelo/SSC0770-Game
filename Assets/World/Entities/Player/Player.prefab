@@ -88,7 +88,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3525159051820233562}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3525159051820233562}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79f58deed61f7a158a9d92e90d5347cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ddb51e7de59bf2f09acd1ecd5cecadf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3653460207674786793}
@@ -195,7 +195,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7619885521521164305}
         m_TargetAssemblyTypeName: SpriteChanger, Assembly-CSharp
-        m_MethodName: ChangeAnimatorController
+        m_MethodName: OnBuffChanged
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -395,14 +395,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8131679921766666147, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
-      propertyPath: affectedRigidbody
-      value: 
-      objectReference: {fileID: 919103125120717176}
-    - target: {fileID: 8131679921766666147, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
-      propertyPath: affectedTransform
-      value: 
-      objectReference: {fileID: 7948958333459480979}
-    - target: {fileID: 8131679921766666147, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: onMoveWillChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -463,11 +455,6 @@ Animator:
 --- !u!212 &1318163591179206247 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7908025162724484979, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
-  m_PrefabInstance: {fileID: 9220553102902286612}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &919103125120717176 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 8301457229456361580, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
   m_PrefabInstance: {fileID: 9220553102902286612}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &7948958333459480979 stripped

@@ -190,8 +190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ed3550d36eec3a695435329423ddcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affectedTransform: {fileID: 0}
-  affectedRigidbody: {fileID: 0}
+  affectedTransform: {fileID: 1271602020425799815}
+  affectedRigidbody: {fileID: 8301457229456361580}
   entityStats: {fileID: 0}
   onMoveWillChanged:
     m_PersistentCalls:
