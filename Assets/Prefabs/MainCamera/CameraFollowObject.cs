@@ -6,26 +6,18 @@ public class CameraFollowObject : MonoBehaviour
 {
     public Transform obj;
 
-    public bool followX = true;
-    public bool followY = true;
-
-    public float minX = -10;
-    public float maxX = 10;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public CameraPrefs prefs;
 
     // Update is called once per frame
     void Update()
     {
-        float newX = obj.position.x;
-        float newY = obj.position.y;
+        float newX = Mathf.Clamp(obj.position.x, prefs.minX, prefs.maxX);
+        float newY = Mathf.Clamp(obj.position.y, prefs.minY, prefs.maxY);
 
-        newX = Mathf.Clamp(newX, minX, maxX);
-
-        transform.position = new Vector3(followX ? newX : transform.position.x, followY ? newY : transform.position.y, transform.position.z);
+        transform.position = new Vector3(
+            prefs.followX ? newX : transform.position.x, 
+            prefs.followY ? newY : transform.position.y, 
+            transform.position.z
+        );
     }
 }
