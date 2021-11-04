@@ -7,29 +7,22 @@ public class PlayerInteraction : MonoBehaviour
     [Header("References")]
     public Player player;
 
-    [Space(10)]
-
-    [Header("Settings")]
-    public UnityEngine.KeyCode interactKey = KeyCode.E;
-
-
     [HideInInspector]
     private SelectableObject selectedObject;
 
     public SelectableObject SelectedObject { get { return selectedObject; } }
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        if (Input.GetKeyDown(interactKey))
+        if (player == null)
+            player = transform.parent.GetComponent<Player>();
+    }
+
+    public void Interact()
+    {
+        if (selectedObject != null)
         {
-            if (selectedObject != null)
-            {
-                if (player.ActiveBuff == Buff.NoItem)
-                    player.ActiveBuff = Buff.Armor;
-                else
-                    player.ActiveBuff = Buff.NoItem;                
-            }
+            Debug.Log("Interacting with " + selectedObject.id);
         }
     }
 
