@@ -55,4 +55,11 @@ public class SelectableObject : MonoBehaviour
             _UpdateSprite();
         }
     }
+
+    //TODO: think of a way to pass the player to the event, but not forcing all target functions to have a player as a parameter
+    public void Interact(Player player)
+    {
+        Debug.Log("Interacted with " + id);
+        onInteracted.Invoke();
+    }
 }

@@ -34,6 +34,6 @@ public class PlayerController : MonoBehaviour
     void InputInteract()
     {
         if (Input.GetKeyDown(interactKey))
-            playerInteraction.Interact();
+            playerInteraction.InteractWithSelectedObject();
     }
 }
