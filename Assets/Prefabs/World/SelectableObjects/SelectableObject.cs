@@ -1,15 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [ExecuteInEditMode]
 public class SelectableObject : MonoBehaviour
 {
-    public string id;
+    [Header("References")]
     public SpriteRenderer spriteRenderer;
-
     public Sprite spriteWhenUnselected;
     public Sprite spriteWhenSelected;
+
+    [Header("Config")]
+
+    public string id;
+
+    [Header("Events")]
+
+    public UnityEvent onSelected;
+    public UnityEvent onUnselected;
+    public UnityEvent onInteracted;
 
     private bool isSelected;
 
@@ -19,6 +29,11 @@ public class SelectableObject : MonoBehaviour
 
         isSelected = selected;
         _UpdateSprite();
+
+        if (selected)
+            onSelected.Invoke();
+        else
+            onUnselected.Invoke();
     }
 
     private void _UpdateSprite()
