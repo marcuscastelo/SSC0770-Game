@@ -18,11 +18,11 @@ public class PlayerInteraction : MonoBehaviour
             player = transform.parent.GetComponent<Player>();
     }
 
-    public void Interact()
+    public void InteractWithSelectedObject()
     {
         if (selectedObject != null)
         {
-            Debug.Log("Interacting with " + selectedObject.id);
+            selectedObject.Interact(player);
         }
     }
 

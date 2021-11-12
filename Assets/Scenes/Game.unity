@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &91814273 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4966873963446758315, guid: 13a624130b8b106b8b90d278cfa9f2e6, type: 3}
+  m_PrefabInstance: {fileID: 4966873963955797471}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f044b59a8717ebeaaed9345b55d6fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &116491947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -238,6 +249,38 @@ PrefabInstance:
     - target: {fileID: 1128861457282046437, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 91814273}
+    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchToLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelSwitcher, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
@@ -465,7 +508,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7948958333459480979, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
   m_PrefabInstance: {fileID: 116491947}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1523521631
+--- !u!114 &1668768912
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

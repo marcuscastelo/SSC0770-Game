@@ -48,7 +48,7 @@ public class LevelSwitcher : MonoBehaviour
         }
     }
 
-    void SwitchToLevel(int level)
+    public void SwitchToLevel(int level)
     {
         if (level < 1 || level > levels.Length)
         {
