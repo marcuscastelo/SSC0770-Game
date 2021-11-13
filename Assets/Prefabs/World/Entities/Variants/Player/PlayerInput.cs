@@ -5,11 +5,15 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     public PlayerController controller;
-    private PlayerControls controls;
-
-    void Awake()
+    private PlayerControls _controls = null;
+    private PlayerControls controls 
     {
-        controls = new PlayerControls();
+        get
+        {
+            if (_controls == null)
+                _controls = new PlayerControls();
+            return _controls;
+        }
     }
 
     void OnEnable() 
