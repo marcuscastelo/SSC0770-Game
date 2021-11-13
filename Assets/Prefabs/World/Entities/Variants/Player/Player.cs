@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
         }
     }
 
+    public SelectableObject SelectedObject { get; set; }
+
     private void Awake()
     {
         currentHealth = stats.maxHealth;

@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &951341921708528401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055728053197583371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389a0b2d2f8a8cb91b13ad78b46db576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 6125233238274049716}
+--- !u!114 &3653460207674786793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055728053197583371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 184cb0c2235067e4aa67c0af16ddaa62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 34e3c25f48378b23ebf0b139253074d8, type: 2}
+  currentHealth: 0
+  velocity: {x: 0, y: 0}
+  onBuffChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7619885521521164305}
+        m_TargetAssemblyTypeName: SpriteChanger, Assembly-CSharp
+        m_MethodName: OnBuffChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  activeBuff: 0
+--- !u!114 &6125233238274049716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055728053197583371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3d83bf0a41f07e8cf56fffdfc7e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceleration: 11.36
+  maxSpeed: 2.84
+  deceleration: 28.4
+  rb: {fileID: 0}
 --- !u!1 &2022157713356823781
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +89,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7948958333459480979}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &8936592905045389142
 CapsuleCollider2D:
@@ -78,7 +138,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7948958333459480979}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &4300378317601239013
 Rigidbody2D:
@@ -159,7 +219,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7948958333459480979}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2739427492246626965
 MonoBehaviour:
@@ -173,40 +233,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e3d83bf0a41f07e8cf56fffdfc7e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityMovement: {fileID: 1093385148567246519}
-  playerInteraction: {fileID: 1306801883184480943}
-  interactKey: 101
---- !u!114 &3653460207674786793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055728053197583371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 184cb0c2235067e4aa67c0af16ddaa62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 34e3c25f48378b23ebf0b139253074d8, type: 2}
-  currentHealth: 0
-  velocity: {x: 0, y: 0}
-  onBuffChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7619885521521164305}
-        m_TargetAssemblyTypeName: SpriteChanger, Assembly-CSharp
-        m_MethodName: OnBuffChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  activeBuff: 0
+  acceleration: 0
+  maxSpeed: 0
+  deceleration: 0
+  rb: {fileID: 0}
 --- !u!1001 &2317038671233479903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -309,11 +339,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1271602020425799815, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.68
+      value: 0.41142952
       objectReference: {fileID: 0}
     - target: {fileID: 1271602020425799815, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.11
+      value: -1.839292
       objectReference: {fileID: 0}
     - target: {fileID: 1271602020425799815, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -349,7 +379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2147429536858060895, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6642391621073496167, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: m_Controller
@@ -435,19 +465,9 @@ PrefabInstance:
       propertyPath: color.r
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4250863387535950232, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
---- !u!114 &1093385148567246519 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8131679921766666147, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
-  m_PrefabInstance: {fileID: 9220553102902286612}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96ed3550d36eec3a695435329423ddcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &2583799330779443571 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6642391621073496167, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}

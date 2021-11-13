@@ -34,17 +34,6 @@ public class SpriteChanger : MonoBehaviour
         animator.Play(animator.GetCurrentAnimatorStateInfo(0).fullPathHash, 0, currentFrame);
     }
 
-    public void OnMoveWillChanged(Vector2 moveWill) {
-        if (moveWill.x > 0)
-        {
-            spriteRenderer.flipX = false;
-        }
-        else if (moveWill.x < 0)
-        {
-            spriteRenderer.flipX = true;
-        }
-    }
-
     public void Start() {
         AssertNotNull();
     }
