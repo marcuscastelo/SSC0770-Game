@@ -7,12 +7,33 @@ public class RotatingBaseEntity : MonoBehaviour
     public EntityController controller;
 
     private Vector2 inputVector = Vector2.right;
+    
+    private static float BASE_FPS = 60;
 
-    // Update is called once per frame
-    void Update()
+    [InspectorName("Lag Test (Drag to change radius)"), Range(0.01f, 2f)]
+    public float radius = 5;
+
+    void FixedUpdate()
     {
-        inputVector = Quaternion.Euler(0, 0, 1) * inputVector;
-        controller.Move(inputVector);
-        Debug.DrawLine(transform.position, transform.position + (Vector3)inputVector, Color.red);
+        float mult = BASE_FPS * Time.fixedDeltaTime;
+
+        float maxLinearSpeed = controller.MaxSpeed;
+        float angularSpeed = maxLinearSpeed / radius;
+
+        inputVector = Quaternion.Euler(0, 0, angularSpeed * mult) * inputVector;
+
+        float centripetalAcceleration = angularSpeed * angularSpeed / radius;
+
+        float ratio = centripetalAcceleration / controller.Acceleration;
+
+        controller.Move(inputVector * ratio);
+    }
+
+    void OnDrawGizmos()
+    {
+        Vector2 perpendicular = Vector2.Perpendicular(inputVector);
+        Vector2 circleCenter = (Vector2)transform.position + perpendicular * radius;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(circleCenter, radius);
     }
 }

@@ -11,71 +11,48 @@ using UnityEngine.Events;
 /// </remarks>
 public class EntityController : MonoBehaviour
 {   
-    [SerializeField] private float acceleration;
-    [SerializeField] private float maxSpeed;
-    [SerializeField] private float deceleration;
+    [SerializeField, Range(0.001f, 10f)] protected float acceleration;
+    [SerializeField] protected float maxSpeed;
+    [SerializeField, Range(0,1)] protected float deceleration;
 
-    public Vector2 CurrentVelocity { get; private set; }
+    public Vector2 CurrentVelocity { get; protected set; }
+    public Vector2 InputVector { get; private set; }
 
-    private Vector2 inputVector;
+    public float Acceleration { get { return acceleration; } }
+    public float MaxSpeed { get { return maxSpeed; } }
+    public float Deceleration { get { return deceleration; } }
 
-    public void Move(Vector2 inputVector) => this.inputVector = inputVector;
+    /// <summary>
+    /// Move according to the input vector, using linear acceleration.
+    /// </summary>
+    public void Move(Vector2 inputVector)
+    {
+        this.InputVector = inputVector;
+        if (inputVector.sqrMagnitude > 0.1f)
+            transform.localScale = new Vector3(Mathf.Sign(inputVector.x), 1, 1); // Flip sprite to face direction of movement
+    }
+
     public void Stop() => CurrentVelocity = Vector2.zero;
 
-    void FixedUpdate()
+    protected void FixedUpdate()
     {
-        CurrentVelocity += inputVector * acceleration;
+        CurrentVelocity += InputVector * acceleration;
         CurrentVelocity = Vector2.ClampMagnitude(CurrentVelocity, maxSpeed);
 
-        //Apply deceleration
-        if (inputVector == Vector2.zero)
-            CurrentVelocity = Vector2.MoveTowards(CurrentVelocity, Vector2.zero, deceleration);
+        // //Apply deceleration
+        if (InputVector.sqrMagnitude < 0.01f)
+            CurrentVelocity *= (1 - deceleration);
 
         //Apply velocity
         transform.Translate(CurrentVelocity * Time.fixedDeltaTime);
     }
 
-    // public void UpdateMovementWill(Vector2 movementWill)
-    // {
-    //     this.movementWill = movementWill.normalized;
-    //     onMoveWillChanged.Invoke(movementWill);
-
-    //     //Flip transform if negative movement will 
-    //     if (movementWill.x < 0)
-    //     {
-    //         affectedTransform.localScale = new Vector3(-1, 1, 1);
-    //     }
-    //     else if (movementWill.x > 0)
-    //     {
-    //         affectedTransform.localScale = new Vector3(1, 1, 1);
-    //     }
-    // }
-
-    // void FixedUpdate()
-    // {
-    //     float accel = entityStats.acceleration;
-    //     float maxSpeed = entityStats.maxSpeed;
-    //     float friction = entityStats.friction;
-
-    //     Vector2 currentVelocity = affectedRigidbody.velocity;
-
-    //     Vector2 accelVector = movementWill * accel;
-    //     Vector2 newVelocity = (currentVelocity + accelVector * Time.fixedDeltaTime);
-
-    //     if (movementWill.magnitude == 0) {
-    //         newVelocity *= friction;
-    //     }
-
-    //     if (newVelocity.magnitude > maxSpeed)
-    //     {
-    //         newVelocity = newVelocity.normalized * maxSpeed;
-    //     }
-    //     else if (newVelocity.magnitude < 10e-3)
-    //     {
-    //         newVelocity = Vector2.zero;
-    //     }
-
-    //     affectedRigidbody.velocity = newVelocity;
-
-    // }
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, transform.position + (Vector3)InputVector);
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + (Vector3)CurrentVelocity);
+        // Handles.DrawBezier(p1,p2,p1,p2, Color.red,null,thickness);
+    }
 }
