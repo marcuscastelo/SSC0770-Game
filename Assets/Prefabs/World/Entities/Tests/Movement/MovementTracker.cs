@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class MovementTracker : MonoBehaviour
 {
+    [Header("Points")]
+    public bool showPoints = true;
     public int everyXFrames = 1;
     public int maxPoints = 100;
 
+    [Header("Movement")]
+    public bool showMovement = true;
+    public EntityController entityController;
+    
 
     private int frameCounter = 0;
     private readonly List<Vector3> positions = new List<Vector3>();
@@ -25,12 +31,23 @@ public class MovementTracker : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        foreach (var position in positions)
-        {
-            Gizmos.DrawSphere(position, 0.1f);
+        if (showPoints) {
+            Gizmos.color = Color.red;
+            foreach (var position in positions)
+            {
+                Gizmos.DrawSphere(position, 0.1f);
+            }
         }
+        
+        if (showMovement) {
+            Gizmos.color = Color.green;
 
-        Gizmos.color = Color.green;
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(transform.position, transform.position + (Vector3)entityController.InputVector);
+            Gizmos.color = Color.red;
+            Vector3 offsetedBase = transform.position + new Vector3(0, 0.05f, 0);
+            Gizmos.DrawLine(offsetedBase, offsetedBase + (Vector3)entityController.CurrentVelocity);
+        }
+        // Handles.DrawBezier(p1,p2,p1,p2, Color.red,null,thickness);
     }
 }

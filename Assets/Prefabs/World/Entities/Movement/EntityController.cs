@@ -11,9 +11,9 @@ using UnityEngine.Events;
 /// </remarks>
 public class EntityController : MonoBehaviour
 {   
-    [SerializeField, Range(0.001f,  10f)] protected float acceleration;
+    [SerializeField, Range(0.001f,  100f)] protected float acceleration;
     [SerializeField                     ] protected float maxSpeed;
-    [SerializeField, Range(0,       10f)] protected float deceleration;
+    [SerializeField, Range(0,       100f)] protected float deceleration;
 
     public Vector2 CurrentVelocity { get; protected set; }
     public Vector2 InputVector { get; private set; }
@@ -60,13 +60,5 @@ public class EntityController : MonoBehaviour
             rb.MovePosition(rb.position + CurrentVelocity * fixedCorrection);
     }
 
-    public void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, transform.position + (Vector3)InputVector);
-        Gizmos.color = Color.red;
-        Vector3 offsetedBase = transform.position + new Vector3(0, 0.05f, 0);
-        Gizmos.DrawLine(offsetedBase, offsetedBase + (Vector3)CurrentVelocity);
-        // Handles.DrawBezier(p1,p2,p1,p2, Color.red,null,thickness);
-    }
+    
 }

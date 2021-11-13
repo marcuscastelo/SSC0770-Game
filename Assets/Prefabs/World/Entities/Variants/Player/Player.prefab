@@ -56,9 +56,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e3d83bf0a41f07e8cf56fffdfc7e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 10
-  maxSpeed: 3.78
-  deceleration: 0.3
+  acceleration: 11.36
+  maxSpeed: 2.84
+  deceleration: 28.4
+  rb: {fileID: 0}
 --- !u!1 &2022157713356823781
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +236,7 @@ MonoBehaviour:
   acceleration: 0
   maxSpeed: 0
   deceleration: 0
+  rb: {fileID: 0}
 --- !u!1001 &2317038671233479903
 PrefabInstance:
   m_ObjectHideFlags: 0
