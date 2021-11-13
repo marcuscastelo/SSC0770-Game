@@ -22,6 +22,14 @@ public class EntityController : MonoBehaviour
     public float MaxSpeed { get { return maxSpeed; } }
     public float Deceleration { get { return deceleration; } }
 
+    public Rigidbody2D rb;
+
+    void Start()
+    {
+        if (rb == null)
+            rb = GetComponent<Rigidbody2D>();
+    }
+
     /// <summary>
     /// Move according to the input vector, using linear acceleration.
     /// </summary>
@@ -35,18 +43,21 @@ public class EntityController : MonoBehaviour
     public void Stop() => CurrentVelocity = Vector2.zero;
 
     protected void FixedUpdate()
-    {
-        // Decelerate if no input or if dot product is smaller than 0.707 (45 degrees)
-        if (Vector2.Dot(InputVector, CurrentVelocity) < 0.707f)
-            CurrentVelocity -= CurrentVelocity.normalized * deceleration * Time.fixedDeltaTime;
+    {        
+        float fixedCorrection = (Time.fixedDeltaTime);
+        Debug.Log("Fixed correction: " + fixedCorrection);
 
-        CurrentVelocity += InputVector * acceleration * Time.fixedDeltaTime;
-        CurrentVelocity = Vector2.ClampMagnitude(CurrentVelocity, maxSpeed);
 
-        //TODO: Add friction
+        CurrentVelocity += InputVector * (Acceleration + Deceleration) * fixedCorrection;
+        CurrentVelocity = Vector2.ClampMagnitude(CurrentVelocity, MaxSpeed);
 
-        //Apply velocity
-        transform.Translate(CurrentVelocity * Time.fixedDeltaTime );
+        if (CurrentVelocity.sqrMagnitude > 0.1f)
+            CurrentVelocity -= CurrentVelocity.normalized * Deceleration * fixedCorrection;
+        else if (InputVector == Vector2.zero)
+            CurrentVelocity = Vector2.zero;
+            
+        if (rb != null)
+            rb.MovePosition(rb.position + CurrentVelocity * fixedCorrection);
     }
 
     public void OnDrawGizmos()
@@ -54,7 +65,8 @@ public class EntityController : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawLine(transform.position, transform.position + (Vector3)InputVector);
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + (Vector3)CurrentVelocity);
+        Vector3 offsetedBase = transform.position + new Vector3(0, 0.05f, 0);
+        Gizmos.DrawLine(offsetedBase, offsetedBase + (Vector3)CurrentVelocity);
         // Handles.DrawBezier(p1,p2,p1,p2, Color.red,null,thickness);
     }
 }
