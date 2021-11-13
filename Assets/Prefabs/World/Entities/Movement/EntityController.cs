@@ -11,9 +11,9 @@ using UnityEngine.Events;
 /// </remarks>
 public class EntityController : MonoBehaviour
 {   
-    [SerializeField, Range(0.001f, 10f)] protected float acceleration;
-    [SerializeField] protected float maxSpeed;
-    [SerializeField, Range(0,1)] protected float deceleration;
+    [SerializeField, Range(0.001f,  10f)] protected float acceleration;
+    [SerializeField                     ] protected float maxSpeed;
+    [SerializeField, Range(0,       10f)] protected float deceleration;
 
     public Vector2 CurrentVelocity { get; protected set; }
     public Vector2 InputVector { get; private set; }
@@ -36,15 +36,17 @@ public class EntityController : MonoBehaviour
 
     protected void FixedUpdate()
     {
-        CurrentVelocity += InputVector * acceleration;
+        // Decelerate if no input or if dot product is smaller than 0.707 (45 degrees)
+        if (Vector2.Dot(InputVector, CurrentVelocity) < 0.707f)
+            CurrentVelocity -= CurrentVelocity.normalized * deceleration * Time.fixedDeltaTime;
+
+        CurrentVelocity += InputVector * acceleration * Time.fixedDeltaTime;
         CurrentVelocity = Vector2.ClampMagnitude(CurrentVelocity, maxSpeed);
 
-        // //Apply deceleration
-        if (InputVector.sqrMagnitude < 0.01f)
-            CurrentVelocity *= (1 - deceleration);
+        //TODO: Add friction
 
         //Apply velocity
-        transform.Translate(CurrentVelocity * Time.fixedDeltaTime);
+        transform.Translate(CurrentVelocity * Time.fixedDeltaTime );
     }
 
     public void OnDrawGizmos()

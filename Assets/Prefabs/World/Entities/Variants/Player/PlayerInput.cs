@@ -7,7 +7,7 @@ public class PlayerInput : MonoBehaviour
     public PlayerController controller;
     private PlayerControls controls;
 
-    void Awake() 
+    void Awake()
     {
         controls = new PlayerControls();
     }
