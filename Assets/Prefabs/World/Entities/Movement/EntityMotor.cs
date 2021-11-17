@@ -24,5 +24,4 @@ public class EntityMotor : MonoBehaviour
 
         controller.Move(movement * Time.deltaTime);
     }
-
 }

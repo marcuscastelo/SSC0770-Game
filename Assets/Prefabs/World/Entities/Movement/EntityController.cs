@@ -29,21 +29,43 @@ public class EntityController : MonoBehaviour
         if (rb == null)
             rb = GetComponent<Rigidbody2D>();
     }
-
-    /// <summary>
-    /// Move according to the input vector, using linear acceleration.
-    /// </summary>
+    
     public void Move(Vector2 inputVector)
     {
+        // // If the entity is on any other state, ignore the input.
+        // if (currentState != State.Moving)
+        //     return;
+
         this.InputVector = inputVector;
         if (inputVector.sqrMagnitude > 0.1f)
             transform.localScale = new Vector3(Mathf.Sign(inputVector.x), 1, 1); // Flip sprite to face direction of movement
     }
+    public void StopImmediately() => CurrentVelocity = Vector2.zero;
+    
+    public virtual void Attack()
+    {
+        // currentState = State.Attacking;
+        StopImmediately();
+    }
 
-    public void Stop() => CurrentVelocity = Vector2.zero;
+    public virtual void Interact()
+    {
+        // currentState = State.Interacting;
+        StopImmediately();
+    }
 
+    public virtual void Dash()
+    {
+        // currentState = State.Dashing;
+    }
+    
     protected void FixedUpdate()
     {        
+        UpdateMovement();
+    }
+
+    private void UpdateMovement()
+    {
         float fixedCorrection = (Time.fixedDeltaTime);
         Debug.Log("Fixed correction: " + fixedCorrection);
 
@@ -59,6 +81,5 @@ public class EntityController : MonoBehaviour
         if (rb != null)
             rb.MovePosition(rb.position + CurrentVelocity * fixedCorrection);
     }
-
     
 }

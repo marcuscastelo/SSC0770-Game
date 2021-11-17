@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 7908025162724484979}
   - component: {fileID: 6642391621073496167}
   m_Layer: 0
-  m_Name: AnimatedSprite
+  m_Name: Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,6 +216,7 @@ MonoBehaviour:
   acceleration: 70
   maxSpeed: 2
   deceleration: 0.7
+  rb: {fileID: 0}
 --- !u!1001 &191386556698876654
 PrefabInstance:
   m_ObjectHideFlags: 0
