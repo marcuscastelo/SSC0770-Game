@@ -1,14 +1,12 @@
+using System;
+
 public abstract class PlayerBrainState : IState
 {
-    protected Player player;
-    public PlayerBrainState(Player player)
+    protected PlayerBrain brain;
+    public PlayerBrainState(PlayerBrain brain)
     {
-        this.player = player;
+        this.brain = brain;
     }
-
-    public abstract void Enter();
-    public abstract void Execute();
-    public abstract void Exit();
 
     public abstract bool CanWalk();
     public abstract bool CanDash();

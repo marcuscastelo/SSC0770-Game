@@ -1,6 +1,6 @@
-public class PBWalkState : PlayerBrainState
+public class PBIdleState : PlayerBrainState
 {
-    public PBWalkState(PlayerBrain brain) : base(brain) { }
+    public PBIdleState(PlayerBrain brain) : base(brain) { }
 
     protected override void EnterBehaviour() { }
     protected override void ExecuteBehaviour(float deltaTime) { }
