@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    public PlayerController controller;
-    private PlayerControls _controls = null;
-    private PlayerControls controls 
+    [SerializeField]
+    public Player player;
+    
+    [SerializeField]
+    private PlayerControls controls;
+
+    void Awake()
     {
-        get
-        {
-            if (_controls == null)
-                _controls = new PlayerControls();
-            return _controls;
-        }
+        controls = new PlayerControls();
     }
 
     void OnEnable() 
@@ -28,11 +27,21 @@ public class PlayerInput : MonoBehaviour
 
     void Start()
     {
-        controls.Default.Walk.performed += ctx => controller.Move(ctx.ReadValue<Vector2>());
-        controls.Default.Walk.canceled += ctx => controller.Move(Vector2.zero);
+        //TODO: maybe rename Default to Player -> so that PlayerBrain can inherit from IPlayerActions and implement the interface
+        //Currently it would be confusing for PlayerBrain to implement IDefaultActions
+        controls.Default.Walk.performed += ctx => player.brain.OnWalkInput(ctx.ReadValue<Vector2>().normalized);
+        controls.Default.Walk.canceled += ctx => player.brain.OnWalkInput(Vector2.zero);
 
-        controls.Default.Interact.started += ctx => controller.Interact();
-        // controls.Default.Attack.started += ctx => controller.Attack();
-        // controls.Default.Dash.started += ctx => controller.Dash();
+        controls.Default.Interact.started += ctx => player.brain.OnInteractInput();
+        controls.Default.Attack.started += ctx => player.brain.OnAttackInput();
+        controls.Default.Dash.started += ctx => player.brain.OnDashInput();
+    }
+
+    void FixedUpdate()
+    {
+        //After hotswapping, the player will be stuck (player controls do not work anymore)
+        //So we need to re-enable the controls
+        // controls.Default.Enable();
+        //PS: it did not work at all.
     }
 }

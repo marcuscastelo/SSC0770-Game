@@ -7,13 +7,19 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
+    [Header("References")]
+
     [SerializeField]
     public PlayerStats stats;
 
+    public PlayerDisplay playerDisplay;
+    
+    public PlayerBrain brain;
+
+    [Header("Player Status")]
+
     [SerializeField]
     private float currentHealth;
-    [SerializeField]
-    private Vector2 velocity;
 
     public UnityEvent<Buff> onBuffChanged;
 
