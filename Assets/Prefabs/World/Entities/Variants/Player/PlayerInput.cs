@@ -7,7 +7,6 @@ public class PlayerInput : MonoBehaviour
     [SerializeField]
     public Player player;
     
-    [SerializeField]
     private PlayerControls controls;
 
     void Awake()
@@ -17,6 +16,8 @@ public class PlayerInput : MonoBehaviour
 
     void OnEnable() 
     {
+        if (controls == null)
+            controls = new PlayerControls();
         controls.Default.Enable();
     }
 

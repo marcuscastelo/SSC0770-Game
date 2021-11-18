@@ -13,7 +13,12 @@ public class PlayerController : EntityController
 
     public override void Interact()
     {
-        base.Interact();
-        player.SelectedObject?.onInteracted?.Invoke();
+        if (player.SelectedObject == null)
+        {
+            Debug.LogWarning("PlayerController.Interact() - No selected object");
+            return;
+        }
+
+        player.SelectedObject.Interact(player);
     }
 }

@@ -60,6 +60,6 @@ public class SelectableObject : MonoBehaviour
     public void Interact(Player player)
     {
         Debug.Log("Interacted with " + id);
-        onInteracted.Invoke();
+        onInteracted?.Invoke();
     }
 }

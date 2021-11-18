@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class AnimatorSync : MonoBehaviour
 {
-    // public Animator animator;
-    // public EntityMovement movement;
+    public Animator animator;
+    public EntityController controller;
 
-    // // Update is called once per frame
-    // void Update()
-    // {
-    //     if (animator.runtimeAnimatorController != null) {
-    //         animator.SetFloat("speedX", movement.CurrentVelocity.x);
-    //         animator.SetFloat("speedY", movement.CurrentVelocity.y);
-    //     }
-    // }
+    // Update is called once per frame
+    void Update()
+    {
+        if (animator.runtimeAnimatorController != null) {
+            animator.SetFloat("speedX", controller.InputVector.x);
+            animator.SetFloat("speedY", controller.InputVector.y);
+        }
+    }
 }
