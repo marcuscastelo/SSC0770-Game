@@ -63,21 +63,16 @@ public class EntityController : MonoBehaviour
 
     public virtual void Attack()
     {
-
+        throw new System.NotImplementedException();
     }
 
     public virtual void Interact()
     {
-
+        throw new System.NotImplementedException();
     }
 
     protected void FixedUpdate()
     {
-        Debug.Log("----------------");
-        Debug.Log("CurrentVelocity: " + CurrentVelocity);
-        Debug.Log("InputVector: " + InputVector);
-        Debug.Log("Dash: " + hack_isDashing);
-        Debug.Log("----------------");
         UpdateMovement(Time.fixedDeltaTime);
         UpdatePosition(Time.fixedDeltaTime);
     }
