@@ -43,7 +43,7 @@ public class EntityController : MonoBehaviour
     public void Move(Vector2 inputVector)
     {
         hack_isDashing = false;
-        Debug.Assert(Mathf.Abs(inputVector.sqrMagnitude - 1f) < 0.1f || inputVector == Vector2.zero, "Input vector magnitude must be 1 or 0-vector (i.e normalized), but it is sqrt of" + inputVector.sqrMagnitude);
+        // Debug.Assert(Mathf.Abs(inputVector.sqrMagnitude - 1f) < 0.1f || inputVector == Vector2.zero, "Input vector magnitude must be 1 or 0-vector (i.e normalized), but it is sqrt of" + inputVector.sqrMagnitude);
 
         this.InputVector = inputVector;
         if (inputVector.sqrMagnitude > 0.1f)
@@ -52,7 +52,7 @@ public class EntityController : MonoBehaviour
         // Update look direction
         LastLookDirection = inputVector;
     }
-    public void StopImmediately() => InputVector = CurrentVelocity = Vector2.zero;
+    public void StopImmediately() => CurrentVelocity = Vector2.zero;
 
     public virtual void Dash()
     {
@@ -91,9 +91,7 @@ public class EntityController : MonoBehaviour
     private void ApplyDeceleration(float deltaTime)
     {
         if (CurrentVelocity.sqrMagnitude > 0.1f)
-            CurrentVelocity -= CurrentVelocity.normalized * Deceleration * deltaTime;
-        else if (InputVector == Vector2.zero)
-            CurrentVelocity = Vector2.zero;
+            CurrentVelocity -= Vector2.ClampMagnitude(CurrentVelocity.normalized * Deceleration * deltaTime, CurrentVelocity.magnitude);
     }
 
     private void UpdateMovement(float deltaTime)

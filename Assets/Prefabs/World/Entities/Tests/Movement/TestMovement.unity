@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!50 &167007506 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 8301457229456361580, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+  m_PrefabInstance: {fileID: 1748270158}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &437917939 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1271602020425799815, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
@@ -157,7 +162,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1545897111}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &445795703
 MonoBehaviour:
@@ -262,6 +267,26 @@ PrefabInstance:
     - target: {fileID: 1055728053197583371, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
+      propertyPath: maxDashSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
+      propertyPath: maxWalkingSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
+      propertyPath: dashDeceleration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
+      propertyPath: walkingAcceleration
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
+      propertyPath: walkingDeceleration
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7948958333459480979, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
       propertyPath: m_RootOrder
@@ -916,12 +941,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4250863387535950232, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 167007506}
+    - target: {fileID: 4250863387535950232, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: maxSpeed
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4250863387535950232, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: acceleration
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250863387535950232, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: maxDashSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250863387535950232, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: maxWalkingSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250863387535950232, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: dashDeceleration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250863387535950232, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: walkingAcceleration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250863387535950232, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: walkingDeceleration
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7908025162724484979, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: m_Color.a
