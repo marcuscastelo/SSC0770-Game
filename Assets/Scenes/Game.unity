@@ -145,6 +145,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
+      propertyPath: maxDashSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
+      propertyPath: maxWalkingSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
+      propertyPath: dashDeceleration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
+      propertyPath: walkingAcceleration
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
+      propertyPath: walkingDeceleration
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7948958333459480979, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -284,6 +304,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+--- !u!114 &868974073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8aac6e82079d467083604e584f7868a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: Dialog not found
+  content: Unavailable
+  hasCancel: 1
 --- !u!1001 &1058934519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -508,21 +543,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7948958333459480979, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
   m_PrefabInstance: {fileID: 116491947}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1668768912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8aac6e82079d467083604e584f7868a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  title: Dialog not found
-  content: Unavailable
-  hasCancel: 1
 --- !u!1001 &4966873963955797471
 PrefabInstance:
   m_ObjectHideFlags: 0
