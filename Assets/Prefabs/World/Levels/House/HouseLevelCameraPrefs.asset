@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followX: 1
   followY: 0
-  minX: -2.25
-  maxX: 2.25
+  minX: -2.57
+  maxX: 0.57
   minY: 0
   maxY: 0
