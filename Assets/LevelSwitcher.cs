@@ -38,14 +38,7 @@ public class LevelSwitcher : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SwitchToLevel(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SwitchToLevel(2);
-        }
+
     }
 
     public void SwitchToLevel(int level)

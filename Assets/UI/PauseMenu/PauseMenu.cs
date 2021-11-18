@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenu : UILayer
 {
 	public GameObject[] objectsToDisable;
 	bool[] objectsToDisableOldState;
@@ -33,14 +33,14 @@ public class PauseMenu : MonoBehaviour
 	{
 		if (pause)
 		{
-			gameObject.SetActive(true);
+			this.Show();
 			Time.timeScale = 0.0f;
 			paused = true;
 			DisableObjects();
 		}
 		else
 		{
-			gameObject.SetActive(false);
+			this.Hide();
 			Time.timeScale = 1.0f;
 			paused = false;
 			ReEnableObjects();
