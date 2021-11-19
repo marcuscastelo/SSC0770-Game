@@ -2,16 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "DialogInfo", menuName = "ScriptableObjects/DialogInfo")]
 public class DialogInfo : ScriptableObject
 {
+    [TextArea]
     public string title = "";
+    [TextArea]
     public string content = "";
-    public bool hasCancel = true;
 
-    public DialogInfo()
-    {
-        title = "Dialog not found";
-        content = "Unavailable";
-        hasCancel = true;
-    }
+    public DialogButtonCombination buttons = DialogButtonCombination.OK;
 }

@@ -24,37 +24,45 @@ public sealed class PlayerBrain : MonoBehaviour
 
     public void OnWalkInput(Vector2 inputVector)
     {
-        if (CurrentState.CanWalk()) {
+        if (CurrentState.CanWalk())
+        {
             controller.Move(inputVector);
             bool wantsToWalk = inputVector.magnitude > 0.1f;
-            if (wantsToWalk) {
+            if (wantsToWalk)
+            {
                 stateMachine.ChangeState(() => new PBWalkState(this));
             }
-            else {
+            else
+            {
                 stateMachine.ChangeState(() => new PBIdleState(this));
             }
         }
     }
-    
+
     public void OnDashInput()
     {
-        if (CurrentState.CanDash()) {
-            stateMachine.ChangeState(() => {
-                var ds = new PBDashState(this);
-                ds.OnEntered += () => {
+        if (CurrentState.CanDash())
+        {
+            stateMachine.ChangeState(() =>
+            {
+                var dashState = new PBDashState(this);
+                dashState.OnEntered += () =>
+                {
                     controller.Dash();
                 };
-                ds.OnExited += () => {
+                dashState.OnExited += () =>
+                {
                     stateMachine.ChangeState(() => new PBIdleState(this));
                 };
-                return ds;
+                return dashState;
             });
         }
     }
 
     public void OnAttackInput()
     {
-        if (CurrentState.CanAttack()) {
+        if (CurrentState.CanAttack())
+        {
             controller.Attack();
             stateMachine.ChangeState(() => new PBAttackState(this));
         }
@@ -62,9 +70,21 @@ public sealed class PlayerBrain : MonoBehaviour
 
     public void OnInteractInput()
     {
-        if (CurrentState.CanInteract()) {
-            controller.Interact();
-            stateMachine.ChangeState(() => new PBInteractState(this));
+        if (CurrentState.CanInteract())
+        {
+            stateMachine.ChangeState(() =>
+            {
+                var interactState = new PBInteractState(this);
+                interactState.OnEntered += () =>
+                {
+                    controller.Interact();
+                };
+                interactState.OnExited += () =>
+                {
+                    stateMachine.ChangeState(() => new PBIdleState(this));
+                };
+                return interactState;
+            });
         }
     }
 }

@@ -1,30 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class PlayerInteraction : MonoBehaviour
+public class ObjectSelector : MonoBehaviour
 {
     [Header("References")]
     public Player player;
-
-    [HideInInspector]
-    private SelectableObject selectedObject;
-
-    public SelectableObject SelectedObject { get { return selectedObject; } }
-
-    void Awake()
-    {
-        if (player == null)
-            player = transform.parent.GetComponent<Player>();
-    }
-
-    public void InteractWithSelectedObject()
-    {
-        if (selectedObject != null)
-        {
-            selectedObject.Interact(player);
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -36,7 +18,7 @@ public class PlayerInteraction : MonoBehaviour
             SelectableObject selectableObj = parentGameObject.GetComponent<SelectableObject>();
             if (selectableObj != null) {
                 Debug.Log("PLAYER: Object has SelectableObject component");
-                this.selectedObject = selectableObj;
+                this.player.SelectedObject = selectableObj;
             } else {
                 Debug.LogError("PLAYER: Object has no SelectableObject component");
             }
@@ -54,10 +36,10 @@ public class PlayerInteraction : MonoBehaviour
             if (selectableObj != null)
             {
                 Debug.Log("PLAYER: Object has SelectableObject component");
-                if (selectableObj == selectedObject)
+                if (selectableObj == player.SelectedObject)
                 {
                     Debug.Log("PLAYER: Object is selected object, deselecting");
-                    this.selectedObject = null;
+                    this.player.SelectedObject = null;
                 }
             }
         }

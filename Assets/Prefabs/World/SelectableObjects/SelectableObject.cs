@@ -57,9 +57,9 @@ public class SelectableObject : MonoBehaviour
     }
 
     //TODO: think of a way to pass the player to the event, but not forcing all target functions to have a player as a parameter
-    public void Interact(Player player)
+    public virtual void OnInteractedBy(Player player)
     {
-        Debug.Log("Interacted with " + id);
-        onInteracted.Invoke();
+        Debug.Log("Interacted by player (id=" + id + ")");
+        onInteracted?.Invoke();
     }
 }

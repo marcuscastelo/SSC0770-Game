@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
 public class Player : MonoBehaviour
@@ -11,9 +10,6 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     public PlayerStats stats;
-
-    public PlayerDisplay playerDisplay;
-    
     public PlayerBrain brain;
 
     [Header("Player Status")]
