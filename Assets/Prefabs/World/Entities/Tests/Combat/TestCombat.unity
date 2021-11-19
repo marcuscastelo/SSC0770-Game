@@ -123,6 +123,39 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &195499086 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4908536836544927471, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+  m_PrefabInstance: {fileID: 1561744183}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &195499088 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1131519126284089960, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+  m_PrefabInstance: {fileID: 1561744183}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195499086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20b88e874e4aa5f75bea01c32381a3f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &195499091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195499086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 334cc32a9c56094bcb014465b9cfa7f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showPoints: 1
+  everyXFrames: 4
+  maxPoints: 100
+  showMovement: 1
+  entityController: {fileID: 195499088}
 --- !u!95 &558576968 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2583799330779443571, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
@@ -153,15 +186,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
       propertyPath: maxDashSpeed
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
       propertyPath: maxWalkingSpeed
-      value: 2
+      value: 3.4
       objectReference: {fileID: 0}
     - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
       propertyPath: dashDeceleration
-      value: 22
+      value: 8.8
       objectReference: {fileID: 0}
     - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
       propertyPath: walkingAcceleration
@@ -302,6 +335,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e3d83bf0a41f07e8cf56fffdfc7e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1404923318 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5640722550532609826, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+  m_PrefabInstance: {fileID: 1561744183}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1404923320 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 426304707399465893, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+  m_PrefabInstance: {fileID: 1561744183}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404923318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20b88e874e4aa5f75bea01c32381a3f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1404923323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404923318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 334cc32a9c56094bcb014465b9cfa7f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showPoints: 1
+  everyXFrames: 4
+  maxPoints: 100
+  showMovement: 1
+  entityController: {fileID: 1404923320}
 --- !u!1001 &1561744183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -309,6 +375,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1131519126284089960, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: maxWalkingSpeed
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131519126284089960, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: walkingAcceleration
+      value: 21.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131519126284089960, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: walkingDeceleration
+      value: 24.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628366572486966133, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: targetPlayer
+      value: 
+      objectReference: {fileID: 1180520027}
+    - target: {fileID: 2071763289696811704, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: targetPlayer
+      value: 
+      objectReference: {fileID: 1180520027}
+    - target: {fileID: 2659459486499234679, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 3364526648135410362, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.61
+      objectReference: {fileID: 0}
     - target: {fileID: 6989203468712084938, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -357,5 +451,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: StreetWorld-alpha
       objectReference: {fileID: 0}
+    - target: {fileID: 7594033107774182295, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e1c0b82b9a9b35dc18174876591f4952, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}

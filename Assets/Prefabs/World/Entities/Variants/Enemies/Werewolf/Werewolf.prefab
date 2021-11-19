@@ -11,6 +11,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Werewolf
       objectReference: {fileID: 0}
+    - target: {fileID: 1023342101732596485, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: show
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904779162472910797, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2958685293620329520, guid: 86a5ab506037f3bf4a838602ac0e6cbe, type: 3}
+    - target: {fileID: 1904779162472910797, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3170344533264515289, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e0b1cd2b7a94c04aab02a9aeee27a974, type: 2}
+    - target: {fileID: 5561885927183477030, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: maxWalkingSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561885927183477030, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: walkingAcceleration
+      value: 16.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561885927183477030, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: walkingDeceleration
+      value: 4.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7382652399878320185, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: m_RootOrder
       value: 0
