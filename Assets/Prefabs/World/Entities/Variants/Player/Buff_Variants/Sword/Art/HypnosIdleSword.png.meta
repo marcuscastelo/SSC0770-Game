@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 6e532945c0898291d9d9b5f3415ca86b
+guid: 804526a456fa06d5384dfff2f64bca31
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6329607176805056213
-    second: HypnosWalkArmorSword_0
+      213: -3312555509687147649
+    second: HypnosIdleSword_0
   - first:
-      213: -836918644541927670
-    second: HypnosWalkArmorSword_1
+      213: 3719463907840152366
+    second: HypnosIdleSword_1
   - first:
-      213: 76921518034975206
-    second: HypnosWalkArmorSword_2
+      213: -7889676743989518330
+    second: HypnosIdleSword_2
   - first:
-      213: -533480409326547272
-    second: HypnosWalkArmorSword_3
+      213: 8502257759721975523
+    second: HypnosIdleSword_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HypnosWalkArmorSword_0
+      name: HypnosIdleSword_0
       rect:
         serializedVersion: 2
         x: 0
@@ -117,14 +117,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2185c2fec7b828a0800000000000000
-      internalID: -6329607176805056213
+      spriteID: f73a55a80507702d0800000000000000
+      internalID: -3312555509687147649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HypnosWalkArmorSword_1
+      name: HypnosIdleSword_1
       rect:
         serializedVersion: 2
         x: 64
@@ -138,14 +138,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0f4d2e4deaa264f0800000000000000
-      internalID: -836918644541927670
+      spriteID: e23d2b5b7b03e9330800000000000000
+      internalID: 3719463907840152366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HypnosWalkArmorSword_2
+      name: HypnosIdleSword_2
       rect:
         serializedVersion: 2
         x: 128
@@ -159,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e9fe0e86b7411100800000000000000
-      internalID: 76921518034975206
+      spriteID: 60028d97dcc328290800000000000000
+      internalID: -7889676743989518330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HypnosWalkArmorSword_3
+      name: HypnosIdleSword_3
       rect:
         serializedVersion: 2
         x: 192
@@ -180,8 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8be067be462b898f0800000000000000
-      internalID: -533480409326547272
+      spriteID: 3ee6905b2661ef570800000000000000
+      internalID: 8502257759721975523
       vertices: []
       indices: 
       edges: []

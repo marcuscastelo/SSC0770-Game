@@ -229,10 +229,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 895138737558732373, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
-      propertyPath: m_Size.y
-      value: 0.6518121
-      objectReference: {fileID: 0}
     - target: {fileID: 1128861457282046436, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
       propertyPath: m_Name
       value: HouseWorld
@@ -281,54 +277,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1738339044386550038, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
-      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
-      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
       propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 91814273}
-    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
-      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
-      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchToLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
-      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LevelSwitcher, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
-      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
-      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4685144232693687434, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4685144232693687434, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 5193190613172853137, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.32
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
 --- !u!95 &723543641 stripped

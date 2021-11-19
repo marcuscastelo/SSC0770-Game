@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c845a3c6b90bf0d1b9adf91eb345b66e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 6642391621073496167}
+  controller: {fileID: 4250863387535950232}
 --- !u!1 &806564399570336610
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,9 +215,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b88e874e4aa5f75bea01c32381a3f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 70
-  maxSpeed: 2
-  deceleration: 0.7
+  walkingAcceleration: 0
+  maxWalkingSpeed: 0
+  walkingDeceleration: 0
+  maxDashSpeed: 0
+  dashDeceleration: 0
   rb: {fileID: 0}
 --- !u!1001 &191386556698876654
 PrefabInstance:
