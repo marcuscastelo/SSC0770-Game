@@ -23,17 +23,6 @@ public class DialogDisplay : MonoBehaviour
     private Dialog currentDialog;
     public bool IsBusy { get { return currentDialog != null; } }
 
-
-    void Start()
-    {
-        //Test code
-        DialogInfo info = new DialogInfo();
-        info.title = "Test Title";
-        info.content = "Test Content";
-        info.buttons = DialogButtonCombination.OK;
-
-    }
-
     void Awake()
     {
         DialogSystem.RegisterDisplay(this);
