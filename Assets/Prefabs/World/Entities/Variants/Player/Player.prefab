@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 34e3c25f48378b23ebf0b139253074d8, type: 2}
-  playerDisplay: {fileID: 2498872509760326568}
+  playerDisplay: {fileID: 0}
   brain: {fileID: 4055097684319794239}
   currentHealth: 0
   onBuffChanged:
@@ -208,7 +208,7 @@ MonoBehaviour:
   dashDeceleration: 5
   rb: {fileID: 919103125120717176}
   player: {fileID: 3653460207674786793}
---- !u!114 &2498872509760326568
+--- !u!114 &4802638200433128092
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,13 +217,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8413993204617077366}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 938e568b9526d63eebb58fd076b633f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 67b4aca44ee2ab166b9a93cf536024eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 1318163591179206247}
   animator: {fileID: 2583799330779443571}
-  noItemAnimatorController: {fileID: 9100000, guid: af1ae5270bd15ff5aa40302e84f2fb4f, type: 2}
   armorAnimatorController: {fileID: 9100000, guid: 12d97f569e8fc42aba7f764963ff9252, type: 2}
+  noItemAnimatorController: {fileID: 9100000, guid: af1ae5270bd15ff5aa40302e84f2fb4f, type: 2}
+  swordAnimatorController: {fileID: 9100000, guid: af1ae5270bd15ff5aa40302e84f2fb4f, type: 2}
+  swordAndArmorAnimatorController: {fileID: 9100000, guid: af1ae5270bd15ff5aa40302e84f2fb4f, type: 2}
 --- !u!1001 &9220553102902286612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -377,11 +378,6 @@ PrefabInstance:
 --- !u!95 &2583799330779443571 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6642391621073496167, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
-  m_PrefabInstance: {fileID: 9220553102902286612}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1318163591179206247 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 7908025162724484979, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
   m_PrefabInstance: {fileID: 9220553102902286612}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8413993204617077366 stripped

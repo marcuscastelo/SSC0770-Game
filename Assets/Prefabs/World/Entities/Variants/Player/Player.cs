@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     public PlayerStats stats;
-    public PlayerDisplay playerDisplay;
     public PlayerBrain brain;
 
     [Header("Player Status")]
