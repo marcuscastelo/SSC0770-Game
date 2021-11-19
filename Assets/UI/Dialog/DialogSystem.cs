@@ -5,6 +5,12 @@ public static class DialogSystem
     private static readonly Queue<Dialog> pendingDialogs = new Queue<Dialog>();
     private static DialogDisplay activeDisplay = null;
 
+    public static void ShowDialog(DialogInfo dialogInfo)
+    {
+        Dialog dummyDialog = new Dialog(dialogInfo, (DialogButton _)=>{});
+        ShowDialog(dummyDialog);
+    }
+
     public static void ShowDialog(Dialog dialog)
     {
         if (activeDisplay == null)

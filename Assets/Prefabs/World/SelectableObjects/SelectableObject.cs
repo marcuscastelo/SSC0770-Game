@@ -19,7 +19,7 @@ public class SelectableObject : MonoBehaviour
 
     public UnityEvent onSelected;
     public UnityEvent onUnselected;
-    public UnityEvent onInteracted;
+    public UnityEvent<Player> onInteracted;
 
     private bool isSelected;
 
@@ -60,6 +60,6 @@ public class SelectableObject : MonoBehaviour
     public virtual void OnInteractedBy(Player player)
     {
         Debug.Log("Interacted by player (id=" + id + ")");
-        onInteracted?.Invoke();
+        onInteracted?.Invoke(player);
     }
 }

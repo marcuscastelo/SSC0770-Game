@@ -78,6 +78,7 @@ public sealed class PlayerBrain : MonoBehaviour
                 interactState.OnEntered += () =>
                 {
                     controller.Interact();
+                    interactState.Exit();
                 };
                 interactState.OnExited += () =>
                 {

@@ -28,6 +28,12 @@ public class DialogDisplay : MonoBehaviour
         DialogSystem.RegisterDisplay(this);
     }
 
+    public void ShowDialog(DialogInfo dialogInfo)
+    {
+        Dialog dummyDialog = new Dialog(dialogInfo, (DialogButton _)=>{});
+        ShowDialog(dummyDialog);
+    }
+
     public void ShowDialog(Dialog dialog)
     {
         Debug.Assert(dialog != null, "DialogDisplay.ShowDialog: dialog is null!");
@@ -39,6 +45,7 @@ public class DialogDisplay : MonoBehaviour
 
     public void DismissDialog()
     {
+        Debug.Assert(IsBusy, "DialogDisplay.DismissDialog: not busy!");
         Dialog currentDialog = this.currentDialog;
         this.currentDialog = null;
         DialogSystem.OnDialogDismissed(currentDialog);
