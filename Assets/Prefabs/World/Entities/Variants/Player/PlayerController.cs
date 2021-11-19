@@ -27,7 +27,6 @@ public class PlayerController : EntityController
             if (pressedButton == DialogButton.Yes)
             {
                 player.SelectedObject.OnInteractedBy(player);
-                player.ActiveBuff = Buff.Armor;
             }
         });
 

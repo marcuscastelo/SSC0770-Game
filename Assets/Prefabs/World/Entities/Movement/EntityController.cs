@@ -79,13 +79,13 @@ public class EntityController : MonoBehaviour
 
     private void ApplyAcceleration(float deltaTime, bool compensateDeceleration = true)
     {
-        CurrentVelocity += InputVector * (Acceleration + Deceleration * (compensateDeceleration ? 1 : 0)) * deltaTime;
+        CurrentVelocity += InputVector * (Acceleration + Deceleration * (compensateDeceleration ? 1f : 0f)) * deltaTime;
         CurrentVelocity = Vector2.ClampMagnitude(CurrentVelocity, MaxSpeed);
     }
 
     private void ApplyDeceleration(float deltaTime)
     {
-        if (CurrentVelocity.sqrMagnitude > 0.1f)
+        if (CurrentVelocity.sqrMagnitude > 0.01f)
             CurrentVelocity -= Vector2.ClampMagnitude(CurrentVelocity.normalized * Deceleration * deltaTime, CurrentVelocity.magnitude);
     }
 
@@ -93,7 +93,7 @@ public class EntityController : MonoBehaviour
     {
         ApplyAcceleration(deltaTime);
         ApplyDeceleration(deltaTime);
-        if (CurrentVelocity.sqrMagnitude < 0.1f) {
+        if (CurrentVelocity.sqrMagnitude < 0.01f) {
             StopImmediately();
             hack_isDashing = false;
         }
