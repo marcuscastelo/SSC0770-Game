@@ -27,6 +27,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: e1c0b82b9a9b35dc18174876591f4952, type: 2}
+    - target: {fileID: 5561885927183477030, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: maxWalkingSpeed
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561885927183477030, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: walkingAcceleration
+      value: 21.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561885927183477030, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: walkingDeceleration
+      value: 24.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7382652399878320185, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: m_RootOrder
       value: 0

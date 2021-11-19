@@ -282,6 +282,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
       propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 3
       objectReference: {fileID: 0}
@@ -298,8 +302,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchToLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
       propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SwitchToLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelSwitcher, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
       propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -308,6 +320,14 @@ PrefabInstance:
     - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
       propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3739972975178031161, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
       propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -338,6 +358,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1628366572486966133, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: targetPlayer
+      value: 
+      objectReference: {fileID: 1406837804}
+    - target: {fileID: 2071763289696811704, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: targetPlayer
+      value: 
+      objectReference: {fileID: 1406837804}
     - target: {fileID: 5923210591955388443, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: animator
       value: 

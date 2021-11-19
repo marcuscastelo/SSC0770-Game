@@ -156,11 +156,6 @@ MonoBehaviour:
   maxPoints: 100
   showMovement: 1
   entityController: {fileID: 195499088}
---- !u!95 &558576968 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2583799330779443571, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
-  m_PrefabInstance: {fileID: 588122288}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &588122288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -172,37 +167,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1356169470159924018, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 558576968}
-    - target: {fileID: 1356169470159924018, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1389683769}
     - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
       propertyPath: dashSpeed
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
-      propertyPath: maxDashSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
-      propertyPath: maxWalkingSpeed
-      value: 3.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
-      propertyPath: dashDeceleration
-      value: 8.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
-      propertyPath: walkingAcceleration
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
-      propertyPath: walkingDeceleration
-      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7948958333459480979, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
       propertyPath: m_RootOrder
@@ -210,11 +177,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7948958333459480979, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
       propertyPath: m_LocalScale.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7948958333459480979, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.3859267
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 7948958333459480979, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
       propertyPath: m_LocalPosition.y
@@ -324,17 +291,6 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: c503e052169fcf6cdbde5775d4501623, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5108ce230a98d8f3ab2df518e69b7d70, type: 3}
---- !u!114 &1389683769 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6125233238274049716, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
-  m_PrefabInstance: {fileID: 588122288}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1e3d83bf0a41f07e8cf56fffdfc7e01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1404923318 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5640722550532609826, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
@@ -375,18 +331,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1131519126284089960, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: maxWalkingSpeed
-      value: 2.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131519126284089960, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: walkingAcceleration
-      value: 21.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131519126284089960, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: walkingDeceleration
-      value: 24.3
-      objectReference: {fileID: 0}
     - target: {fileID: 1628366572486966133, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: targetPlayer
       value: 
@@ -395,14 +339,6 @@ PrefabInstance:
       propertyPath: targetPlayer
       value: 
       objectReference: {fileID: 1180520027}
-    - target: {fileID: 2659459486499234679, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 3364526648135410362, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.61
-      objectReference: {fileID: 0}
     - target: {fileID: 6989203468712084938, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: m_RootOrder
       value: 0
