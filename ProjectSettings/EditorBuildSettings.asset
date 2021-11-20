@@ -9,15 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Tests/Testing25DCollisions.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Menus/MainMenu/MainMenu.unity
+    path: Assets/UI/MainMenu/MainMenu.unity
     guid: 286233b7b4e42d74f907daa685dc2a8e
   - enabled: 1
-    path: Assets/Scenes/Street.unity
+    path: Assets/Prefabs/Objects/Levels/Street/Street.unity
     guid: e2e1af0c6c26398a084c58437d5b6134
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Game.unity
     guid: 5278cfb870675bab8832a5e67bfc8590
   m_configObjects: {}
