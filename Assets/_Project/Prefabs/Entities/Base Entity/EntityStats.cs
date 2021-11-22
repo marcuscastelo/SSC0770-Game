@@ -1,21 +1,29 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEditor;
+using System;
 
-[CreateAssetMenu(fileName = "EntityStats", menuName = "ScriptableObjects/EntityStats")]
-public class EntityStats : ScriptableObject
+[Serializable]
+public class EntityStats
 {
-    [Space(10)]
-    [Header("Combat")]
-    public int maxHealth;
-    public int damage;
+   CombatStats combatStats;
+   MovementStats movementStats;
+}
 
+[Serializable]
+internal class CombatStats
+{
+    public float attackDamage;
+    public float attackCooldown;
+    public float attackDuration;
+}
 
-    [Space(10)]
-    [Header("Movement")]
-    public int acceleration;
-    public int maxSpeed;
-    [Range(0,1)] 
-    public float friction;
+[Serializable]
+internal class MovementStats
+{
+    public float acceleration;
+    public float maxSpeed;
+    public float deceleration;
+
+    public float dashSpeed;
+    public float dashDuration;
+    public float dashCooldown;
 }

@@ -43,13 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b88e874e4aa5f75bea01c32381a3f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactor: {fileID: 0}
-  walkingAcceleration: 0
-  maxWalkingSpeed: 0
-  walkingDeceleration: 0
-  maxDashSpeed: 0
-  dashDeceleration: 0
-  rb: {fileID: 3655516277853973644}
+  interactor: {fileID: 4519475127628345580}
+  combat: {fileID: 1414300145984740011}
+  movement: {fileID: 6730314429003350609}
 --- !u!1 &806564399570336610
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +177,6 @@ Transform:
   m_Children:
   - {fileID: 7200059236752764952}
   - {fileID: 2187512963626707849}
-  - {fileID: 8693648443659585975}
   - {fileID: 4001760268457468333}
   m_Father: {fileID: 1271602020425799815}
   m_RootOrder: 2
@@ -195,8 +190,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4001760268457468333}
+  - component: {fileID: 6730314429003350609}
   m_Layer: 0
-  m_Name: Move
+  m_Name: Movement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,38 +210,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3829129987982705606}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5954346996135757543
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8693648443659585975}
-  m_Layer: 0
-  m_Name: Hurt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8693648443659585975
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5954346996135757543}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3829129987982705606}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6730314429003350609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4664816210852779234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62913daafd4b39749a53d05b17cd1695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 3655516277853973644}
+  movementStats:
+    acceleration: 70
+    maxSpeed: 2
+    deceleration: 15
+    dashSpeed: 10
+    dashDuration: 1
+    dashCooldown: 2
 --- !u!1 &8061754779003200853
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,9 +241,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7200059236752764952}
+  - component: {fileID: 3417692391073928960}
   - component: {fileID: 4519475127628345580}
   m_Layer: 0
-  m_Name: Interactor
+  m_Name: Interaction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,6 +264,22 @@ Transform:
   m_Father: {fileID: 3829129987982705606}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &3417692391073928960
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8061754779003200853}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!114 &4519475127628345580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,7 +292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e7185813da753f1c83358ec3d5185ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!1 &8165957565077548319
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,8 +356,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2187512963626707849}
+  - component: {fileID: 1414300145984740011}
   m_Layer: 0
-  m_Name: Hit
+  m_Name: Combat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -375,3 +378,15 @@ Transform:
   m_Father: {fileID: 3829129987982705606}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1414300145984740011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9186883905810641235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65fc3f6e6adf1bc6694b9b6fad9d58ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

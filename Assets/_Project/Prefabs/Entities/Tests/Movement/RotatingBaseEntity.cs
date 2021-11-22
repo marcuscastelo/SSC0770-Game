@@ -15,18 +15,18 @@ public class RotatingBaseEntity : MonoBehaviour
 
     void FixedUpdate()
     {
-        float mult = BASE_FPS * Time.fixedDeltaTime;
+        // float mult = BASE_FPS * Time.fixedDeltaTime;
 
-        float maxLinearSpeed = controller.MaxSpeed;
-        float angularSpeed = maxLinearSpeed / radius;
+        // float maxLinearSpeed = controller.MaxSpeed;
+        // float angularSpeed = maxLinearSpeed / radius;
 
-        inputVector = Quaternion.Euler(0, 0, angularSpeed * mult) * inputVector;
+        // inputVector = Quaternion.Euler(0, 0, angularSpeed * mult) * inputVector;
 
-        float centripetalAcceleration = angularSpeed * angularSpeed / radius;
+        // float centripetalAcceleration = angularSpeed * angularSpeed / radius;
 
-        float ratio = centripetalAcceleration / controller.Acceleration;
+        // float ratio = centripetalAcceleration / controller.Acceleration;
 
-        controller.Move(inputVector * ratio);
+        // controller.Walk(inputVector * ratio);
     }
 
     void OnDrawGizmos()

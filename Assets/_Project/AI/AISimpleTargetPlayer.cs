@@ -8,6 +8,13 @@ public class AISimpleTargetPlayer : MonoBehaviour
     public Transform self;
     public Transform targetPlayer;
 
+    void Awake()
+    {
+        Debug.Assert(controller != null, "AISimpleTargetPlayer.Awake() - controller is null");
+        Debug.Assert(self != null, "AISimpleTargetPlayer.Awake() - self is null");
+        Debug.Assert(targetPlayer != null, "AISimpleTargetPlayer.Awake() - targetPlayer is null");
+    }
+
     void Update()
     {
         Vector2 difference = targetPlayer.position - self.position;
@@ -15,8 +22,8 @@ public class AISimpleTargetPlayer : MonoBehaviour
         Vector2 direction = difference.normalized;
         
         if (magnitude > 0.1f)
-            controller.Move(direction);
+            controller.Walk(direction);
         else
-            controller.Move(Vector2.zero);
+            controller.Walk(Vector2.zero);
     }
 }

@@ -1,18 +1,30 @@
 using UnityEngine;
 
-//<summary>
-// Attach this component to a SelectableObject to apply buffs to the player when it is selected.
-//</summary>
-public class BuffApplier: MonoBehaviour
+public class ApplyBuffToInteractor : MonoBehaviour
 {
-    [Header("References")]
-    public SelectableObject selectableObject;
-
     [Header("Config")]
     public Buff buff;
 
-    public void ApplyBuffTo(Player player)
+    public void ApplyBuffTo(IInteractor target)
     {
-        player.ActiveBuff |= buff;
+        if (!(target is IBuffable))
+            return;
+
+        IBuffable buffable = target as IBuffable;
+
+        DialogInfo buffConfirmationDialogInfo = ScriptableObject.CreateInstance<DialogInfo>();
+        buffConfirmationDialogInfo.title = "Select Buff";
+        buffConfirmationDialogInfo.content = "Do you want to select " + buff.ToString() + " as a buff?";
+        buffConfirmationDialogInfo.buttons = DialogButtonCombination.YesNo;
+        Dialog buffConfirmationDialog = new Dialog(buffConfirmationDialogInfo, (DialogButton pressedButton) =>
+        {
+            if (pressedButton == DialogButton.Yes)
+            {
+                buffable.ApplyBuff(buff);
+            }
+        });
+
+        DialogSystem.ShowDialog(buffConfirmationDialog);
+
     }
 }

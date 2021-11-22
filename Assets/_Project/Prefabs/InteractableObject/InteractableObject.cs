@@ -19,7 +19,7 @@ public class SelectableObject : MonoBehaviour
 
     public UnityEvent onSelected;
     public UnityEvent onUnselected;
-    public UnityEvent<Player> onInteracted;
+    public UnityEvent<IInteractor> onInteracted;
 
     private bool isSelected;
 
@@ -57,9 +57,9 @@ public class SelectableObject : MonoBehaviour
     }
 
     //TODO: think of a way to pass the player to the event, but not forcing all target functions to have a player as a parameter
-    public virtual void OnInteractedBy(Player player)
+    public virtual void OnInteractedBy(IInteractor interactor)
     {
         Debug.Log("Interacted by player (id=" + id + ")");
-        onInteracted?.Invoke(player);
+        onInteracted?.Invoke(interactor);
     }
 }
