@@ -11,6 +11,8 @@ using UnityEngine.Events;
 /// </remarks>
 public class EntityController : MonoBehaviour
 {
+    public AreaInteractor interactor;
+
     [SerializeField, Range(0.001f, 100f)] protected float walkingAcceleration;
     [SerializeField] protected float maxWalkingSpeed;
     [SerializeField, Range(0, 100f)] protected float walkingDeceleration;
@@ -54,21 +56,34 @@ public class EntityController : MonoBehaviour
     }
     public void StopImmediately() => CurrentVelocity = Vector2.zero;
 
-    public virtual void Dash()
+    public void Dash()
     {
         hack_isDashing = true;
         InputVector = Vector2.zero;
         CurrentVelocity = LastLookDirection * MaxSpeed;
     }
 
-    public virtual void Attack()
+    public void Attack()
     {
-        throw new System.NotImplementedException();
+        
     }
 
-    public virtual void Interact()
+    public void Interact()
     {
-        throw new System.NotImplementedException();
+        interactor?.Interact();
+
+        // DialogInfo buffConfirmationDialogInfo = ScriptableObject.CreateInstance<DialogInfo>();
+        // buffConfirmationDialogInfo.title = "Select Buff";
+        // buffConfirmationDialogInfo.content = "Do you want to select " + player.SelectedObject.name + " as a buff?";
+        // buffConfirmationDialogInfo.buttons = DialogButtonCombination.YesNo;
+        // Dialog buffConfirmationDialog = new Dialog(buffConfirmationDialogInfo, (DialogButton pressedButton) => {
+        //     if (pressedButton == DialogButton.Yes)
+        //     {
+        //         player.SelectedObject.OnInteractedBy(player);
+        //     }
+        // });
+
+        // DialogSystem.ShowDialog(buffConfirmationDialog);
     }
 
     protected void FixedUpdate()
