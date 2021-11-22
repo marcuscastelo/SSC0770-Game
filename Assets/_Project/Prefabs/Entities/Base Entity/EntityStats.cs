@@ -9,7 +9,7 @@ public class EntityStats
 }
 
 [Serializable]
-internal class CombatStats
+public class CombatStats
 {
     public float attackDamage;
     public float attackCooldown;
@@ -17,7 +17,7 @@ internal class CombatStats
 }
 
 [Serializable]
-internal class MovementStats
+public class MovementStats
 {
     public float acceleration;
     public float maxSpeed;

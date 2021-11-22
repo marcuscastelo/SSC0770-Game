@@ -30,8 +30,8 @@ public class PlayerInput : MonoBehaviour
     {
         //TODO: maybe rename Default to Player -> so that PlayerBrain can inherit from IPlayerActions and implement the interface
         //Currently it would be confusing for PlayerBrain to implement IDefaultActions
-        controls.Default.Walk.performed += ctx => controller.Walk(ctx.ReadValue<Vector2>());
-        controls.Default.Walk.canceled += ctx => controller.Walk(Vector2.zero);
+        controls.Default.Walk.performed += ctx => controller.Move(ctx.ReadValue<Vector2>());
+        controls.Default.Walk.canceled += ctx => controller.Move(Vector2.zero);
 
         controls.Default.Interact.started += ctx => controller.Interact();
         controls.Default.Attack.started += ctx => controller.Attack();

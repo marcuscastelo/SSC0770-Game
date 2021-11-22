@@ -46,6 +46,8 @@ MonoBehaviour:
   interactor: {fileID: 4519475127628345580}
   combat: {fileID: 1414300145984740011}
   movement: {fileID: 6730314429003350609}
+  entityTransform: {fileID: 1271602020425799815}
+  animator: {fileID: 6642391621073496167}
 --- !u!1 &806564399570336610
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,3 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65fc3f6e6adf1bc6694b9b6fad9d58ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combatStats:
+    attackDamage: 1
+    attackCooldown: 0
+    attackDuration: 3.49
