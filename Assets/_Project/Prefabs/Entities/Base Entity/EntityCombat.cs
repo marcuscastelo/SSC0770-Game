@@ -1,8 +1,11 @@
 using UnityEngine;
+using System.Collections.Generic;
+
 
 public class EntityCombat: MonoBehaviour, IAttackable, IAttacker
 {
     [SerializeField] private CombatStats combatStats;
+    [SerializeField] private List<AttackerArea> attackerAreas;
     public CombatStats Stats => combatStats;
 
     public void Attack()
@@ -14,4 +17,10 @@ public class EntityCombat: MonoBehaviour, IAttackable, IAttacker
     {
         Debug.Log("EntityCombat.OnAttacked()");
     }
+}
+
+internal struct AttackerArea
+{
+    public Collider2D triggerArea;
+    public bool alwaysActive = false;
 }

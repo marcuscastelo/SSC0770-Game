@@ -227,13 +227,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 3655516277853973644}
-  movementStats:
+  walkStats:
     acceleration: 70
     maxSpeed: 2
-    deceleration: 15
-    dashSpeed: 10
-    dashDuration: 1
-    dashCooldown: 2
+    deceleration: 14
+  dashStats:
+    dashSpeed: 0
+    dashDuration: 0
+    dashCooldown: 0
 --- !u!1 &8061754779003200853
 GameObject:
   m_ObjectHideFlags: 0
