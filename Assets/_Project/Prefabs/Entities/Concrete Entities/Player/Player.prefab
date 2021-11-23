@@ -204,6 +204,30 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: af1ae5270bd15ff5aa40302e84f2fb4f, type: 2}
+    - target: {fileID: 6730314429003350609, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: walkStats.maxSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730314429003350609, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: dashStats.dashSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730314429003350609, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: dashStats.dashCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730314429003350609, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: dashStats.dashDuration
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730314429003350609, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: walkStats.acceleration
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730314429003350609, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: walkStats.deceleration
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 7908025162724484979, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: m_FlipX
       value: 0

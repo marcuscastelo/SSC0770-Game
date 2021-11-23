@@ -5,7 +5,8 @@ using System;
 public class EntityStats
 {
    CombatStats combatStats;
-   MovementStats movementStats;
+   WalkStats walkStats;
+   DashStats dashStats;
 }
 
 [Serializable]
@@ -17,12 +18,16 @@ public class CombatStats
 }
 
 [Serializable]
-public class MovementStats
+public class WalkStats
 {
     public float acceleration;
     public float maxSpeed;
     public float deceleration;
+}
 
+[Serializable]
+public class DashStats
+{
     public float dashSpeed;
     public float dashDuration;
     public float dashCooldown;

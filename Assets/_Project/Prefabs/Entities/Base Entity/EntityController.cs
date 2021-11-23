@@ -12,6 +12,7 @@ public class EntityController : MonoBehaviour
     [SerializeField] private Animator animator;
 
     public Vector2 InputDirection { get; private set; }
+    public Vector2 LastLookDirection { get; private set; }
 
     enum State { Moving, Attacking, Interacting, Dashing, Dead }
     State _state = State.Moving;
@@ -27,7 +28,7 @@ public class EntityController : MonoBehaviour
     public void Attack() => StartCoroutine(AttackCoroutine());
     public void Move(Vector2 direction) => StartCoroutine(MoveCoroutine(direction));
     public void Dash(Vector2 direction) => StartCoroutine(DashCoroutine(direction));
-    public void Dash() => StartCoroutine(DashCoroutine(InputDirection));
+    public void Dash() => StartCoroutine(DashCoroutine(LastLookDirection));
 
     public IEnumerator InteractCoroutine()
     {
@@ -50,6 +51,7 @@ public class EntityController : MonoBehaviour
         _state = State.Attacking;
         combat.Attack();
         animator.SetTrigger("attackTrigger");
+        movement.SetVel(Vector2.zero);
 
         yield return new WaitForSeconds(combat.Stats.attackDuration);
         
@@ -59,39 +61,53 @@ public class EntityController : MonoBehaviour
 
     public IEnumerator MoveCoroutine(Vector2 direction)
     {
+        InputDirection = direction;
+        Debug.Log("MoveCoroutine() - InputDirection: " + InputDirection);
+        if (InputDirection.sqrMagnitude > 0)
+            LastLookDirection = InputDirection;
+
         if (_state != State.Moving)
             yield break;
 
-        InputDirection = direction;
-        movement.AccelerateTo(direction, movement.Stats.acceleration);
-        UpdateAnimator();
+        movement.AccelerateTo(direction * movement.WalkStats.maxSpeed, movement.WalkStats.acceleration);
+        UpdateAnimator(InputDirection);
 
         yield break;
     }
 
+    private float _dashLastTime = float.MinValue;
     public IEnumerator DashCoroutine(Vector2 direction)
     {
         if (_state != State.Moving)
             yield break;
 
-        InputDirection = direction;
-        movement.SetVel(direction * movement.Stats.dashSpeed);
-        UpdateAnimator();
+        if (Time.time - _dashLastTime < movement.DashStats.dashCooldown)
+            yield break;
 
-        yield return new WaitForSeconds(movement.Stats.dashDuration);
+        _state = State.Dashing;
+        movement.OnDashStart();
+        UpdateAnimator(Vector2.zero);
 
-        movement.SetVel(Vector2.zero);
-        UpdateAnimator();
+        movement.SetVel(direction * movement.DashStats.dashSpeed);
 
+        yield return new WaitForSeconds(movement.DashStats.dashDuration);
+        movement.OnDashEnd();
+
+        if (InputDirection.sqrMagnitude < float.Epsilon)
+            movement.SetVel(Vector2.zero);
+        UpdateAnimator(InputDirection);
+        
         _state = State.Moving;
+        _dashLastTime = Time.time;
         yield break;
     }
 
-    private void UpdateAnimator()
+    private void UpdateAnimator(Vector2 lookDirection)
     {
-        entityTransform.localScale = new Vector3(Mathf.Sign(InputDirection.x), 1, 1); // Flip sprite to face direction of movement
+        if (lookDirection != Vector2.zero)
+            entityTransform.localScale = new Vector3(Mathf.Sign(lookDirection.x), 1, 1); // Flip sprite to face direction of movement
 
-        animator.SetFloat("speedX", InputDirection.x);
-        animator.SetFloat("speedY", InputDirection.y);
+        animator.SetFloat("speedX", lookDirection.x);
+        animator.SetFloat("speedY", lookDirection.y);
     }
 }

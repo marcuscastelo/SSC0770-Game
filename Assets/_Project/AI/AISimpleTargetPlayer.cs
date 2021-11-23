@@ -21,9 +21,9 @@ public class AISimpleTargetPlayer : MonoBehaviour
         float magnitude = difference.magnitude;
         Vector2 direction = difference.normalized;
         
-        if (magnitude > 0.1f)
-            controller.Move(direction);
-        else
-            controller.Move(Vector2.zero);
+        // if (magnitude > 0.1f)
+        //     controller.Move(direction);
+        // else
+        //     controller.Move(Vector2.zero);
     }
 }
