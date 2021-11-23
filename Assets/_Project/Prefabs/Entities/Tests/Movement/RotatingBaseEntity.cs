@@ -4,34 +4,28 @@ using UnityEngine;
 
 public class RotatingBaseEntity : MonoBehaviour
 {
-    public EntityController controller;
+    public EntityMovement movement;
 
-    private Vector2 inputVector = Vector2.right;
+    private Vector2 tangentVector = Vector2.right;
     
-    private static float BASE_FPS = 60;
-
     [InspectorName("Lag Test (Drag to change radius)"), Range(0.01f, 2f)]
     public float radius = 5;
+    public float period = 1f;
 
     void FixedUpdate()
     {
-        // float mult = BASE_FPS * Time.fixedDeltaTime;
+        float FPS = 1f / Time.fixedDeltaTime;
+        float angularSpeedPerFrame = (360f / FPS) / period;
 
-        // float maxLinearSpeed = controller.MaxSpeed;
-        // float angularSpeed = maxLinearSpeed / radius;
-
-        // inputVector = Quaternion.Euler(0, 0, angularSpeed * mult) * inputVector;
-
-        // float centripetalAcceleration = angularSpeed * angularSpeed / radius;
-
-        // float ratio = centripetalAcceleration / controller.Acceleration;
-
-        // controller.Walk(inputVector * ratio);
+        tangentVector = Quaternion.Euler(0, 0, angularSpeedPerFrame) * tangentVector;
+        float linearSpeedPerFrame = radius * angularSpeedPerFrame;
+        float linearSpeed = linearSpeedPerFrame / FPS;
+        movement.SetVel(tangentVector * linearSpeed);
     }
 
     void OnDrawGizmos()
     {
-        Vector2 perpendicular = Vector2.Perpendicular(inputVector);
+        Vector2 perpendicular = Vector2.Perpendicular(tangentVector);
         Vector2 circleCenter = (Vector2)transform.position + perpendicular * radius;
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(circleCenter, radius);

@@ -13,6 +13,7 @@ public class EntityController : MonoBehaviour
 
     public Vector2 InputDirection { get; private set; }
     public Vector2 LastLookDirection { get; private set; }
+    public Vector2 CurrentVelocity => movement.CurrentVelocity;
 
     enum State { Moving, Attacking, Interacting, Dashing, Dead }
     State _state = State.Moving;

@@ -46,7 +46,6 @@ public class EntityMovement : MonoBehaviour, IMoveable
     }
     #endregion
 
-
     #region Unity Functions
     private void Awake()
     {
@@ -61,13 +60,13 @@ public class EntityMovement : MonoBehaviour, IMoveable
     private void FixedUpdate()
     {
         if (_acceleration > 0)
-            CurrentVelocity = Vector2.MoveTowards(CurrentVelocity, _targetVelocity, _acceleration * Time.fixedDeltaTime);
+            CurrentVelocity = Vector2.MoveTowards(CurrentVelocity, _targetVelocity, _acceleration);
 
         bool capVelocity = !IsDashing;
         if (capVelocity)
             CurrentVelocity = Vector2.ClampMagnitude(CurrentVelocity, walkStats.maxSpeed);
 
-        rb.MovePosition(rb.position + CurrentVelocity * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + CurrentVelocity);
     }
     #endregion
 
