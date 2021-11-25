@@ -353,6 +353,7 @@ GameObject:
   - component: {fileID: 1271602020425799815}
   - component: {fileID: 3655516277853973644}
   - component: {fileID: 3711105377348449902}
+  - component: {fileID: 7380174496230228167}
   m_Layer: 0
   m_Name: BaseEntity
   m_TagString: Untagged
@@ -411,6 +412,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b25431fa40de81178d71153c88f61d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityHealth: {fileID: 7380174496230228167}
+  entityController: {fileID: 8271322966867865260}
+  entityMovement: {fileID: 6730314429003350609}
+  entityCombat: {fileID: 1414300145984740011}
+  entityInteractor: {fileID: 4519475127628345580}
+--- !u!114 &7380174496230228167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8165957565077548319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 994882b8bc6a36478904240280e36b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
 --- !u!1 &8201080275128857555
 GameObject:
   m_ObjectHideFlags: 0

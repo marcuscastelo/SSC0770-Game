@@ -1,24 +1,47 @@
 using UnityEngine;
 using UnityEditor;
 
-[ExecuteInEditMode]
-public class EntityGizmos : MonoBehaviour
+namespace Hypnos.Entities
 {
-    [SerializeField] private bool showGizmos = true;
-    [SerializeField] private Transform entityTransform;
-
-    void Awake()
+    [ExecuteInEditMode]
+    public class EntityGizmos : MonoBehaviour
     {
-        entityTransform = gameObject.GetComponentInParent<Entity>().transform;
-    }
+        [SerializeField] private bool showGizmos = true;
+        [SerializeField] private Entity entity;
 
-    void OnDrawGizmos()
-    {
-        if (!showGizmos)
-            return;
+        private SpriteRenderer _spriteRenderer = null;
 
-        // Draw a yellow sphere at the transform's position
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(entityTransform.position, 0.1f);
+        private float Height => (_spriteRenderer != null) ? (_spriteRenderer.sprite.texture.height / _spriteRenderer.sprite.pixelsPerUnit) : 0;
+
+        [ContextMenu("Find Entity")]
+        void Awake()
+        {
+            entity = gameObject.GetComponentInParent<Entity>();
+        }
+
+        void Update()
+        {
+            if (Application.isPlaying)
+                return;
+
+            Start();            
+        }
+
+        void Start()
+        {
+            _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        }
+
+        void OnDrawGizmos()
+        {
+            if (!showGizmos)
+                return;
+
+            Vector2 headPos = entity.transform.position + Vector3.up * Height;
+            
+            // Draw text: entity health
+            Handles.Label(headPos, $"{entity.name}: ({entity.Health.CurrentHealth})");
+
+        }
     }
 }
