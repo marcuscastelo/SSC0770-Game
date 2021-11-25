@@ -2,29 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectableObjectInteraction : MonoBehaviour
+public class InteractableByArea : MonoBehaviour, IInteractable
 {
-    public SelectableObject parentSO;
+    // public InteractableObject parentSO;
 
-    void OnTriggerEnter2D(Collider2D collider2D)
-    {
-        // Debug.Log("OnTriggerEnter2D");
-        // Debug.Log(collider2D.gameObject.name);
-        // Debug.Log(collider2D.gameObject.tag);
-        if (collider2D.gameObject.tag == "Player")
-        {
-            parentSO.SetSelected(true);
-        }
-    }
+    // void OnTriggerEnter2D(Collider2D collider2D)
+    // {
+    //     Debug.Log("InteractableByArea - OnTriggerEnter2D: " + collider2D.name);
+    //     parentSO.SetSelected(true);
+    //     if (collider2D.GetComponentInParent<Player>() != null)
+    //     {
+    //     }
+    // }
 
-    void OnTriggerExit2D(Collider2D collider2D)
+    // void OnTriggerExit2D(Collider2D collider2D)
+    // {
+    //     Debug.Log("InteractableByArea - OnTriggerExit2D: " + collider2D.name);
+    //     parentSO.SetSelected(false);
+    //     if (collider2D.GetComponentInParent<Player>() != null)
+    //     {
+    //     }
+    // }
+
+    private InteractableObject _parentSO;
+
+    void Start()
     {
-        // Debug.Log("OnTriggerExit2D");
-        // Debug.Log(collider2D.gameObject.name);
-        // Debug.Log(collider2D.gameObject.tag);
-        if (collider2D.gameObject.tag == "Player")
-        {
-            parentSO.SetSelected(false);
-        }
+        _parentSO = GetComponentInParent<InteractableObject>();
+        Debug.Assert(_parentSO != null, "InteractableByArea - Start: _parentSO is null");
     }
+    
+    public void OnSelected() => _parentSO.OnSelected();
+    public void OnDeselected() => _parentSO.OnDeselected();
+    public void OnInteract(IInteractor interactor) => _parentSO.OnInteract(interactor);
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [ExecuteInEditMode]
-public class SelectableObject : MonoBehaviour
+public class InteractableObject : MonoBehaviour, IInteractable
 {
     [Header("References")]
     public SpriteRenderer spriteRenderer;
@@ -21,13 +21,13 @@ public class SelectableObject : MonoBehaviour
     public UnityEvent onUnselected;
     public UnityEvent<IInteractor> onInteracted;
 
-    private bool isSelected;
+    private bool _selected;
 
     public void SetSelected(bool selected)
     {
-        if (isSelected == selected) return;
+        if (_selected == selected) return;
 
-        isSelected = selected;
+        _selected = selected;
         _UpdateSprite();
 
         if (selected)
@@ -38,16 +38,14 @@ public class SelectableObject : MonoBehaviour
 
     private void _UpdateSprite()
     {
-        spriteRenderer.sprite = isSelected ? spriteWhenSelected : spriteWhenUnselected;
+        spriteRenderer.sprite = _selected ? spriteWhenSelected : spriteWhenUnselected;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         _UpdateSprite();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Application.isEditor)
@@ -56,8 +54,21 @@ public class SelectableObject : MonoBehaviour
         }
     }
 
-    //TODO: think of a way to pass the player to the event, but not forcing all target functions to have a player as a parameter
-    public virtual void OnInteractedBy(IInteractor interactor)
+    public void OnSelected()
+    {
+        Debug.Log("Selected");
+        onSelected?.Invoke();
+        SetSelected(true);
+    }
+
+    public void OnDeselected()
+    {
+        Debug.Log("Deselected");
+        onUnselected?.Invoke();
+        SetSelected(false);
+    }
+
+    public void OnInteract(IInteractor interactor)
     {
         Debug.Log("Interacted by player (id=" + id + ")");
         onInteracted?.Invoke(interactor);

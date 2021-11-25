@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/_Project/UI/MainMenu/MainMenu.unity
     guid: 286233b7b4e42d74f907daa685dc2a8e
   - enabled: 1
-    path: Assets/_Project/Prefabs/Levels/Street/Street.unity
+    path: Assets/_Project/Prefabs/Levels/Street/Scenes/Street.unity
     guid: e2e1af0c6c26398a084c58437d5b6134
   - enabled: 0
     path: 

@@ -1,20 +1,40 @@
 using UnityEngine;
 
+using System.Collections.Generic;
+
 namespace Hypnos.Entities.Systems
 {
     public class AreaInteractor : MonoBehaviour, IInteractor
     {
-        public IInteractable SelectedInteractable { get; private set; }
+        private readonly List<IInteractable> collidingInteractables = new List<IInteractable>();
+
+        public IInteractable SelectedInteractable
+        {
+            get
+            {
+                if (collidingInteractables.Count > 0)
+                    return collidingInteractables[0];
+                else
+                    return null;
+            }
+        }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             GameObject collisionObject = collision.gameObject;
             IInteractable interactable = collisionObject.GetComponent<IInteractable>();
 
+            Debug.Log("AreaInteractor: OnTriggerEnter2D: " + collisionObject.name);
             if (interactable != null)
             {
-                SelectedInteractable = interactable;
-                SelectedInteractable.OnSelected();
+                Debug.Log("AreaInteractor: IT IS INTERACTABLE");
+                SelectedInteractable?.OnDeselected();
+                collidingInteractables.Add(interactable);
+                SelectedInteractable?.OnSelected();
+            }
+            else
+            {
+                Debug.Log("AreaInteractor: NOT INTERACTABLE");
             }
         }
 
@@ -23,10 +43,24 @@ namespace Hypnos.Entities.Systems
             GameObject collisionObject = collision.gameObject;
             IInteractable interactable = collisionObject.GetComponent<IInteractable>();
 
+            Debug.Log("AreaInteractor: OnTriggerExit2D: " + collisionObject.name);
+
             if (interactable != null)
             {
-                SelectedInteractable = null;
-                interactable.OnDeselected();
+                bool exitingIsSelected = interactable == SelectedInteractable;
+                collidingInteractables.Remove(interactable);
+
+                if (exitingIsSelected)
+                {
+                    interactable.OnDeselected();
+                    SelectedInteractable?.OnSelected();
+                }
+            
+                Debug.Log("AreaInteractor: IT IS INTERACTABLE");
+            }
+            else
+            {
+                Debug.Log("AreaInteractor: NOT INTERACTABLE");
             }
         }
 

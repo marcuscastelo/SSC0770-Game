@@ -16,10 +16,10 @@ TagManager:
   - World
   - Hit
   - Hurt
-  - Interact
+  - 
   - EntityWorld
-  - 
-  - 
+  - Interactor
+  - Interactable
   - 
   - 
   - 
