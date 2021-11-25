@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelSwitcher : MonoBehaviour
 {
-    public Player player;
+    public Hypnos.Entities.Entity player;
     public Camera mainCamera;
     public CameraFollowObject cameraFollowObject;
 
@@ -22,18 +22,12 @@ public class LevelSwitcher : MonoBehaviour
 
     void OnValidate()
     {
-        if (player == null)
-        {
-            player = FindObjectOfType<Player>();
-        }
-        if (mainCamera == null)
-        {
-            mainCamera = FindObjectOfType<Camera>();
-        }
-        if (cameraFollowObject == null)
-        {
-            cameraFollowObject = FindObjectOfType<CameraFollowObject>();
-        }
+        Debug.Assert(levels.Length > 0, "Levels array is empty");
+        Debug.Assert(player != null, "Player is null");
+        Debug.Assert(mainCamera != null, "Main camera is null");
+        Debug.Assert(cameraFollowObject != null, "Camera follow object is null");
+
+        SwitchToLevel(currentLevel);
     }
 
     void Update()

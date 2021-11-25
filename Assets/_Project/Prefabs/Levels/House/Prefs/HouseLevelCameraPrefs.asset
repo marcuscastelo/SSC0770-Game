@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: HouseLevelCameraPrefs
   m_EditorClassIdentifier: 
   followX: 1
-  followY: 0
+  followY: 1
   minX: -2.57
   maxX: 0.57
-  minY: 0
-  maxY: 0
+  minY: 1.2
+  maxY: 8.7

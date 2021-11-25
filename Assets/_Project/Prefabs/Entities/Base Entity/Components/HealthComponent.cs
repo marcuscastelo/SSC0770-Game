@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Hypnos.Entities.Components
 {
-    public class Health : MonoBehaviour
+    public class HealthComponent : MonoBehaviour
     {
         [SerializeField] private int maxHealth = 100;
         [SerializeField] private int currentHealth = 100;

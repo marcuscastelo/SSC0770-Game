@@ -174,6 +174,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7948958333459480979, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948958333459480979, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
       objectReference: {fileID: 0}
@@ -183,7 +187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7948958333459480979, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7948958333459480979, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
       propertyPath: m_LocalRotation.w
@@ -328,6 +332,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+--- !u!114 &937096600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d405728c5b16f1a0b5615859406a7f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followX: 1
+  followY: 0
+  minX: -2.57
+  maxX: 0.57
+  minY: 0
+  maxY: 0
 --- !u!1001 &1127045064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -397,6 +419,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+--- !u!114 &1183041677 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5509453327428530042, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
+  m_PrefabInstance: {fileID: 116491947}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b25431fa40de81178d71153c88f61d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1186466764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -414,7 +447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5965685057920765928, guid: 5108ce230a98d8f3ab2df518e69b7d70, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.57
       objectReference: {fileID: 0}
     - target: {fileID: 5965685057920765928, guid: 5108ce230a98d8f3ab2df518e69b7d70, type: 3}
       propertyPath: m_LocalPosition.y
@@ -459,9 +492,33 @@ PrefabInstance:
     - target: {fileID: 5965685057920765931, guid: 5108ce230a98d8f3ab2df518e69b7d70, type: 3}
       propertyPath: prefs
       value: 
-      objectReference: {fileID: 11400000, guid: 46437dec8d15cc024969d6d03b242bfc, type: 2}
+      objectReference: {fileID: 937096600}
+    - target: {fileID: 5965685057920765931, guid: 5108ce230a98d8f3ab2df518e69b7d70, type: 3}
+      propertyPath: showGizmos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965685057920765931, guid: 5108ce230a98d8f3ab2df518e69b7d70, type: 3}
+      propertyPath: thisCamera
+      value: 
+      objectReference: {fileID: 1337992673}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5108ce230a98d8f3ab2df518e69b7d70, type: 3}
+--- !u!114 &1337992671 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5965685057920765931, guid: 5108ce230a98d8f3ab2df518e69b7d70, type: 3}
+  m_PrefabInstance: {fileID: 1186466764}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b986ed8fad7fa57ca93b18632509a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!20 &1337992673 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5965685057920765929, guid: 5108ce230a98d8f3ab2df518e69b7d70, type: 3}
+  m_PrefabInstance: {fileID: 1186466764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1406837804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7948958333459480979, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
@@ -519,6 +576,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4966873963446758315, guid: 13a624130b8b106b8b90d278cfa9f2e6, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1183041677}
+    - target: {fileID: 4966873963446758315, guid: 13a624130b8b106b8b90d278cfa9f2e6, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1337992673}
+    - target: {fileID: 4966873963446758315, guid: 13a624130b8b106b8b90d278cfa9f2e6, type: 3}
       propertyPath: currentLevel
       value: 1
       objectReference: {fileID: 0}
@@ -526,6 +591,10 @@ PrefabInstance:
       propertyPath: levels.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4966873963446758315, guid: 13a624130b8b106b8b90d278cfa9f2e6, type: 3}
+      propertyPath: cameraFollowObject
+      value: 
+      objectReference: {fileID: 1337992671}
     - target: {fileID: 4966873963446758315, guid: 13a624130b8b106b8b90d278cfa9f2e6, type: 3}
       propertyPath: levels.Array.data[0]
       value: 
