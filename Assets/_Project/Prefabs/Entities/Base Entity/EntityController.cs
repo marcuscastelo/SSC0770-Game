@@ -50,27 +50,28 @@ public class EntityController : MonoBehaviour
             yield break;
 
         _state = State.Attacking;
-        combat.Attack();
-        animator.SetTrigger("attackTrigger");
         movement.SetVel(Vector2.zero);
+        UpdateAnimator(Vector2.zero);
+
+        animator.SetTrigger("attackTrigger");
+        combat.Attack();
 
         yield return new WaitForSeconds(combat.Stats.attackDuration);
-        
+        UpdateAnimator(InputDirection);
         _state = State.Moving;
+        
         yield break;
     }
 
     public IEnumerator MoveCoroutine(Vector2 direction)
     {
         InputDirection = direction;
-        Debug.Log("MoveCoroutine() - InputDirection: " + InputDirection);
         if (InputDirection.sqrMagnitude > 0)
             LastLookDirection = InputDirection;
 
         if (_state != State.Moving)
             yield break;
 
-        movement.AccelerateTo(direction * movement.WalkStats.maxSpeed, movement.WalkStats.acceleration);
         UpdateAnimator(InputDirection);
 
         yield break;
@@ -93,11 +94,9 @@ public class EntityController : MonoBehaviour
 
         yield return new WaitForSeconds(movement.DashStats.dashDuration);
         movement.OnDashEnd();
-
-        if (InputDirection.sqrMagnitude < float.Epsilon)
-            movement.SetVel(Vector2.zero);
+        movement.SetVel(Vector2.zero);
         UpdateAnimator(InputDirection);
-        
+
         _state = State.Moving;
         _dashLastTime = Time.time;
         yield break;
@@ -110,5 +109,11 @@ public class EntityController : MonoBehaviour
 
         animator.SetFloat("speedX", lookDirection.x);
         animator.SetFloat("speedY", lookDirection.y);
+    }
+
+    private void FixedUpdate()
+    {
+        if (_state == State.Moving)
+            movement.AccelerateTo(InputDirection * movement.WalkStats.maxSpeed, movement.WalkStats.acceleration);
     }
 }

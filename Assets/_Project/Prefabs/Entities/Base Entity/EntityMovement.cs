@@ -60,13 +60,13 @@ public class EntityMovement : MonoBehaviour, IMoveable
     private void FixedUpdate()
     {
         if (_acceleration > 0)
-            CurrentVelocity = Vector2.MoveTowards(CurrentVelocity, _targetVelocity, _acceleration);
+            CurrentVelocity = Vector2.MoveTowards(CurrentVelocity, _targetVelocity, _acceleration * Time.fixedDeltaTime);
 
         bool capVelocity = !IsDashing;
         if (capVelocity)
             CurrentVelocity = Vector2.ClampMagnitude(CurrentVelocity, walkStats.maxSpeed);
 
-        rb.MovePosition(rb.position + CurrentVelocity);
+        rb.MovePosition(rb.position + CurrentVelocity * Time.fixedDeltaTime);
     }
     #endregion
 
