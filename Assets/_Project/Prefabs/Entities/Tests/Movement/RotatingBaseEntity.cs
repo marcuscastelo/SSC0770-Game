@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Hypnos.Entities.Systems;
+
 public class RotatingBaseEntity : MonoBehaviour
 {
     public EntityMovement movement;

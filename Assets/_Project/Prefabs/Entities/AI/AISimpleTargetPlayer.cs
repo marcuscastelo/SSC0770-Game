@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Hypnos.Entities;
+
 public class AISimpleTargetPlayer : MonoBehaviour
 {
     public EntityController controller;

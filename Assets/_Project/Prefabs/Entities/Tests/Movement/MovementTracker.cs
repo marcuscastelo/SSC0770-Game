@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Hypnos.Entities;
+
 public class MovementTracker : MonoBehaviour
 {
     [Header("Points")]
@@ -12,7 +14,6 @@ public class MovementTracker : MonoBehaviour
     [Header("Movement")]
     public bool showMovement = true;
     public EntityController entityController;
-    
 
     private int frameCounter = 0;
     private readonly List<Vector3> positions = new List<Vector3>();

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Hypnos.Entities.Systems;
+using Hypnos.Entities;
+
 public class CombatTester : MonoBehaviour
 {
     [SerializeField] private EntityController controller;

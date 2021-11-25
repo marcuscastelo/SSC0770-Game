@@ -1,35 +1,38 @@
 using UnityEngine;
 
-public class AreaInteractor : MonoBehaviour, IInteractor
+namespace Hypnos.Entities.Systems
 {
-    public IInteractable SelectedInteractable { get; private set; }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class AreaInteractor : MonoBehaviour, IInteractor
     {
-        GameObject collisionObject = collision.gameObject;
-        IInteractable interactable = collisionObject.GetComponent<IInteractable>();
-        
-        if (interactable != null)
+        public IInteractable SelectedInteractable { get; private set; }
+
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            SelectedInteractable = interactable;
-            SelectedInteractable.OnSelected();
+            GameObject collisionObject = collision.gameObject;
+            IInteractable interactable = collisionObject.GetComponent<IInteractable>();
+
+            if (interactable != null)
+            {
+                SelectedInteractable = interactable;
+                SelectedInteractable.OnSelected();
+            }
         }
-    }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        GameObject collisionObject = collision.gameObject;
-        IInteractable interactable = collisionObject.GetComponent<IInteractable>();
-
-        if (interactable != null)
+        private void OnTriggerExit2D(Collider2D collision)
         {
-            SelectedInteractable = null;
-            interactable.OnDeselected();
-        }
-    }
+            GameObject collisionObject = collision.gameObject;
+            IInteractable interactable = collisionObject.GetComponent<IInteractable>();
 
-    public void Interact()
-    {
-        SelectedInteractable?.OnInteract(this);
+            if (interactable != null)
+            {
+                SelectedInteractable = null;
+                interactable.OnDeselected();
+            }
+        }
+
+        public void Interact()
+        {
+            SelectedInteractable?.OnInteract(this);
+        }
     }
 }
