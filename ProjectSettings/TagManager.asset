@@ -14,8 +14,8 @@ TagManager:
   - Water
   - UI
   - World
-  - Player
-  - Enemies
+  - Hit
+  - Hurt
   - Interact
   - 
   - 

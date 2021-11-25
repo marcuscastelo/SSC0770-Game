@@ -15,6 +15,22 @@ PrefabInstance:
       propertyPath: show
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1895271085797140903, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Size.x
+      value: 0.68889046
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895271085797140903, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Size.y
+      value: 0.22851339
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895271085797140903, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.019313179
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895271085797140903, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.16226281
+      objectReference: {fileID: 0}
     - target: {fileID: 1904779162472910797, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: m_Sprite
       value: 

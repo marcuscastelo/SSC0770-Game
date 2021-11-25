@@ -30,6 +30,10 @@ public class EntityController : MonoBehaviour
     public void Move(Vector2 direction) => StartCoroutine(MoveCoroutine(direction));
     public void Dash(Vector2 direction) => StartCoroutine(DashCoroutine(direction));
     public void Dash() => StartCoroutine(DashCoroutine(LastLookDirection));
+    public void LookTo(Vector2 direction) {
+        LastLookDirection = direction;
+        UpdateAnimator(LastLookDirection.normalized*0.1f);
+    }
 
     public IEnumerator InteractCoroutine()
     {

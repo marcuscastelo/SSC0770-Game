@@ -8,6 +8,8 @@ public class AISimpleTargetPlayer : MonoBehaviour
     public Transform self;
     public Transform targetPlayer;
 
+    private Vector2 _vecToTarget;
+
     void Awake()
     {
         Debug.Assert(controller != null, "AISimpleTargetPlayer.Awake() - controller is null");
@@ -15,15 +17,38 @@ public class AISimpleTargetPlayer : MonoBehaviour
         Debug.Assert(targetPlayer != null, "AISimpleTargetPlayer.Awake() - targetPlayer is null");
     }
 
-    void Update()
+    void Start()
     {
-        Vector2 difference = targetPlayer.position - self.position;
-        float magnitude = difference.magnitude;
-        Vector2 direction = difference.normalized;
-        
-        // if (magnitude > 0.1f)
-        //     controller.Move(direction);
-        // else
-        //     controller.Move(Vector2.zero);
+        StartCoroutine(ExecuteIA());
+    }
+
+    private IEnumerator ExecuteIA()
+    {
+        while (true)
+        {
+            float magnitude = _vecToTarget.magnitude;
+            Vector2 direction = _vecToTarget.normalized;
+
+            if (magnitude > 1f) {
+                controller.Move(direction);
+                controller.Dash();
+            }
+            else
+            {
+                controller.Move(Vector2.zero);
+                controller.LookTo(direction);
+                yield return controller.AttackCoroutine();
+                
+                // controller.LookTo(-direction);
+                // controller.Dash();
+            }
+
+            yield return null;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        _vecToTarget = targetPlayer.position - self.position;
     }
 }
