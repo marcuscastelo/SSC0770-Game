@@ -413,6 +413,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityHealth: {fileID: 7380174496230228167}
+  spriteRenderer: {fileID: 7908025162724484979}
+  animator: {fileID: 6642391621073496167}
   entityController: {fileID: 8271322966867865260}
   entityMovement: {fileID: 6730314429003350609}
   entityCombat: {fileID: 1414300145984740011}
@@ -536,7 +538,6 @@ GameObject:
   - component: {fileID: 2187512963626707849}
   - component: {fileID: 1933997946492204452}
   - component: {fileID: 1414300145984740011}
-  - component: {fileID: 6581335997691244438}
   m_Layer: 0
   m_Name: Combat
   m_TagString: Untagged
@@ -603,17 +604,3 @@ MonoBehaviour:
   endFrame: 1
   totalFrames: 2
   entityMovement: {fileID: 6730314429003350609}
---- !u!114 &6581335997691244438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9186883905810641235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 994882b8bc6a36478904240280e36b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100

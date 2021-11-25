@@ -18,6 +18,8 @@ namespace Hypnos.Entities.Systems
 
         public CombatStats Stats => combatStats;
 
+        private Entity _thisEntity;
+
         void Awake()
         {
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
@@ -37,6 +39,9 @@ namespace Hypnos.Entities.Systems
         {
             if (attackerArea != null)
                 attackerArea.enabled = attackAreaAlwaysEnabled;
+
+            _thisEntity = GetComponentInParent<Entity>();
+            Debug.Assert(_thisEntity != null, "EntityCombat.Start() - _thisEntity is null");
         }
 
         private IEnumerator BlinkAttackAreaCoroutine(float duration)
@@ -58,14 +63,9 @@ namespace Hypnos.Entities.Systems
 
         public void OnHurt(IAttacker attacker)
         {
-            if (attacker is MonoBehaviour mb)
-            {
-                var diffVec = transform.position - mb.transform.position;
-                var diff = diffVec.magnitude;
-                var dir = diffVec.normalized;
-                var speed = 3 / (1 + diff);
-                entityMovement.SetVel(speed * dir);
-            }
+            //TODO: knockback
+            const int DUMMY_DAMAGE = 1; //TODO: remove this
+            _thisEntity.Health.TakeDamage(DUMMY_DAMAGE);
         }
 
         public void OnValidate()

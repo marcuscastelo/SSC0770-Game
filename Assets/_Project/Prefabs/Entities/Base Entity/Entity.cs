@@ -10,6 +10,8 @@ namespace Hypnos.Entities
     {
         [Header("Entity Components")]
         [SerializeField] private Health entityHealth;
+        [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private Animator animator;
 
         [Header("Entity Systems")]
         [SerializeField] private EntityController entityController;
@@ -27,7 +29,9 @@ namespace Hypnos.Entities
         [ContextMenu("Update Refs")]
         public void Awake()
         {
-            entityHealth = GetComponent<Health>();
+            entityHealth = GetComponentInChildren<Health>();
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            animator = GetComponentInChildren<Animator>();
 
             entityController = GetComponentInChildren<EntityController>();
             entityMovement = GetComponentInChildren<EntityMovement>();
