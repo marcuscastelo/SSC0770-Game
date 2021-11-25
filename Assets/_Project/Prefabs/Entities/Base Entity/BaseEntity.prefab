@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2790162654996483601}
   - component: {fileID: 7898341159918453017}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: WorldCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,9 +279,9 @@ MonoBehaviour:
     maxSpeed: 2
     deceleration: 14
   dashStats:
-    dashSpeed: 0
-    dashDuration: 0
-    dashCooldown: 0
+    dashSpeed: 3
+    dashDuration: 0.6
+    dashCooldown: 10
 --- !u!1 &8061754779003200853
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +436,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8201080275128857555}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -503,6 +503,7 @@ GameObject:
   - component: {fileID: 2187512963626707849}
   - component: {fileID: 1933997946492204452}
   - component: {fileID: 1414300145984740011}
+  - component: {fileID: 6581335997691244438}
   m_Layer: 0
   m_Name: Combat
   m_TagString: Untagged
@@ -563,8 +564,23 @@ MonoBehaviour:
     attackDamage: 1
     attackCooldown: 0
     attackDuration: 3.49
-  attackerArea: {fileID: 0}
+  attackerArea: {fileID: 9021476468073469778}
   attackAreaAlwaysEnabled: 0
   startFrame: 0
   endFrame: 1
   totalFrames: 2
+  entityMovement: {fileID: 6730314429003350609}
+--- !u!114 &6581335997691244438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9186883905810641235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 994882b8bc6a36478904240280e36b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100

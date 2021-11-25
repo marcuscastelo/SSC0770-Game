@@ -1,4 +1,4 @@
 public interface IAttackable
 {
-    void OnAttacked(IAttacker attacker);
+    void OnHurt(IAttacker attacker);
 }

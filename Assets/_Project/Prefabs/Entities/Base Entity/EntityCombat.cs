@@ -13,6 +13,8 @@ public class EntityCombat: MonoBehaviour, IAttackable, IAttacker
     [SerializeField] private int endFrame = 1;
     [SerializeField] private int totalFrames = 1;
 
+    [SerializeField] private EntityMovement entityMovement;
+
     public CombatStats Stats => combatStats;
 
     void Awake()
@@ -39,7 +41,7 @@ public class EntityCombat: MonoBehaviour, IAttackable, IAttacker
     private IEnumerator BlinkAttackAreaCoroutine(float duration)
     {
         float frameDuration = duration / totalFrames;
-        if (attackerArea != null)
+        if (attackerArea != null && !attackAreaAlwaysEnabled)
         {
             yield return new WaitForSeconds(startFrame * frameDuration);
             attackerArea.enabled = true;
@@ -53,16 +55,22 @@ public class EntityCombat: MonoBehaviour, IAttackable, IAttacker
         StartCoroutine(BlinkAttackAreaCoroutine(combatStats.attackDuration));
     }
 
-    public void OnAttacked(IAttacker attacker)
+    public void OnHurt(IAttacker attacker)
     {
-        Debug.Log("EntityCombat.OnAttacked(): " + gameObject.name);
+        if (attacker is MonoBehaviour mb)
+        {
+            var diffVec = transform.position - mb.transform.position;
+            var diff = diffVec.magnitude;
+            var dir = diffVec.normalized;
+            var speed = 3 / (1+diff);
+            entityMovement.SetVel(speed * dir);
+        }
     }
 
     public void OnValidate()
     {
         if (attackerArea != null)
             attackerArea.enabled = attackAreaAlwaysEnabled;
-        
 
         if (startFrame >= endFrame) {
             Debug.LogWarning("EntityCombat.OnValidate() - startFrame must be less than endFrame");
@@ -78,11 +86,10 @@ public class EntityCombat: MonoBehaviour, IAttackable, IAttacker
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("EntityCombat.OnTriggerEnter2D(): \n\tthis=" + gameObject.name + " \n\tother=" + other.gameObject.name);
+        other.gameObject.GetComponentInParent<IAttackable>()?.OnHurt(this);
     }
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("EntityCombat.OnTriggerExit2D(): " + gameObject.name);
     }
 }
