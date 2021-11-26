@@ -27,5 +27,6 @@ namespace Hypnos.Entities.Components
         public void ApplyBuff(Buff buff) => activeBuff |= buff;
         public void RemoveBuff(Buff buff) => activeBuff &= ~buff;
         public void ClearBuffs() => activeBuff = Buff.NoItem;
+        public bool HasBuff(Buff buff) => (activeBuff & buff) == buff;
     }
 }

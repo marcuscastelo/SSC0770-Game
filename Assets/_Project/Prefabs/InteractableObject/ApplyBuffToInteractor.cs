@@ -9,7 +9,7 @@ public class ApplyBuffToInteractor : MonoBehaviour
     public void ApplyBuffTo(IInteractor target)
     {
         Assert.IsNotNull(target);
-        
+
         IBuffable buffable = target as IBuffable;
         if (buffable == null)
         {
@@ -25,6 +25,18 @@ public class ApplyBuffToInteractor : MonoBehaviour
         }
 
         Assert.IsNotNull(buffable);
+
+        if (buffable.HasBuff(buff))
+        {
+            DialogInfo buffAlreadyActive = new DialogInfo()
+            {
+                title = "Buff already active",
+                content = $"{buff} is already active",
+                buttons = DialogButtonCombination.OK
+            };
+            DialogSystem.ShowDialog(buffAlreadyActive);
+            return;
+        }
 
         DialogInfo buffConfirmationDialogInfo = ScriptableObject.CreateInstance<DialogInfo>();
         buffConfirmationDialogInfo.title = "Select Buff";
