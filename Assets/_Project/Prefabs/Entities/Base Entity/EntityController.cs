@@ -53,23 +53,28 @@ namespace Hypnos.Entities
             yield break;
         }
 
+        private float _attackLastTime = float.MinValue;
         public IEnumerator AttackCoroutine()
         {
             if (_state != State.Moving)
+                yield break;
+
+            if (Time.time - _attackLastTime < combat.Stats.attackCooldown)
                 yield break;
 
             _state = State.Attacking;
             movement.SetVel(Vector2.zero);
             UpdateAnimator(Vector2.zero);
 
-            animator.SetTrigger("attackTrigger");
             animator.SetFloat("attackSpeed", (1f / combat.Stats.attackDuration) * combat.Stats.attackAnimatorMultiplier);
+            animator.SetTrigger("attackTrigger");
             combat.Attack();
 
             yield return new WaitForSeconds(combat.Stats.attackDuration);
             UpdateAnimator(InputDirection);
-            _state = State.Moving;
 
+            _state = State.Moving;
+            _attackLastTime = Time.time;
             yield break;
         }
 
