@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Hypnos.Core;
+
 public class InteractableByArea : MonoBehaviour, IInteractable
 {
     // public InteractableObject parentSO;
@@ -34,5 +36,5 @@ public class InteractableByArea : MonoBehaviour, IInteractable
     
     public void OnSelected() => _parentSO.OnSelected();
     public void OnDeselected() => _parentSO.OnDeselected();
-    public void OnInteract(IInteractor interactor) => _parentSO.OnInteract(interactor);
+    public void OnInteract(Interaction interaction) => _parentSO.OnInteract(interaction);
 }

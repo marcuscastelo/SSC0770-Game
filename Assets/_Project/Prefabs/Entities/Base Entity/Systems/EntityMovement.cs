@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Hypnos.Core;
+
 namespace Hypnos.Entities.Systems
 {
     public class EntityMovement : MonoBehaviour, IMoveable

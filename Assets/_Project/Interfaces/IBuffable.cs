@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IBuffable
+namespace Hypnos.Core
 {
-    Buff ActiveBuff { get; }
-    
-    void ApplyBuff(Buff buff);
-    void RemoveBuff(Buff buff);
+    public interface IBuffable
+    {
+        Buff ActiveBuff { get; }
 
-    bool HasBuff(Buff buff);
+        void ApplyBuff(Buff buff);
+        void RemoveBuff(Buff buff);
 
-    void ClearBuffs();
+        bool HasBuff(Buff buff);
+
+        void ClearBuffs();
+    }
 }

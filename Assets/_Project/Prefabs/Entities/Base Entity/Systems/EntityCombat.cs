@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 
+using Hypnos.Core;
+
 namespace Hypnos.Entities.Systems
 {
     public class EntityCombat : MonoBehaviour, IAttackable, IAttacker

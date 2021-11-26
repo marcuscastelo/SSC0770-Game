@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 
+using Hypnos.Core;
+
 public class ApplyBuffToInteractor : MonoBehaviour
 {
     [Header("Config")]
@@ -19,8 +21,9 @@ public class ApplyBuffToInteractor : MonoBehaviour
         }
     }
 
-    public void ApplyBuffTo(IInteractor target)
+    public void ApplyBuffTo(Interaction interaction)
     {
+        IInteractor target = interaction.Interactor;
         Assert.IsNotNull(target);
 
         IBuffable buffable = target as IBuffable;
@@ -41,7 +44,7 @@ public class ApplyBuffToInteractor : MonoBehaviour
 
         if (buffable.HasBuff(buff))
         {
-            DialogInfo buffAlreadyActive = new DialogInfo()
+            DialogInfo buffAlreadyActive = new DialogInfo() // TODO: make this a scriptable object
             {
                 title = "Buff already active",
                 content = $"{buff} is already active",
@@ -51,12 +54,20 @@ public class ApplyBuffToInteractor : MonoBehaviour
             return;
         }
 
+        if (dialogInfo.buttons != DialogButtonCombination.YesNo)
+            Debug.LogWarning($"Buff confirmation dialog is not configured correctly. Please set {nameof(dialogInfo.buttons)} to {nameof(DialogButtonCombination.YesNo)}");
+
         Dialog buffConfirmationDialog = new Dialog(dialogInfo, (DialogButton pressedButton) =>
         {
             if (pressedButton == DialogButton.Yes)
             {
                 buffable.ApplyBuff(buff);
+                interaction.EndInteraction(true);
             }
+            else
+            {
+                interaction.EndInteraction(false);
+            } 
         });
 
         DialogSystem.ShowDialog(buffConfirmationDialog);

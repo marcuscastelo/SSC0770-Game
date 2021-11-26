@@ -1,4 +1,7 @@
-public interface IAttacker
+namespace Hypnos.Core
 {
-    void Attack();
+    public interface IAttacker
+    {
+        void Attack();
+    }
 }

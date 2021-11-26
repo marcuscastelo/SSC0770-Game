@@ -1,5 +1,8 @@
-public interface IInteractor 
+namespace Hypnos.Core
 {
-    IInteractable SelectedInteractable { get; }
-    void Interact();
+    public interface IInteractor
+    {
+        IInteractable SelectedInteractable { get; }
+        void Interact();
+    }
 }

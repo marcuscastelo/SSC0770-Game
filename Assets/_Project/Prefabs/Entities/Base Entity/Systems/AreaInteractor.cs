@@ -2,6 +2,8 @@ using UnityEngine;
 
 using System.Collections.Generic;
 
+using Hypnos.Core;
+
 namespace Hypnos.Entities.Systems
 {
     public class AreaInteractor : MonoBehaviour, IInteractor
@@ -28,9 +30,7 @@ namespace Hypnos.Entities.Systems
             if (interactable != null)
             {
                 Debug.Log("AreaInteractor: IT IS INTERACTABLE");
-                SelectedInteractable?.OnDeselected();
-                collidingInteractables.Add(interactable);
-                SelectedInteractable?.OnSelected();
+                Select(interactable);
             }
             else
             {
@@ -47,16 +47,8 @@ namespace Hypnos.Entities.Systems
 
             if (interactable != null)
             {
-                bool exitingIsSelected = interactable == SelectedInteractable;
-                collidingInteractables.Remove(interactable);
-
-                if (exitingIsSelected)
-                {
-                    interactable.OnDeselected();
-                    SelectedInteractable?.OnSelected();
-                }
-            
                 Debug.Log("AreaInteractor: IT IS INTERACTABLE");
+                Deselect(interactable);
             }
             else
             {
@@ -64,9 +56,40 @@ namespace Hypnos.Entities.Systems
             }
         }
 
-        public void Interact()
+        private void Select(IInteractable interactable)
         {
-            SelectedInteractable?.OnInteract(this);
+            SelectedInteractable?.OnDeselected();
+            collidingInteractables.Add(interactable);
+            SelectedInteractable?.OnSelected();
+        }
+
+        private void Deselect(IInteractable interactable)
+        {
+            bool targetIsTop = interactable == SelectedInteractable;
+            collidingInteractables.Remove(interactable);
+
+            if (targetIsTop)
+            {
+                interactable.OnDeselected();
+                SelectedInteractable?.OnSelected();
+            }
+        }
+
+        public void Interact() => Interact((bool success) => { });
+        public void Interact(Interaction.OnInteractionEnded onInteractionEnded)
+        {
+            if (SelectedInteractable == null)
+                return;
+
+            Interaction interaction = new Interaction(this, SelectedInteractable);
+
+            interaction.OnInteractionEndedEvent += (bool success) =>
+            {
+                Deselect(SelectedInteractable);
+                onInteractionEnded.Invoke(success);
+            };
+
+            SelectedInteractable.OnInteract(interaction);
         }
     }
 }

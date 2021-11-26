@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Hypnos.Core;
+
 namespace Hypnos.Entities.Components
 {
     public class BuffComponent : MonoBehaviour, IBuffable

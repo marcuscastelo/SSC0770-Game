@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IInteractable
+namespace Hypnos.Core
 {
-    void OnSelected();
-    void OnDeselected();
-    void OnInteract(IInteractor interactor);
+    public interface IInteractable
+    {
+        void OnSelected();
+        void OnDeselected();
+        void OnInteract(Interaction interaction);
+    }
 }

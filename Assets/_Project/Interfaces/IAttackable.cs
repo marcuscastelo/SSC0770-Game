@@ -1,4 +1,7 @@
-public interface IAttackable
+namespace Hypnos.Core
 {
-    void OnHurt(IAttacker attacker);
+    public interface IAttackable
+    {
+        void OnHurt(IAttacker attacker);
+    }
 }

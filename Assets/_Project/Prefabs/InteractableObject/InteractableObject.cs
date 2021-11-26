@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+using Hypnos.Core;
+
 [ExecuteInEditMode]
 public class InteractableObject : MonoBehaviour, IInteractable
 {
@@ -17,9 +19,9 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
     [Header("Events")]
 
-    public UnityEvent onSelected;
-    public UnityEvent onUnselected;
-    public UnityEvent<IInteractor> onInteracted;
+    [SerializeField] private UnityEvent onSelected;
+    [SerializeField] private UnityEvent onUnselected;
+    [SerializeField] private UnityEvent<Interaction> onInteracted;
 
     private bool _selected;
 
@@ -68,9 +70,10 @@ public class InteractableObject : MonoBehaviour, IInteractable
         SetSelected(false);
     }
 
-    public void OnInteract(IInteractor interactor)
+    public void OnInteract(Interaction interaction)
     {
         Debug.Log("Interacted by player (id=" + id + ")");
-        onInteracted?.Invoke(interactor);
+        interaction.StartInteraction();
+        onInteracted?.Invoke(interaction);
     }
 }
