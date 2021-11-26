@@ -7,7 +7,7 @@ using Hypnos.Entities;
 public class TroubleMakerAI : MonoBehaviour
 {
     public EntityController controller;
-    public Transform self;
+    public Entity self;
     public Transform targetPlayer;
 
     private Vector2 _vecToTarget;
@@ -51,6 +51,6 @@ public class TroubleMakerAI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _vecToTarget = targetPlayer.position - self.position;
+        _vecToTarget = targetPlayer.position - self.transform.position;
     }
 }
