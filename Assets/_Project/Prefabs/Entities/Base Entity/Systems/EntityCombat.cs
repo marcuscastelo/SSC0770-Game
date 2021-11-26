@@ -37,8 +37,10 @@ namespace Hypnos.Entities.Systems
 
         void Start()
         {
-            if (attackerArea != null)
+            if (attackerArea != null) {
                 attackerArea.enabled = attackAreaAlwaysEnabled;
+                attackerArea.transform.localScale = Vector3.one * (attackAreaAlwaysEnabled? 1 : 0);
+            }
 
             _thisEntity = GetComponentInParent<Entity>();
             Debug.Assert(_thisEntity != null, "EntityCombat.Start() - _thisEntity is null");
@@ -51,8 +53,10 @@ namespace Hypnos.Entities.Systems
             {
                 yield return new WaitForSeconds(startFrame * frameDuration);
                 attackerArea.enabled = true;
+                attackerArea.transform.localScale = Vector3.one;
                 yield return new WaitForSeconds((endFrame - startFrame) * frameDuration);
                 attackerArea.enabled = false;
+                attackerArea.transform.localScale = Vector3.zero;
             }
         }
 

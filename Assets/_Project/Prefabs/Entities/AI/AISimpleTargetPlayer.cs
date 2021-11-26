@@ -42,7 +42,7 @@ public class AISimpleTargetPlayer : MonoBehaviour
                 yield return controller.AttackCoroutine();
                 
                 // controller.LookTo(-direction);
-                // controller.Dash();
+                // controller.Dash(-direction*0.1f);
             }
 
             yield return null;
