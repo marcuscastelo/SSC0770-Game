@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class ApplyBuffToInteractor : MonoBehaviour
 {
@@ -7,10 +8,23 @@ public class ApplyBuffToInteractor : MonoBehaviour
 
     public void ApplyBuffTo(IInteractor target)
     {
-        if (!(target is IBuffable))
-            return;
-
+        Assert.IsNotNull(target);
+        
         IBuffable buffable = target as IBuffable;
+        if (buffable == null)
+        {
+            if (target is MonoBehaviour monoBehaviour)
+            {
+                buffable = monoBehaviour.gameObject.GetComponentInParent<IBuffable>();
+                if (buffable == null)
+                {
+                    Debug.LogWarning($"{target} is not buffable");
+                    return;
+                }
+            }
+        }
+
+        Assert.IsNotNull(buffable);
 
         DialogInfo buffConfirmationDialogInfo = ScriptableObject.CreateInstance<DialogInfo>();
         buffConfirmationDialogInfo.title = "Select Buff";

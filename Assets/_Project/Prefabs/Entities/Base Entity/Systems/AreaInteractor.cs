@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Hypnos.Entities.Systems
 {
-    public class AreaInteractor : MonoBehaviour
+    public class AreaInteractor : MonoBehaviour, IInteractor
     {
         private readonly List<IInteractable> collidingInteractables = new List<IInteractable>();
 
@@ -66,8 +66,7 @@ namespace Hypnos.Entities.Systems
 
         public void Interact()
         {
-            IInteractor interactor = GetComponentInParent<IInteractor>();
-            SelectedInteractable?.OnInteract(interactor);
+            SelectedInteractable?.OnInteract(this);
         }
     }
 }
