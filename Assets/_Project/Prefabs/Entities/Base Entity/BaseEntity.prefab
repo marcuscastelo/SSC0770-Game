@@ -435,6 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityHealth: {fileID: 7380174496230228167}
+  entityBuff: {fileID: 0}
   spriteRenderer: {fileID: 7908025162724484979}
   animator: {fileID: 6642391621073496167}
   entityController: {fileID: 8271322966867865260}
@@ -465,7 +466,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8597900526030139369}
   - component: {fileID: 9021476468073469778}
-  m_Layer: 7
+  - component: {fileID: 2546914315098510321}
+  - component: {fileID: 3431617904725135483}
+  m_Layer: 13
   m_Name: HitArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,6 +505,41 @@ CapsuleCollider2D:
   m_Offset: {x: 0.25621, y: 1.5045937}
   m_Size: {x: 1.0593929, y: 0.26698926}
   m_Direction: 1
+--- !u!50 &2546914315098510321
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8201080275128857555}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &3431617904725135483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8201080275128857555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ba395ee41d2976785652c23650bf85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCombat: {fileID: 1414300145984740011}
+  colliderType: 0
 --- !u!1 &8426221543874484270
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +550,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7972488036749439604}
   - component: {fileID: 1547614594769690991}
-  m_Layer: 8
+  - component: {fileID: 6565755924129745252}
+  - component: {fileID: 296055479141002878}
+  m_Layer: 14
   m_Name: HurtArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,6 +589,41 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0038238764, y: 0.95843494}
   m_Size: {x: 0.3546822, y: 1.8766983}
   m_Direction: 0
+--- !u!50 &6565755924129745252
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8426221543874484270}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &296055479141002878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8426221543874484270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ba395ee41d2976785652c23650bf85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCombat: {fileID: 1414300145984740011}
+  colliderType: 1
 --- !u!1 &9186883905810641235
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,7 +633,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2187512963626707849}
-  - component: {fileID: 1933997946492204452}
   - component: {fileID: 1414300145984740011}
   m_Layer: 0
   m_Name: Combat
@@ -583,27 +657,6 @@ Transform:
   m_Father: {fileID: 3829129987982705606}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1933997946492204452
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9186883905810641235}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &1414300145984740011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,6 +673,7 @@ MonoBehaviour:
     attackDamage: 1
     attackCooldown: 0
     attackDuration: 3.49
+    attackAnimatorMultiplier: 0.5
   attackerArea: {fileID: 9021476468073469778}
   attackAreaAlwaysEnabled: 0
   startFrame: 0

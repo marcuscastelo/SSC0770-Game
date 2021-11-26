@@ -24,6 +24,9 @@ namespace Hypnos.Entities
         public BuffComponent Buff => entityBuff;
 
 
+        public SpriteRenderer SpriteRenderer => spriteRenderer;
+        public Animator Animator => animator;
+
         public EntityController Controller => entityController;
         public EntityMovement Movement => entityMovement;
         public EntityCombat Combat => entityCombat;

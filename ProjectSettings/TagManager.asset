@@ -14,16 +14,16 @@ TagManager:
   - Water
   - UI
   - World
-  - Hit
-  - Hurt
+  - 
+  - 
   - 
   - EntityWorld
   - Interactor
   - Interactable
-  - 
-  - 
-  - 
-  - 
+  - EnemyHit
+  - EnemyHurt
+  - PlayerHit
+  - PlayerHurt
   - 
   - 
   - 

@@ -147,6 +147,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.21032888
       objectReference: {fileID: 0}
+    - target: {fileID: 3711105377348449902, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: entityBuff
+      value: 
+      objectReference: {fileID: 3653460207674786793}
     - target: {fileID: 4250863387535950232, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: interactor
       value: 
@@ -174,7 +178,7 @@ PrefabInstance:
     - target: {fileID: 6642391621073496167, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: af1ae5270bd15ff5aa40302e84f2fb4f, type: 2}
+      objectReference: {fileID: 9100000, guid: c730a07da9609bd54806fca252937a2a, type: 2}
     - target: {fileID: 6730314429003350609, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: walkStats.maxSpeed
       value: 3
@@ -266,6 +270,14 @@ PrefabInstance:
     - target: {fileID: 8165957565077548319, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201080275128857555, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426221543874484270, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8782710088674685883, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: show

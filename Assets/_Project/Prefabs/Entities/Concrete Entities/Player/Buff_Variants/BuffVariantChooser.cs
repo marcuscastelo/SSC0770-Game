@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEditor;
 
 using Hypnos.Entities;
+using UnityEditorInternal;
 
 [ExecuteInEditMode]
 public class BuffVariantChooser : MonoBehaviour
@@ -45,6 +46,7 @@ public class BuffVariantChooser : MonoBehaviour
         if (Application.isEditor) 
         {
             SetVariant(entity.Buff.ActiveBuff);
+            // armorAnimatorController.animationClips[0].
         }
     }
 }

@@ -22,12 +22,6 @@ namespace Hypnos.Entities.Systems
 
         void Awake()
         {
-            Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            if (rb == null)
-            {
-                Debug.LogError("EntityCombat: No Rigidbody2D found on " + gameObject.name);
-            }
-
             if (attackerArea != null)
                 attackerArea.enabled = attackAreaAlwaysEnabled;
 
@@ -91,13 +85,24 @@ namespace Hypnos.Entities.Systems
             totalFrames = Mathf.Max(totalFrames, endFrame + 1);
         }
 
-        public void OnTriggerEnter2D(Collider2D other)
+        public void OnHurtboxEnter(Collider2D other)
         {
-            other.gameObject.GetComponentInParent<IAttackable>()?.OnHurt(this);
         }
 
-        public void OnTriggerExit2D(Collider2D other)
+        public void OnHurtboxExit(Collider2D other)
         {
         }
+
+        public void OnHitboxEnter(Collider2D other)
+        {
+            Entity entity = other.GetComponentInParent<Entity>();
+            if (entity != null)
+                entity.Combat.OnHurt(this);
+        }
+
+        public void OnHitboxExit(Collider2D other)
+        {
+        }
+
     }
 }
