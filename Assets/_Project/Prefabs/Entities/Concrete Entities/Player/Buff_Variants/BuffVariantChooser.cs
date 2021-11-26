@@ -1,14 +1,23 @@
 using UnityEngine;
 using UnityEditor;
 
+using Hypnos.Entities;
+
+[ExecuteInEditMode]
 public class BuffVariantChooser : MonoBehaviour
 {
-    public Animator animator;
+    [SerializeField] private Animator animator;
+    [SerializeField] private Entity entity;
 
-    public RuntimeAnimatorController armorAnimatorController;
-    public RuntimeAnimatorController noItemAnimatorController;
-    public RuntimeAnimatorController swordAnimatorController;
-    public RuntimeAnimatorController swordAndArmorAnimatorController;
+    [SerializeField] private RuntimeAnimatorController armorAnimatorController;
+    [SerializeField] private RuntimeAnimatorController noItemAnimatorController;
+    [SerializeField] private RuntimeAnimatorController swordAnimatorController;
+    [SerializeField] private RuntimeAnimatorController swordAndArmorAnimatorController;
+
+    public void Start()
+    {
+        entity.Buff.OnBuffChangedEvent += SetVariant;
+    }
 
     public void SetVariant(Buff buffs)
     {
@@ -28,6 +37,14 @@ public class BuffVariantChooser : MonoBehaviour
                 break;
             default:
                 throw new System.Exception("Unknown buff variant: " + buffs);
+        }
+    }
+
+    void Update()
+    {
+        if (Application.isEditor) 
+        {
+            SetVariant(entity.Buff.ActiveBuff);
         }
     }
 }

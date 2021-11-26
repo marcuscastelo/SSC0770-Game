@@ -15,6 +15,7 @@ public class CombatStats
     public float attackDamage;
     public float attackCooldown;
     public float attackDuration;
+    public float attackAnimatorMultiplier = 0.5f;
 }
 
 [Serializable]

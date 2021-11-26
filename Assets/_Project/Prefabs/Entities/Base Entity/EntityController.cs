@@ -63,6 +63,7 @@ namespace Hypnos.Entities
             UpdateAnimator(Vector2.zero);
 
             animator.SetTrigger("attackTrigger");
+            animator.SetFloat("attackSpeed", (1f / combat.Stats.attackDuration) * combat.Stats.attackAnimatorMultiplier);
             combat.Attack();
 
             yield return new WaitForSeconds(combat.Stats.attackDuration);
