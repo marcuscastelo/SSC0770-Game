@@ -20,8 +20,17 @@ public class DialogDisplay : MonoBehaviour
     public Button Button3;
 
 
-    private Dialog currentDialog;
-    public bool IsBusy { get { return currentDialog != null; } }
+    private Dialog _currentDialog;
+    public bool IsBusy { get { return _currentDialog != null; } }
+    public Dialog CurrentDialog
+    {
+        get { return _currentDialog; }
+        set
+        {
+            _currentDialog = value;
+            dialogPanel.SetActive(_currentDialog != null);
+        }
+    }
 
     void Awake()
     {
@@ -30,7 +39,7 @@ public class DialogDisplay : MonoBehaviour
 
     public void ShowDialog(DialogInfo dialogInfo)
     {
-        Dialog dummyDialog = new Dialog(dialogInfo, (DialogButton _)=>{});
+        Dialog dummyDialog = new Dialog(dialogInfo, (DialogButton _) => { });
         ShowDialog(dummyDialog);
     }
 
@@ -38,18 +47,16 @@ public class DialogDisplay : MonoBehaviour
     {
         Debug.Assert(dialog != null, "DialogDisplay.ShowDialog: dialog is null!");
         Debug.Assert(!IsBusy, "DialogDisplay.ShowDialog: already busy!");
-        currentDialog = dialog;
+        CurrentDialog = dialog;
         AdaptToDialog(dialog);
-        dialogPanel.SetActive(true);
     }
 
     public void DismissDialog()
     {
         Debug.Assert(IsBusy, "DialogDisplay.DismissDialog: not busy!");
-        Dialog currentDialog = this.currentDialog;
-        this.currentDialog = null;
+        Dialog currentDialog = CurrentDialog;
+        CurrentDialog = null;
         DialogSystem.OnDialogDismissed(currentDialog);
-        dialogPanel.SetActive(false);
     }
 
     private void AdaptToDialog(Dialog dialog)
@@ -57,7 +64,7 @@ public class DialogDisplay : MonoBehaviour
         Title.text = dialog.dialogInfo.title;
         Content.text = dialog.dialogInfo.content;
 
-        int buttonCount = (( ( (int)dialog.dialogInfo.buttons & 0b1100) >> 2 ) - 1) / 2 + 2;
+        int buttonCount = Dialog.GetButtonCount(dialog.dialogInfo.buttons);
         Button1.gameObject.SetActive(buttonCount >= 1);
         Button2.gameObject.SetActive(buttonCount >= 2);
         Button3.gameObject.SetActive(buttonCount >= 3);
@@ -69,13 +76,12 @@ public class DialogDisplay : MonoBehaviour
 
     public void OnDialogButtonPressed(int index)
     {
-        Debug.Assert(this.currentDialog != null);
+        Debug.Assert(CurrentDialog != null);
 
-        Dialog currentDialog = this.currentDialog;
-        this.currentDialog = null;
+        Dialog currentDialog = this._currentDialog;
+        CurrentDialog = null;
 
         DialogButton pressedButton = Dialog.IndexToButton(currentDialog.dialogInfo.buttons, index);
         DialogSystem.OnDialogButtonPressed(currentDialog, pressedButton);
-        dialogPanel.SetActive(false);
     }
 }

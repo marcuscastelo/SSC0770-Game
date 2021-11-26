@@ -22,25 +22,22 @@ public static class DialogSystem
             activeDisplay.ShowDialog(dialog);
     }
 
+    public static void ShowNextDialog()
+    {
+        if (pendingDialogs.Count > 0)
+            ShowDialog(pendingDialogs.Dequeue());
+    }
+
     // called by DialogDisplay when a button is pressed
     public static void OnDialogButtonPressed(Dialog dialog, DialogButton button)
     {
         dialog.OnButtonPressed(button);
-
-        if (pendingDialogs.Count > 0)
-        {
-            Dialog nextDialog = pendingDialogs.Dequeue();
-            ShowDialog(nextDialog);
-        }
+        ShowNextDialog();
     }
 
     public static void OnDialogDismissed(Dialog dialog)
     {
-        if (pendingDialogs.Count > 0)
-        {
-            Dialog nextDialog = pendingDialogs.Dequeue();
-            ShowDialog(nextDialog);
-        }
+        ShowNextDialog();
     }
 
     public static void RegisterDisplay(DialogDisplay display)
@@ -50,6 +47,7 @@ public static class DialogSystem
             throw new Exception("Only one dialog display can be active at a time");
         }
         activeDisplay = display;
+        ShowNextDialog();
     }
 
     public static void UnregisterDisplay(DialogDisplay display)
