@@ -82,7 +82,9 @@ public class CameraFollowObject : MonoBehaviour
         Gizmos.DrawSphere(cmlt, 0.1f);
         Gizmos.DrawSphere(cmrt, 0.1f);
 
-
-
+        Gizmos.DrawLine(cmlb, cmrb);
+        Gizmos.DrawLine(cmlt, cmrt);
+        Gizmos.DrawLine(cmlb, cmlt);
+        Gizmos.DrawLine(cmrb, cmrt);
     }
 }
