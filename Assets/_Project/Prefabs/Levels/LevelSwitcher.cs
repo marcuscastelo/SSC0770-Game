@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class LevelSwitcher : MonoBehaviour
 {
-    public Hypnos.Entities.Entity player;
-    public Camera mainCamera;
-    public CameraFollowObject cameraFollowObject;
+    [SerializeField] private Hypnos.Entities.Entity player;
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private CameraFollowObject cameraFollowObject;
 
-    public int currentLevel = 1;
+    [SerializeField] private int currentLevel = 1;
 
-    public Level[] levels;
+    [SerializeField] private Level[] levels;
 
     //TODO: Make mutable in editor, and have it update the level in the scene when changed
     public readonly float LEVEL_X_OFFSET = 10.0f;
