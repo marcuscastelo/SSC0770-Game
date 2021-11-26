@@ -586,10 +586,6 @@ PrefabInstance:
       propertyPath: totalFrames
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 5049615897656463805, guid: b287b120d80efdab79483c292174b31b, type: 3}
-      propertyPath: combatStats.attackDuration
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b287b120d80efdab79483c292174b31b, type: 3}
 --- !u!1 &4908536836544927471 stripped
@@ -631,30 +627,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6989203468712084938}
     m_Modifications:
-    - target: {fileID: 2510909553327400983, guid: aea1e5f5c569cf508acb7c4cc80aafba, type: 3}
-      propertyPath: m_Size.x
-      value: 0.580462
-      objectReference: {fileID: 0}
-    - target: {fileID: 2510909553327400983, guid: aea1e5f5c569cf508acb7c4cc80aafba, type: 3}
-      propertyPath: m_Size.y
-      value: 1.3929253
-      objectReference: {fileID: 0}
-    - target: {fileID: 2510909553327400983, guid: aea1e5f5c569cf508acb7c4cc80aafba, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2510909553327400983, guid: aea1e5f5c569cf508acb7c4cc80aafba, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.2662375
-      objectReference: {fileID: 0}
-    - target: {fileID: 2510909553327400983, guid: aea1e5f5c569cf508acb7c4cc80aafba, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.82647634
-      objectReference: {fileID: 0}
-    - target: {fileID: 2510909553327400983, guid: aea1e5f5c569cf508acb7c4cc80aafba, type: 3}
-      propertyPath: m_Direction
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3366859362080002650, guid: aea1e5f5c569cf508acb7c4cc80aafba, type: 3}
       propertyPath: m_Name
       value: Werewolf
@@ -662,18 +634,6 @@ PrefabInstance:
     - target: {fileID: 3401260251581935846, guid: aea1e5f5c569cf508acb7c4cc80aafba, type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5372803862536347178, guid: aea1e5f5c569cf508acb7c4cc80aafba, type: 3}
-      propertyPath: m_Size.x
-      value: 1.0264034
-      objectReference: {fileID: 0}
-    - target: {fileID: 5372803862536347178, guid: aea1e5f5c569cf508acb7c4cc80aafba, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.0006251335
-      objectReference: {fileID: 0}
-    - target: {fileID: 5497392795508434414, guid: aea1e5f5c569cf508acb7c4cc80aafba, type: 3}
-      propertyPath: attackAreaAlwaysEnabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5642887940804732866, guid: aea1e5f5c569cf508acb7c4cc80aafba, type: 3}
       propertyPath: m_RootOrder
