@@ -102,6 +102,7 @@ namespace Hypnos.Entities
                 yield break;
 
             _state = State.Dashing;
+            animator.SetTrigger("dashTrigger");
             movement.OnDashStart();
             UpdateAnimator(Vector2.zero);
 
