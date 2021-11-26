@@ -8,6 +8,7 @@ namespace Hypnos.Entities.Components
     {
         [SerializeField] private int maxHealth = 100;
         [SerializeField] private int currentHealth = 100;
+        [SerializeField] private bool invulnerable = false;
 
         public int MaxHealth => maxHealth;
         public int CurrentHealth => currentHealth;
@@ -29,7 +30,10 @@ namespace Hypnos.Entities.Components
 
         public void TakeDamage(int damage)
         {
-            currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
+            if (invulnerable)
+                return;
+
+            SetHealth(currentHealth - damage);
             OnDamageTakenEvent?.Invoke(damage);
         }
 
@@ -43,12 +47,18 @@ namespace Hypnos.Entities.Components
         {
             currentHealth = Mathf.Clamp(health, 0, maxHealth);
             OnHealthChangedEvent?.Invoke(currentHealth);
+            if (currentHealth == 0)
+                OnDeathEvent?.Invoke();
         }
 
-        public void SetMaxHealth(int health)
+        public void SetMaxHealth(int newMax)
         {
-            maxHealth = health;
+            maxHealth = Mathf.Clamp(newMax, 0, int.MaxValue);
             OnMaxHealthChangedEvent?.Invoke(maxHealth);
+            if (currentHealth > maxHealth)
+                SetHealth(maxHealth);
         }
+
+        public void Die() => SetHealth(0);
     }
 }
