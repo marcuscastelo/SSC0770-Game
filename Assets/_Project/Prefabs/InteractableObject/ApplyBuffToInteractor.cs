@@ -6,6 +6,19 @@ public class ApplyBuffToInteractor : MonoBehaviour
     [Header("Config")]
     public Buff buff;
 
+    public DialogInfo dialogInfo = null;
+
+    void Awake()
+    {
+        if (dialogInfo == null)
+        {
+            dialogInfo = ScriptableObject.CreateInstance<DialogInfo>();
+            dialogInfo.title = "Select Buff";
+            dialogInfo.content = "Do you want to select " + buff.ToString() + " as a buff?";
+            dialogInfo.buttons = DialogButtonCombination.YesNo;
+        }
+    }
+
     public void ApplyBuffTo(IInteractor target)
     {
         Assert.IsNotNull(target);
@@ -38,11 +51,7 @@ public class ApplyBuffToInteractor : MonoBehaviour
             return;
         }
 
-        DialogInfo buffConfirmationDialogInfo = ScriptableObject.CreateInstance<DialogInfo>();
-        buffConfirmationDialogInfo.title = "Select Buff";
-        buffConfirmationDialogInfo.content = "Do you want to select " + buff.ToString() + " as a buff?";
-        buffConfirmationDialogInfo.buttons = DialogButtonCombination.YesNo;
-        Dialog buffConfirmationDialog = new Dialog(buffConfirmationDialogInfo, (DialogButton pressedButton) =>
+        Dialog buffConfirmationDialog = new Dialog(dialogInfo, (DialogButton pressedButton) =>
         {
             if (pressedButton == DialogButton.Yes)
             {
@@ -51,6 +60,5 @@ public class ApplyBuffToInteractor : MonoBehaviour
         });
 
         DialogSystem.ShowDialog(buffConfirmationDialog);
-
     }
 }
