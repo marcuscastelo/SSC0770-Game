@@ -24,8 +24,8 @@ namespace Hypnos.Entities
 
         private void Awake()
         {
-            Debug.Assert(interactor != null, "EntityController.Awake() - _interactor is null");
-            Debug.Assert(combat != null, "EntityController.Awake() - _attacker is null");
+            Debug.Assert(interactor != null, "EntityController.Awake() - interactor is null");
+            Debug.Assert(combat != null, "EntityController.Awake() - attacker is null");
             Debug.Assert(movement != null, "EntityController.Awake() - movement is null");
         }
 
@@ -39,12 +39,19 @@ namespace Hypnos.Entities
             LastLookDirection = direction;
             UpdateAnimator(LastLookDirection.normalized * 0.1f);
         }
+        
+        public bool CanMove() => _state == State.Moving;
+        public bool CanInteract() => _state == State.Moving;
+        public bool CanAttack() => _state == State.Moving;
+        public bool CanDash() => _state == State.Moving;
 
         public IEnumerator InteractCoroutine()
         {
-            if (_state != State.Moving)
+            if (!CanInteract())
                 yield break;
 
+            _state = State.Interacting;
+            
             interactor.Interact();
             yield return new WaitForSeconds(5f);
 
@@ -56,7 +63,7 @@ namespace Hypnos.Entities
         private float _attackLastTime = float.MinValue;
         public IEnumerator AttackCoroutine()
         {
-            if (_state != State.Moving)
+            if (!CanAttack())
                 yield break;
 
             if (Time.time - _attackLastTime < combat.Stats.attackCooldown)
@@ -80,14 +87,16 @@ namespace Hypnos.Entities
 
         public IEnumerator MoveCoroutine(Vector2 direction)
         {
+            // Update direction, even if we can't move
             InputDirection = direction;
             if (InputDirection.sqrMagnitude > 0)
                 LastLookDirection = InputDirection;
 
-            if (_state != State.Moving)
+            if (!CanMove())
                 yield break;
 
             UpdateAnimator(InputDirection);
+            // FixedUpdate is called every frame with the InputDirection set
 
             yield break;
         }
@@ -95,7 +104,7 @@ namespace Hypnos.Entities
         private float _dashLastTime = float.MinValue;
         public IEnumerator DashCoroutine(Vector2 direction)
         {
-            if (_state != State.Moving)
+            if (!CanDash())
                 yield break;
 
             if (Time.time - _dashLastTime < movement.DashStats.dashCooldown)
