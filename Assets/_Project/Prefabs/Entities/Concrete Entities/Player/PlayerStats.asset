@@ -9,12 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fa37f450caf65aa68274733c90e5434, type: 3}
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  maxHealth: 3
-  damage: 1
-  acceleration: 35
-  maxSpeed: 3
-  friction: 0.7
-  maxStamina: 0
+  combatStats:
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 8
+    dashDuration: 0.3
+    dashCooldown: 2

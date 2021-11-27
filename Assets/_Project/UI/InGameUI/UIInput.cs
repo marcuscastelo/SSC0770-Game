@@ -10,22 +10,20 @@ public class UIInput : MonoBehaviour
 
     UIControls uiControls;
 
-    void Awake()
-    {
-        uiControls = new UIControls();
-    }
-    
     void OnEnable()
     {
+        uiControls = new UIControls();
+        SetCallbacks();
         uiControls.UI.Enable();
     }
 
     void OnDisable()
     {
         uiControls.UI.Disable();
+        uiControls = null;
     }
 
-    void Start()
+    void SetCallbacks()
     {
         uiControls.UI.Pause.canceled += ctx =>
         {

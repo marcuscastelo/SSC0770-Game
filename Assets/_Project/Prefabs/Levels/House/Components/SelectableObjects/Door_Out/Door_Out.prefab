@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1160371915503802774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5696912500486768850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ce3e841daa16cfe883317d9121cae97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevel: 2
 --- !u!1001 &1574530269889007057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27,6 +40,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: b0fb0edd5a483997c98b40ff56711924, type: 3}
+    - target: {fileID: 2820890592111733890, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+      propertyPath: _parentSO
+      value: 
+      objectReference: {fileID: 4345278856198527649}
     - target: {fileID: 2996110811739395952, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: id
       value: door
@@ -39,6 +56,30 @@ PrefabInstance:
       propertyPath: spriteWhenUnselected
       value: 
       objectReference: {fileID: 21300000, guid: b0fb0edd5a483997c98b40ff56711924, type: 3}
+    - target: {fileID: 2996110811739395952, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2996110811739395952, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1160371915503802774}
+    - target: {fileID: 2996110811739395952, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2996110811739395952, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnInteracted
+      objectReference: {fileID: 0}
+    - target: {fileID: 2996110811739395952, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SendNextLevelInteractionResponse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2996110811739395952, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3120547531337318226, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
       propertyPath: m_Size.x
       value: 1.3462524
@@ -133,3 +174,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+--- !u!1 &5696912500486768850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6545600855929423107, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+  m_PrefabInstance: {fileID: 1574530269889007057}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4345278856198527649 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2996110811739395952, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+  m_PrefabInstance: {fileID: 1574530269889007057}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5696912500486768850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df61eb6439e94c6ef82fc88772c20e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

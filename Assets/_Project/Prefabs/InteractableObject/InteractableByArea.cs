@@ -4,30 +4,10 @@ using UnityEngine;
 
 using Hypnos.Core;
 
+[ExecuteAlways]
 public class InteractableByArea : MonoBehaviour, IInteractable
-{
-    // public InteractableObject parentSO;
-
-    // void OnTriggerEnter2D(Collider2D collider2D)
-    // {
-    //     Debug.Log("InteractableByArea - OnTriggerEnter2D: " + collider2D.name);
-    //     parentSO.SetSelected(true);
-    //     if (collider2D.GetComponentInParent<Player>() != null)
-    //     {
-    //     }
-    // }
-
-    // void OnTriggerExit2D(Collider2D collider2D)
-    // {
-    //     Debug.Log("InteractableByArea - OnTriggerExit2D: " + collider2D.name);
-    //     parentSO.SetSelected(false);
-    //     if (collider2D.GetComponentInParent<Player>() != null)
-    //     {
-    //     }
-    // }
-
-    private InteractableObject _parentSO;
-
+{   
+    [SerializeField] [ReadOnly] private InteractableObject _parentSO;
     void Start()
     {
         _parentSO = GetComponentInParent<InteractableObject>();

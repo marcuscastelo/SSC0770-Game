@@ -23,6 +23,9 @@ public class LevelSwitcher : MonoBehaviour
 
     void OnValidate()
     {
+        if (!isActiveAndEnabled)
+            return;
+            
         Debug.Assert(levels.Length > 0, "Levels array is empty");
         Debug.Assert(player != null, "Player is null");
         Debug.Assert(mainCamera != null, "Main camera is null");

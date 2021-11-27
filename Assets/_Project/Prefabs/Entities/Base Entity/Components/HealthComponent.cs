@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 namespace Hypnos.Entities.Components
 {
-    public class HealthComponent : MonoBehaviour
+    [Serializable]
+    public class HealthComponent
     {
-        [SerializeField] private int maxHealth = 100;
-        [SerializeField] private int currentHealth = 100;
-        [SerializeField] private bool invulnerable = false;
+        private int maxHealth = 100;
+        private int currentHealth = 100;
+        private bool invulnerable = false;
 
         public int MaxHealth => maxHealth;
         public int CurrentHealth => currentHealth;

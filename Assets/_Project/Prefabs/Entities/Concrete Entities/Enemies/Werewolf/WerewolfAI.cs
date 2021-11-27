@@ -6,25 +6,14 @@ using Hypnos.Entities;
 
 public class WerewolfAI : MonoBehaviour
 {
-    public EntityController controller;
-    public Entity self;
-    public Transform targetPlayer;
+    [SerializeField] private Entity _selfEntity;
+    [SerializeField] private Entity _targetEntity;
 
     private Vector2 _vecToTarget;
 
-    void Awake()
-    {
-        Debug.Assert(controller != null, "AISimpleTargetPlayer.Awake() - controller is null");
-        Debug.Assert(self != null, "AISimpleTargetPlayer.Awake() - self is null");
-        Debug.Assert(targetPlayer != null, "AISimpleTargetPlayer.Awake() - targetPlayer is null");
-    }
+    void Start() => StartCoroutine(AILoop());
 
-    void Start()
-    {
-        StartCoroutine(ExecuteIA());
-    }
-
-    private IEnumerator ExecuteIA()
+    private IEnumerator AILoop()
     {
         while (true)
         {
@@ -32,17 +21,17 @@ public class WerewolfAI : MonoBehaviour
             Vector2 direction = _vecToTarget.normalized;
 
             if (distance > 0.5f) {
-                controller.Move(direction);
-                controller.Dash();
+                _selfEntity.Controller.Move(direction);
+                _selfEntity.Controller.Dash();
             }
             else
             {
-                controller.Move(Vector2.zero);
-                controller.LookTo(direction);
-                yield return controller.AttackCoroutine();
+                _selfEntity.Controller.Move(Vector2.zero);
+                _selfEntity.Controller.LookTo(direction);
+                yield return _selfEntity.Controller.AttackCoroutine();
                 
-                // controller.LookTo(-direction);
-                // controller.Dash(-direction*0.1f);
+                // _selfEntity.Controller.LookTo(-direction);
+                // _selfEntity.Controller.Dash(-direction*0.1f);
             }
 
             yield return null;
@@ -51,6 +40,6 @@ public class WerewolfAI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _vecToTarget = targetPlayer.position - self.transform.position;
+        _vecToTarget = _targetEntity.transform.position - _selfEntity.transform.position;
     }
 }
