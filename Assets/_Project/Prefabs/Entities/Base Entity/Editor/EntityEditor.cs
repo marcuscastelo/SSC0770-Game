@@ -11,10 +11,13 @@ namespace Hypnos.Entities
         {
             base.OnInspectorGUI();
 
+            if (Application.isPlaying) 
+                PlayModeOnInspectorGUI();
+        }
+
+        private void PlayModeOnInspectorGUI()
+        {
             Entity entity = (Entity)target;
-
-            if (entity.Animator == null) return; //Zenject have not yet injected the animator
-
             Buff buff = entity.ActiveBuff;
     
             Buff newBuff = (Buff)EditorGUILayout.EnumFlagsField(buff);
