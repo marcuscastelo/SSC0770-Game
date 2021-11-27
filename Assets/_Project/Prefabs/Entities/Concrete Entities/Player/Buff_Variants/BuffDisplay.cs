@@ -28,11 +28,11 @@ public class BuffDisplay : MonoBehaviour
 
     private void ChangeAnimatorController(Buff buffs)
     {
-        if (buffs.HasFlag(Buff.Armor | Buff.Sword))
+        if (buffs.HasFlag(Buff.Defense | Buff.Damage))
             _animator.runtimeAnimatorController = swordAndArmorAnimatorController;
-        else if (buffs.HasFlag(Buff.Armor))
+        else if (buffs.HasFlag(Buff.Defense))
             _animator.runtimeAnimatorController = armorAnimatorController;
-        else if (buffs.HasFlag(Buff.Sword))
+        else if (buffs.HasFlag(Buff.Damage))
             _animator.runtimeAnimatorController = swordAnimatorController;
         else
             _animator.runtimeAnimatorController = noItemAnimatorController;

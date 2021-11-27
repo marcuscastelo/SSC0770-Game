@@ -44,7 +44,7 @@ namespace Hypnos.Entities
         public bool CanMove() => _state == State.Moving;
         public bool CanInteract() => _state == State.Moving;
         public bool CanAttack() => _state == State.Moving;
-        public bool CanDash() => _state == State.Moving;
+        public bool CanDash() => _entity.HasBuff(Buff.Dash) && _state == State.Moving;
 
         public IEnumerator InteractCoroutine()
         {
