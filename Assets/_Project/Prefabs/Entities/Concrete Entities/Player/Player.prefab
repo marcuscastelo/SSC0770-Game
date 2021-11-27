@@ -93,11 +93,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1414300145984740011, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: endFrame
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1414300145984740011, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: startFrame
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1414300145984740011, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: totalFrames
