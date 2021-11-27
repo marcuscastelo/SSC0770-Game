@@ -3,38 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using Hypnos.Entities;
+using Zenject;
 
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField]
-    public EntityController controller;
-    
-    private PlayerControls controls;
+    private EntityController _controller;
+    private PlayerControls _controls;
 
-    void Awake()
+    [Inject]
+    public void Construct(EntityController controller)
     {
-        controls = new PlayerControls();
+        _controller = controller;
     }
 
-    void OnEnable() 
+    void OnEnable()
     {
-        if (controls == null)
-            controls = new PlayerControls();
-        controls.Default.Enable();
+        _controls = new PlayerControls();
+        SetCallbacks();
+        _controls.Enable();
     }
 
     void OnDisable() 
     {
-        controls.Default.Disable();
+        _controls.Disable();
     }
 
-    void Start()
+    void SetCallbacks()
     {
-        controls.Default.Walk.performed += ctx => controller.Move(ctx.ReadValue<Vector2>());
-        controls.Default.Walk.canceled += ctx => controller.Move(Vector2.zero);
+        _controls.Default.Walk.performed += ctx => _controller.Move(ctx.ReadValue<Vector2>());
+        _controls.Default.Walk.canceled += ctx => _controller.Move(Vector2.zero);
 
-        controls.Default.Interact.started += ctx => controller.Interact();
-        controls.Default.Attack.started += ctx => controller.Attack();
-        controls.Default.Dash.started += ctx => controller.Dash();
+        _controls.Default.Interact.started += ctx => _controller.Interact();
+        _controls.Default.Attack.started += ctx => _controller.Attack();
+        _controls.Default.Dash.started += ctx => _controller.Dash();
     }
 }

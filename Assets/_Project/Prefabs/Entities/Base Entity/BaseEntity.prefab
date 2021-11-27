@@ -43,11 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3e407b2296d3dd0ac0a4d4dcb3da66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactor: {fileID: 4519475127628345580}
-  combat: {fileID: 1414300145984740011}
-  movement: {fileID: 6730314429003350609}
-  entityTransform: {fileID: 1271602020425799815}
-  animator: {fileID: 6642391621073496167}
 --- !u!1 &806564399570336610
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,12 +430,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b25431fa40de81178d71153c88f61d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 7908025162724484979}
-  animator: {fileID: 6642391621073496167}
-  entityController: {fileID: 8271322966867865260}
-  entityMovement: {fileID: 6730314429003350609}
-  entityCombat: {fileID: 1414300145984740011}
-  entityInteractor: {fileID: 4519475127628345580}
 --- !u!114 &4634145994924793360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,6 +460,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5ff95d47e9a169d96f0af04831ee4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactor: {fileID: 4519475127628345580}
+  combat: {fileID: 1414300145984740011}
+  movement: {fileID: 6730314429003350609}
+  spriteRenderer: {fileID: 0}
+  animator: {fileID: 6642391621073496167}
+  entity: {fileID: 3711105377348449902}
+  controller: {fileID: 8271322966867865260}
 --- !u!1 &8201080275128857555
 GameObject:
   m_ObjectHideFlags: 0

@@ -99,7 +99,7 @@ namespace Hypnos.Entities.Systems
         {
             Entity entity = other.GetComponentInParent<Entity>();
             if (entity != null)
-                entity.Combat.OnHurt(this);
+                entity.AttackableSystem.OnHurt(this); //TODO: use facade
         }
 
         public void OnHitboxExit(Collider2D other)
