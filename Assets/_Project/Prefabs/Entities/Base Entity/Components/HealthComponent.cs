@@ -14,19 +14,19 @@ namespace Hypnos.Entities.Components
         public int CurrentHealth => currentHealth;
 
         public delegate void OnHealthChanged(int newHealth);
-        public event OnHealthChanged OnHealthChangedEvent;
+        public event OnHealthChanged OnHealthChangedEvent = delegate { };
 
         public delegate void OnMaxHealthChanged(int newMaxHealth);
-        public event OnMaxHealthChanged OnMaxHealthChangedEvent;
+        public event OnMaxHealthChanged OnMaxHealthChangedEvent = delegate { };
 
         public delegate void OnDeath();
-        public event OnDeath OnDeathEvent;
+        public event OnDeath OnDeathEvent = delegate { };
 
         public delegate void OnDamageTaken(int damage);
-        public event OnDamageTaken OnDamageTakenEvent;
+        public event OnDamageTaken OnDamageTakenEvent = delegate { };
 
         public delegate void OnHealed(int heal);
-        public event OnHealed OnHealedEvent;
+        public event OnHealed OnHealedEvent = delegate { };
 
         public void TakeDamage(int damage)
         {
