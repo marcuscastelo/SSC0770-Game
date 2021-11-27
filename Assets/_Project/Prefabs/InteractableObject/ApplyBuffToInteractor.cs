@@ -45,12 +45,10 @@ public class ApplyBuffToInteractor : MonoBehaviour, IInteractionResponse
 
         if (buffable.HasBuff(buff))
         {
-            DialogInfo buffAlreadyActiveDI = new DialogInfo() // TODO: make this a scriptable object
-            {
-                title = "Buff already active",
-                content = $"{buff} is already active",
-                buttons = DialogButtonCombination.OK
-            };
+            DialogInfo buffAlreadyActiveDI = ScriptableObject.CreateInstance<DialogInfo>(); // TODO: make this a scriptable object reference
+            buffAlreadyActiveDI.title = "Buff already active";
+            buffAlreadyActiveDI.content = $"{buff} is already active";
+            buffAlreadyActiveDI.buttons = DialogButtonCombination.OK;
             DialogSystem.ShowDialog(new Dialog(buffAlreadyActiveDI, _ => { interaction.EndInteraction(false); }));
             return;
         }

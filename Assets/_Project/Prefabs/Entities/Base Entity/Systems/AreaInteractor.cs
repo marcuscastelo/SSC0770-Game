@@ -26,16 +26,8 @@ namespace Hypnos.Entities.Systems
             GameObject collisionObject = collision.gameObject;
             IInteractable interactable = collisionObject.GetComponent<IInteractable>();
 
-            Debug.Log("AreaInteractor: OnTriggerEnter2D: " + collisionObject.name);
             if (interactable != null)
-            {
-                Debug.Log("AreaInteractor: IT IS INTERACTABLE");
                 Select(interactable);
-            }
-            else
-            {
-                Debug.Log("AreaInteractor: NOT INTERACTABLE");
-            }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
@@ -43,17 +35,8 @@ namespace Hypnos.Entities.Systems
             GameObject collisionObject = collision.gameObject;
             IInteractable interactable = collisionObject.GetComponent<IInteractable>();
 
-            Debug.Log("AreaInteractor: OnTriggerExit2D: " + collisionObject.name);
-
             if (interactable != null)
-            {
-                Debug.Log("AreaInteractor: IT IS INTERACTABLE");
                 Deselect(interactable);
-            }
-            else
-            {
-                Debug.Log("AreaInteractor: NOT INTERACTABLE");
-            }
         }
 
         private void Select(IInteractable interactable)
@@ -65,6 +48,8 @@ namespace Hypnos.Entities.Systems
 
         private void Deselect(IInteractable interactable)
         {
+            if (interactable == null) return;
+
             bool targetIsTop = interactable == SelectedInteractable;
             collidingInteractables.Remove(interactable);
 

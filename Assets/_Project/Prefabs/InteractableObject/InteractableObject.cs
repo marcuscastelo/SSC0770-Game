@@ -54,24 +54,19 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
     public void OnSelected()
     {
-        Debug.Log("Selected");
         SetSelected(true);
     }
 
     public void OnDeselected()
     {
-        Debug.Log("Deselected");
         SetSelected(false);
     }
 
     public void OnInteract(Interaction interaction)
     {
-        Debug.Log("Interacted by player (id=" + id + ")");
         interaction.StartInteraction();
         if (_interactionResponse != null)
-        {
             _interactionResponse.OnInteracted(interaction);
-        }
         else
         {
             Debug.LogWarning("No IInteractionResponse found on " + gameObject.name);
