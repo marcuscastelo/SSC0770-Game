@@ -9,18 +9,15 @@ using Hypnos.Core;
 public class InteractableObject : MonoBehaviour, IInteractable
 {
     [Header("References")]
-    public SpriteRenderer spriteRenderer;
-    public Sprite spriteWhenUnselected;
-    public Sprite spriteWhenSelected;
+    [SerializeField] [ReadOnly] private SpriteRenderer spriteRenderer;
+    [SerializeField] [ReadOnly] private Sprite spriteWhenUnselected;
+    [SerializeField] [ReadOnly] private Sprite spriteWhenSelected;
 
     [Header("Config")]
-
     public string id;
 
     [Header("Events")]
 
-    [SerializeField] private UnityEvent onSelected;
-    [SerializeField] private UnityEvent onUnselected;
     [SerializeField] private UnityEvent<Interaction> onInteracted;
 
     private bool _selected;
@@ -31,11 +28,6 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
         _selected = selected;
         _UpdateSprite();
-
-        if (selected)
-            onSelected.Invoke();
-        else
-            onUnselected.Invoke();
     }
 
     private void _UpdateSprite()
@@ -59,14 +51,12 @@ public class InteractableObject : MonoBehaviour, IInteractable
     public void OnSelected()
     {
         Debug.Log("Selected");
-        onSelected?.Invoke();
         SetSelected(true);
     }
 
     public void OnDeselected()
     {
         Debug.Log("Deselected");
-        onUnselected?.Invoke();
         SetSelected(false);
     }
 
