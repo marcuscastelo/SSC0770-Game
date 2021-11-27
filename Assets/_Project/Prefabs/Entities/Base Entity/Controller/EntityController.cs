@@ -122,13 +122,13 @@ namespace Hypnos.Entities
             yield break;
         }
 
-        private void UpdateAnimator(Vector2 lookDirection)
+        private void UpdateAnimator(Vector2 animDir)
         {
-            if (lookDirection != Vector2.zero)
-                _entity.transform.localScale = new Vector3(Mathf.Sign(lookDirection.x), 1, 1); // Flip sprite to face direction of movement
+            if (animDir != Vector2.zero)
+                _entity.transform.localScale = new Vector3(Mathf.Sign(animDir.x), 1, 1); // Flip sprite to face direction of movement
 
-            _entity.Animator.SetFloat("speedX", lookDirection.x);
-            _entity.Animator.SetFloat("speedY", lookDirection.y);
+            _entity.Animator.SetFloat("speedX", animDir.x);
+            _entity.Animator.SetFloat("speedY", animDir.y);
         }
 
         private void FixedUpdate()
