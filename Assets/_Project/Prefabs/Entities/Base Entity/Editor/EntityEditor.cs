@@ -21,7 +21,7 @@ namespace Hypnos.Entities
             entity.ClearBuffs();
             entity.ApplyBuff(newBuff);
 
-            EditorGUILayout.LabelField("Stats");
+            EditorGUILayout.LabelField("Health", entity.Health.CurrentHealth.ToString());
         }
     }
 }

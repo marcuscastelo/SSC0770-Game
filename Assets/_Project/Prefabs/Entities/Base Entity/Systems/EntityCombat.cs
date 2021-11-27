@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Collections;
 
 using Hypnos.Core;
+using Zenject;
 
 namespace Hypnos.Entities.Systems
 {
     public class EntityCombat : MonoBehaviour, IAttackable, IAttacker
     {
-        [SerializeField] private CombatStats combatStats;
         [SerializeField] private Collider2D attackerArea;
         [SerializeField] private bool attackAreaAlwaysEnabled = false;
 
@@ -16,19 +16,12 @@ namespace Hypnos.Entities.Systems
         [SerializeField] private int endFrame = 1;
         [SerializeField] private int totalFrames = 1;
 
-        [SerializeField] private EntityMovement entityMovement;
-
-        public CombatStats Stats => combatStats;
-
         private Entity _thisEntity;
 
-        void Awake()
+        [Inject]
+        public void Construct(Entity thisEntity)
         {
-            if (attackerArea != null)
-                attackerArea.enabled = attackAreaAlwaysEnabled;
-
-            Debug.Assert(startFrame < endFrame, "EntityCombat.Awake() - startFrame must be less than endFrame");
-            Debug.Assert(endFrame <= totalFrames, "EntityCombat.Awake() - endFrame must be less than or equal to totalFrames");
+            _thisEntity = thisEntity;
         }
 
         void Start()
@@ -37,9 +30,6 @@ namespace Hypnos.Entities.Systems
                 attackerArea.enabled = attackAreaAlwaysEnabled;
                 attackerArea.transform.localScale = Vector3.one * (attackAreaAlwaysEnabled? 1 : 0);
             }
-
-            _thisEntity = GetComponentInParent<Entity>();
-            Debug.Assert(_thisEntity != null, "EntityCombat.Start() - _thisEntity is null");
         }
 
         private IEnumerator BlinkAttackAreaCoroutine(float duration)
@@ -58,14 +48,13 @@ namespace Hypnos.Entities.Systems
 
         public void Attack()
         {
-            StartCoroutine(BlinkAttackAreaCoroutine(combatStats.attackDuration));
+            StartCoroutine(BlinkAttackAreaCoroutine(_thisEntity.CombatStats.attackDuration));
         }
 
-        public void OnHurt(IAttacker attacker)
+        public void OnHurt(IAttacker attacker, int damage)
         {
             //TODO: knockback
-            const int DUMMY_DAMAGE = 1; //TODO: remove this
-            _thisEntity.Health.TakeDamage(DUMMY_DAMAGE);
+            _thisEntity.Health.TakeDamage(damage);
         }
 
         public void OnValidate()
@@ -99,7 +88,7 @@ namespace Hypnos.Entities.Systems
         {
             Entity entity = other.GetComponentInParent<Entity>();
             if (entity != null)
-                entity.AttackableSystem.OnHurt(this); //TODO: use facade
+                entity.AttackableSystem.OnHurt(this, _thisEntity.Stats.combatStats.attackDamage); //TODO: use facade
         }
 
         public void OnHitboxExit(Collider2D other)

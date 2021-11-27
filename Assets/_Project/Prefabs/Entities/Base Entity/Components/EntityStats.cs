@@ -13,7 +13,7 @@ public class EntityStats : ScriptableObject
 [Serializable]
 public class CombatStats
 {
-    public float attackDamage;
+    public int attackDamage;
     public float attackCooldown;
     public float attackDuration;
     public float attackAnimatorMultiplier = 0.5f;
