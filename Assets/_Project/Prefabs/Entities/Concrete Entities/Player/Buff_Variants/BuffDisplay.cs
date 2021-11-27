@@ -28,23 +28,14 @@ public class BuffDisplay : MonoBehaviour
 
     private void ChangeAnimatorController(Buff buffs)
     {
-        switch (buffs)
-        {
-            case Buff.Armor:
-                _animator.runtimeAnimatorController = armorAnimatorController;
-                break;
-            case Buff.NoItem:
-                _animator.runtimeAnimatorController = noItemAnimatorController;
-                break;
-            case Buff.Sword:
-                _animator.runtimeAnimatorController = swordAnimatorController;
-                break;
-            case Buff.SwordArmor:
-                _animator.runtimeAnimatorController = swordAndArmorAnimatorController;
-                break;
-            default:
-                throw new System.Exception("Unknown buff variant: " + buffs);
-        }
+        if (buffs.HasFlag(Buff.Armor | Buff.Sword))
+            _animator.runtimeAnimatorController = swordAndArmorAnimatorController;
+        else if (buffs.HasFlag(Buff.Armor))
+            _animator.runtimeAnimatorController = armorAnimatorController;
+        else if (buffs.HasFlag(Buff.Sword))
+            _animator.runtimeAnimatorController = swordAnimatorController;
+        else
+            _animator.runtimeAnimatorController = noItemAnimatorController;
     }
 
     void Update()
