@@ -17,7 +17,8 @@ public class InteractableObject : MonoBehaviour, IInteractable
     public string id;
 
     [Header("Events")]
-
+    
+    //TODO: stop using UnityEvent, because this object cares if someone receives it (https://github.com/modesttree/Zenject/blob/master/Documentation/Signals.md#when-to-use-signals)
     [SerializeField] private UnityEvent<Interaction> onInteracted;
 
     private bool _selected;

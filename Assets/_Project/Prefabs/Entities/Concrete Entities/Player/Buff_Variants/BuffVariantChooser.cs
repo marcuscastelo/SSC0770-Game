@@ -14,11 +14,6 @@ public class BuffVariantChooser : MonoBehaviour
     [SerializeField] private RuntimeAnimatorController swordAnimatorController;
     [SerializeField] private RuntimeAnimatorController swordAndArmorAnimatorController;
 
-    public void Start()
-    {
-        entity.Buff.OnBuffChangedEvent += SetVariant;
-    }
-
     public void SetVariant(Buff buffs)
     {
         switch (buffs)
@@ -42,10 +37,10 @@ public class BuffVariantChooser : MonoBehaviour
 
     void Update()
     {
-        if (Application.isEditor) 
-        {
-            SetVariant(entity.Buff.ActiveBuff);
-            // armorAnimatorController.animationClips[0].
-        }
+        // if (Application.isEditor) 
+        // {
+        //     // SetVariant(entity.ActiveBuff);
+        //     // armorAnimatorController.animationClips[0].
+        // }
     }
 }
