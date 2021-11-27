@@ -11,6 +11,8 @@ namespace Hypnos.Entities
     [ExecuteInEditMode]
     public class Entity : MonoBehaviour, IBuffable//, //TODO: IAttackable, ...
     {
+        [SerializeField] private EntityStats _stats;
+
         private SpriteRenderer _spriteRenderer;
         private Animator _animator;
         private HealthComponent _health;
@@ -20,6 +22,7 @@ namespace Hypnos.Entities
         private IAttacker _entityAttacker;
         private IAttackable _entityAttackable;
         private IInteractor _entityInteractor;
+
 
         [Inject]
         public void Construct(SpriteRenderer spriteRenderer, Animator animator, HealthComponent health, IBuffable buff, EntityController entityController, IMoveable entityMovement, IAttacker entityAttacker, IAttackable entityAttackable, IInteractor entityInteractor)
@@ -42,8 +45,6 @@ namespace Hypnos.Entities
         public bool HasBuff(Buff buff) => _buff.HasBuff(buff);
         public void ClearBuffs() => _buff.ClearBuffs();
 
-
-
         // // // Facade - IAttackable
         // // public void OnHurt(int damage) => entityCombat.OnHurt(damage);
     
@@ -57,6 +58,14 @@ namespace Hypnos.Entities
         public IAttacker AttackerSystem => _entityAttacker;
         public IAttackable AttackableSystem => _entityAttackable;
         public IInteractor Interactor => _entityInteractor;
+
+
+        //! This is a temporary solution to get the EntityController to work.
+        public EntityStats Stats => _stats;
+        public CombatStats CombatStats => _stats.combatStats;
+        public WalkStats WalkStats => _stats.walkStats;
+        public DashStats DashStats => _stats.dashStats;
+        //!<
 
         [Inject]
         public void Construct(HealthComponent health, IBuffable buff)

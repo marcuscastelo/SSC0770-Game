@@ -6,6 +6,7 @@ using Hypnos.Core;
 
 namespace Hypnos.Entities.Systems
 {
+    //TODO: use strategy pattern for movement (Walk, Dash)
     public class EntityMovement : MonoBehaviour, IMoveable
     {
         [SerializeField] private Rigidbody2D rb;
@@ -17,17 +18,10 @@ namespace Hypnos.Entities.Systems
 
         public Vector2 Position { get { return rb.position; } }
         public Vector2 CurrentVelocity { get; private set; }
-        public bool IsDashing { get; private set; }
+        public bool VelocitySetManually { get; private set; } //* Represents DASH (for now it's a little bit of a hack)
 
         private Vector2 _targetVelocity;
         private float _acceleration;
-
-
-        #region Hacky Events (not ideal, but I am too overwhelmed refactoring this by the xth time now)
-        public void OnDashStart() => IsDashing = true;
-        public void OnDashEnd() => IsDashing = false;
-        #endregion
-
 
         #region IMoveable
         public void Teleport(Vector2 position)
@@ -37,6 +31,7 @@ namespace Hypnos.Entities.Systems
 
         public void SetVel(Vector2 velocity)
         {
+            VelocitySetManually = true;
             CurrentVelocity = velocity;
 
             _targetVelocity = CurrentVelocity;
@@ -45,6 +40,7 @@ namespace Hypnos.Entities.Systems
 
         public void AccelerateTo(Vector2 targetVel, float accel)
         {
+            VelocitySetManually = false;
             _targetVelocity = targetVel;
             _acceleration = accel;
         }
@@ -66,7 +62,7 @@ namespace Hypnos.Entities.Systems
             if (_acceleration > 0)
                 CurrentVelocity = Vector2.MoveTowards(CurrentVelocity, _targetVelocity, _acceleration * Time.fixedDeltaTime);
 
-            bool capVelocity = !IsDashing;
+            bool capVelocity = !VelocitySetManually;
             if (capVelocity)
                 CurrentVelocity = Vector2.ClampMagnitude(CurrentVelocity, walkStats.maxSpeed);
 

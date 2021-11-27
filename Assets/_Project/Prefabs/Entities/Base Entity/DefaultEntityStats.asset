@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: DefaultEntityStats
+  m_EditorClassIdentifier: 
+  combatStats:
+    attackDamage: 0
+    attackCooldown: 0
+    attackDuration: 0
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 0
+    maxSpeed: 0
+    deceleration: 0
+  dashStats:
+    dashSpeed: 0
+    dashDuration: 0
+    dashCooldown: 0

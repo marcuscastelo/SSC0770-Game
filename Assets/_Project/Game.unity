@@ -235,6 +235,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b25431fa40de81178d71153c88f61d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &322611221 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6521030684132829334, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
+  m_PrefabInstance: {fileID: 116491947}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3e407b2296d3dd0ac0a4d4dcb3da66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &669022334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -403,10 +414,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3711105377348449902, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8165957565077548319, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: m_Name
       value: BaseEntity
@@ -420,6 +427,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 195499087, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 322611221}
     - target: {fileID: 465697021435536060, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: self
       value: 
@@ -428,6 +439,10 @@ PrefabInstance:
       propertyPath: targetPlayer
       value: 
       objectReference: {fileID: 1406837804}
+    - target: {fileID: 465697021435536060, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _targetEntity
+      value: 
+      objectReference: {fileID: 1183041677}
     - target: {fileID: 635483937670154020, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: self
       value: 
@@ -436,6 +451,10 @@ PrefabInstance:
       propertyPath: targetPlayer
       value: 
       objectReference: {fileID: 1406837804}
+    - target: {fileID: 635483937670154020, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _targetEntity
+      value: 
+      objectReference: {fileID: 1183041677}
     - target: {fileID: 1628366572486966133, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: targetPlayer
       value: 

@@ -1,12 +1,13 @@
 using System.Collections;
 using System;
+using UnityEngine;
 
-[Serializable]
-public class EntityStats
+[CreateAssetMenu(fileName = "EntityStats", menuName = "Hypnos/Entity/Stats")]
+public class EntityStats : ScriptableObject
 {
-   CombatStats combatStats;
-   WalkStats walkStats;
-   DashStats dashStats;
+   public CombatStats combatStats;
+   public WalkStats walkStats;
+   public DashStats dashStats;
 }
 
 [Serializable]

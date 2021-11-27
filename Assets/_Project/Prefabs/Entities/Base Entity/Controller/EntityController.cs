@@ -63,23 +63,23 @@ namespace Hypnos.Entities
             if (!CanAttack())
                 yield break;
 
-            // if (Time.time - _attackLastTime < _attacker.Stats.attackCooldown)
-            //     yield break;
+            if (Time.time - _attackLastTime < _entity.CombatStats.attackCooldown)
+                yield break;
 
-            // _state = State.Attacking;
-            // _movement.SetVel(Vector2.zero);
-            // UpdateAnimator(Vector2.zero);
+            _state = State.Attacking;
+            _movement.SetVel(Vector2.zero);
+            UpdateAnimator(Vector2.zero);
 
-            // _animator.SetFloat("attackSpeed", (1f / _attacker.Stats.attackDuration) * _attacker.Stats.attackAnimatorMultiplier);
-            // _animator.SetTrigger("attackTrigger");
-            // _attacker.Attack();
+            _entity.Animator.SetFloat("attackSpeed", (1f / _entity.CombatStats.attackDuration) * _entity.CombatStats.attackAnimatorMultiplier);
+            _entity.Animator.SetTrigger("attackTrigger");
+            _attacker.Attack();
 
-            // yield return new WaitForSeconds(_attacker.Stats.attackDuration);
-            // UpdateAnimator(InputDirection);
+            yield return new WaitForSeconds(_entity.CombatStats.attackDuration);
+            UpdateAnimator(InputDirection);
 
-            // _state = State.Moving;
-            // _attackLastTime = Time.time;
-            // yield break;
+            _state = State.Moving;
+            _attackLastTime = Time.time;
+            yield break;
         }
 
         public IEnumerator MoveCoroutine(Vector2 direction)
@@ -104,24 +104,22 @@ namespace Hypnos.Entities
             if (!CanDash())
                 yield break;
 
-            // if (Time.time - _dashLastTime < _movement.DashStats.dashCooldown)
-            //     yield break;
+            if (Time.time - _dashLastTime < _entity.DashStats.dashCooldown)
+                yield break;
 
-            // _state = State.Dashing;
-            // _animator.SetTrigger("dashTrigger");
-            // _movement.OnDashStart();
-            // UpdateAnimator(Vector2.zero);
+            _state = State.Dashing;
+            _entity.Animator.SetTrigger("dashTrigger");
+            UpdateAnimator(Vector2.zero);
 
-            // _movement.SetVel(direction * _movement.DashStats.dashSpeed);
+            _movement.SetVel(direction * _entity.DashStats.dashSpeed);
 
-            // yield return new WaitForSeconds(_movement.DashStats.dashDuration);
-            // _movement.OnDashEnd();
-            // _movement.SetVel(Vector2.zero);
-            // UpdateAnimator(InputDirection);
+            yield return new WaitForSeconds(_entity.DashStats.dashDuration);
+            _movement.SetVel(Vector2.zero);
+            UpdateAnimator(InputDirection);
 
-            // _state = State.Moving;
-            // _dashLastTime = Time.time;
-            // yield break;
+            _state = State.Moving;
+            _dashLastTime = Time.time;
+            yield break;
         }
 
         private void UpdateAnimator(Vector2 lookDirection)
@@ -135,8 +133,8 @@ namespace Hypnos.Entities
 
         private void FixedUpdate()
         {
-            // if (_state == State.Moving)
-            //     _movement.AccelerateTo(InputDirection * _movement.WalkStats.maxSpeed, _movement.WalkStats.acceleration);
+            if (_state == State.Moving)
+                _movement.AccelerateTo(InputDirection * _entity.WalkStats.maxSpeed, _entity.WalkStats.acceleration);
         }
     }
 }
