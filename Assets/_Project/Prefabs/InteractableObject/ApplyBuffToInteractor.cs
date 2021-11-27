@@ -35,6 +35,7 @@ public class ApplyBuffToInteractor : MonoBehaviour
                 if (buffable == null)
                 {
                     Debug.LogWarning($"{target} is not buffable");
+                    interaction.EndInteraction(false);
                     return;
                 }
             }
@@ -44,13 +45,13 @@ public class ApplyBuffToInteractor : MonoBehaviour
 
         if (buffable.HasBuff(buff))
         {
-            DialogInfo buffAlreadyActive = new DialogInfo() // TODO: make this a scriptable object
+            DialogInfo buffAlreadyActiveDI = new DialogInfo() // TODO: make this a scriptable object
             {
                 title = "Buff already active",
                 content = $"{buff} is already active",
                 buttons = DialogButtonCombination.OK
             };
-            DialogSystem.ShowDialog(buffAlreadyActive);
+            DialogSystem.ShowDialog(new Dialog(buffAlreadyActiveDI, _ => { interaction.EndInteraction(false); }));
             return;
         }
 
