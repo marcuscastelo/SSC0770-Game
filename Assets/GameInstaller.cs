@@ -5,10 +5,12 @@ using Zenject;
 
 using Hypnos.Core;
 
-public class AppInstaller : MonoInstaller
+public class GameInstaller : MonoInstaller
 {
+    [SerializeField]
+
     public override void InstallBindings()
     {
-        
+        Container.Bind<LevelSwitcher>().FromComponentInHierarchy().AsSingle();       
     }
 }

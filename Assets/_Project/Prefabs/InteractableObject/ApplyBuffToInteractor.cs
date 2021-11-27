@@ -3,7 +3,7 @@ using UnityEngine.Assertions;
 
 using Hypnos.Core;
 
-public class ApplyBuffToInteractor : MonoBehaviour
+public class ApplyBuffToInteractor : MonoBehaviour, IInteractionResponse
 {
     [Header("Config")]
     public Buff buff;
@@ -21,7 +21,7 @@ public class ApplyBuffToInteractor : MonoBehaviour
         }
     }
 
-    public void ApplyBuffTo(Interaction interaction)
+    public void OnInteracted(Interaction interaction)
     {
         IInteractor target = interaction.Interactor;
         Assert.IsNotNull(target);

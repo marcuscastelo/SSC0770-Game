@@ -124,13 +124,29 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3417692391073928960, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9634394
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417692391073928960, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: m_Size.y
-      value: 0.57934225
+      value: 0.57269967
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417692391073928960, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.020804895
       objectReference: {fileID: 0}
     - target: {fileID: 3417692391073928960, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: m_Offset.y
-      value: 0.21032888
+      value: 0.16919914
       objectReference: {fileID: 0}
+    - target: {fileID: 3417692391073928960, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: m_Direction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711105377348449902, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 93e85d0b8abed90e9bfe7134d1db3237, type: 2}
     - target: {fileID: 3711105377348449902, guid: 3d7f9e4b3733e6e9684d28a409d31bdd, type: 3}
       propertyPath: entityBuff
       value: 

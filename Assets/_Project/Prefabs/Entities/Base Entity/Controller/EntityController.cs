@@ -19,7 +19,7 @@ namespace Hypnos.Entities
         public Vector2 CurrentVelocity => _movement.CurrentVelocity;
 
         enum State { Moving, Attacking, Interacting, Dashing, Dead }
-        State _state = State.Moving;
+        [SerializeField] [ReadOnly] private State _state = State.Moving;
 
         [Inject]
         public void Construct(IInteractor interactor, IAttacker attacker, IMoveable movement, Entity entity)
@@ -52,7 +52,7 @@ namespace Hypnos.Entities
                 yield break;
 
             _state = State.Interacting;
-            _interactor.Interact((bool _) => _state = State.Moving);
+            _interactor.Interact(_ => _state = State.Moving);
 
             yield break;
         }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 using Hypnos.Core;
+using Zenject;
 
 [ExecuteInEditMode]
 public class InteractableObject : MonoBehaviour, IInteractable
@@ -16,10 +17,12 @@ public class InteractableObject : MonoBehaviour, IInteractable
     [Header("Config")]
     public string id;
 
-    [Header("Events")]
-    
-    //TODO: stop using UnityEvent, because this object cares if someone receives it (https://github.com/modesttree/Zenject/blob/master/Documentation/Signals.md#when-to-use-signals)
-    [SerializeField] private UnityEvent<Interaction> onInteracted;
+    private IInteractionResponse _interactionResponse;
+
+    void Awake()
+    {
+        _interactionResponse = GetComponent<IInteractionResponse>();
+    }
 
     private bool _selected;
 
@@ -31,7 +34,7 @@ public class InteractableObject : MonoBehaviour, IInteractable
         _UpdateSprite();
     }
 
-    private void _UpdateSprite()
+    private void _UpdateSprite() //TODO: ISelectionResponse
     {
         spriteRenderer.sprite = _selected ? spriteWhenSelected : spriteWhenUnselected;
     }
@@ -65,12 +68,13 @@ public class InteractableObject : MonoBehaviour, IInteractable
     {
         Debug.Log("Interacted by player (id=" + id + ")");
         interaction.StartInteraction();
-        if (onInteracted != null)
+        if (_interactionResponse != null)
         {
-            onInteracted.Invoke(interaction);
+            _interactionResponse.OnInteracted(interaction);
         }
         else
         {
+            Debug.LogWarning("No IInteractionResponse found on " + gameObject.name);
             interaction.EndInteraction(false);
         }
     }

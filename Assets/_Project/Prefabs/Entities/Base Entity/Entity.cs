@@ -23,7 +23,6 @@ namespace Hypnos.Entities
         private IAttackable _entityAttackable;
         private IInteractor _entityInteractor;
 
-
         [Inject]
         public void Construct(SpriteRenderer spriteRenderer, Animator animator, HealthComponent health, IBuffable buff, EntityController entityController, IMoveable entityMovement, IAttacker entityAttacker, IAttackable entityAttackable, IInteractor entityInteractor)
         {

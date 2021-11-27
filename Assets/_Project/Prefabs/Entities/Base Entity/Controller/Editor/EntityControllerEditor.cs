@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 
@@ -8,7 +9,7 @@ namespace Hypnos.Entities
     {
         private bool showDebug = false;
         private Vector2 _testMovement;
-#if UNITY_EDITOR
+
         public override void OnInspectorGUI()
         {
             EntityController controller = (EntityController)target;
@@ -25,7 +26,7 @@ namespace Hypnos.Entities
             }
 
         }
-#endif
     }
 
 }
+#endif

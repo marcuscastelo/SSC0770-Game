@@ -559,36 +559,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1128861457282046437}
     m_Modifications:
     - target: {fileID: 4345278856198527649, guid: 94858227aa3ea7d6690545d8a232750c, type: 3}
-      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345278856198527649, guid: 94858227aa3ea7d6690545d8a232750c, type: 3}
-      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345278856198527649, guid: 94858227aa3ea7d6690545d8a232750c, type: 3}
       propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4345278856198527649, guid: 94858227aa3ea7d6690545d8a232750c, type: 3}
-      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowDialog
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345278856198527649, guid: 94858227aa3ea7d6690545d8a232750c, type: 3}
-      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DialogDisplay, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345278856198527649, guid: 94858227aa3ea7d6690545d8a232750c, type: 3}
       propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345278856198527649, guid: 94858227aa3ea7d6690545d8a232750c, type: 3}
-      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: 0eb158b716f582eda9daa34d027eb2e3, type: 2}
-    - target: {fileID: 4345278856198527649, guid: 94858227aa3ea7d6690545d8a232750c, type: 3}
-      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: DialogInfo, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5168846883874480905, guid: 94858227aa3ea7d6690545d8a232750c, type: 3}
       propertyPath: m_RootOrder

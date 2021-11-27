@@ -78,16 +78,15 @@ namespace Hypnos.Entities.Systems
         public void Interact() => Interact((bool success) => { });
         public void Interact(Interaction.OnInteractionEnded onInteractionEnded)
         {
-            if (SelectedInteractable == null)
+            if (SelectedInteractable == null) {
+                onInteractionEnded(false);
                 return;
+            }
 
             Interaction interaction = new Interaction(this, SelectedInteractable);
 
-            interaction.OnInteractionEndedEvent += (bool success) =>
-            {
-                Deselect(SelectedInteractable);
-                onInteractionEnded.Invoke(success);
-            };
+            interaction.OnInteractionEndedEvent += _ => Deselect(SelectedInteractable);
+            interaction.OnInteractionEndedEvent += onInteractionEnded;
 
             SelectedInteractable.OnInteract(interaction);
         }

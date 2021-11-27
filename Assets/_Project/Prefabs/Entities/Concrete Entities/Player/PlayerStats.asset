@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
-  m_Name: DefaultEntityStats
+  m_Name: PlayerStats
   m_EditorClassIdentifier: 
   combatStats:
     attackDamage: 1
@@ -19,9 +19,9 @@ MonoBehaviour:
     attackAnimatorMultiplier: 0.5
   walkStats:
     acceleration: 70
-    maxSpeed: 2
+    maxSpeed: 3
     deceleration: 14
   dashStats:
-    dashSpeed: 4
+    dashSpeed: 8
     dashDuration: 0.3
-    dashCooldown: 8
+    dashCooldown: 2
