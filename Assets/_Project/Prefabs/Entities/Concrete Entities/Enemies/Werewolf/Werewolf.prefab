@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &7388400927401404356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3366859362080002650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0886e24495b0e4874bd33f815348c3fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 3252609972950143465}
+  self: {fileID: 5642887940804732866}
+  targetPlayer: {fileID: 0}
 --- !u!1001 &2899160998964287483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,6 +25,22 @@ PrefabInstance:
     - target: {fileID: 469112482189067681, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: m_Name
       value: Werewolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 784586750060675052, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1724087
+      objectReference: {fileID: 0}
+    - target: {fileID: 784586750060675052, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Size.y
+      value: 0.77777874
+      objectReference: {fileID: 0}
+    - target: {fileID: 784586750060675052, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 784586750060675052, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.11
       objectReference: {fileID: 0}
     - target: {fileID: 1023342101732596485, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: show
@@ -39,6 +70,18 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3077982895628282607, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: dashStats.dashSpeed
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077982895628282607, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: dashStats.dashCooldown
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077982895628282607, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: dashStats.dashDuration
+      value: 0.001
+      objectReference: {fileID: 0}
     - target: {fileID: 3170344533264515289, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: m_Controller
       value: 
@@ -59,6 +102,42 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 3252609972950143465}
+    - target: {fileID: 7110035049528789457, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Size.x
+      value: 1.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110035049528789457, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Size.y
+      value: 1.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110035049528789457, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110035049528789457, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237647506844987925, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: endFrame
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237647506844987925, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: startFrame
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237647506844987925, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: totalFrames
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237647506844987925, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: combatStats.attackCooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237647506844987925, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: combatStats.attackDuration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7382652399878320185, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -103,8 +182,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8651571894188747349, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+--- !u!1 &3366859362080002650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 469112482189067681, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+  m_PrefabInstance: {fileID: 2899160998964287483}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5642887940804732866 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7382652399878320185, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+  m_PrefabInstance: {fileID: 2899160998964287483}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3252609972950143465 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 367171020344837650, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}

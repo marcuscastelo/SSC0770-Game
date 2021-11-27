@@ -9,5 +9,7 @@ public interface IBuffable
     void ApplyBuff(Buff buff);
     void RemoveBuff(Buff buff);
 
+    bool HasBuff(Buff buff);
+
     void ClearBuffs();
 }

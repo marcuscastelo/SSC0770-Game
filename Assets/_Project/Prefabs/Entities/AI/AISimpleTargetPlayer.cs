@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Assertions;
 using UnityEngine;
 
 using Hypnos.Entities;
@@ -14,9 +15,9 @@ public class AISimpleTargetPlayer : MonoBehaviour
 
     void Awake()
     {
-        Debug.Assert(controller != null, "AISimpleTargetPlayer.Awake() - controller is null");
-        Debug.Assert(self != null, "AISimpleTargetPlayer.Awake() - self is null");
-        Debug.Assert(targetPlayer != null, "AISimpleTargetPlayer.Awake() - targetPlayer is null");
+        Assert.IsNotNull(controller, "AISimpleTargetPlayer: controller is null");
+        Assert.IsNotNull(self, "AISimpleTargetPlayer: self is null");
+        Assert.IsNotNull(targetPlayer, "AISimpleTargetPlayer: targetPlayer is null");
     }
 
     void Start()
