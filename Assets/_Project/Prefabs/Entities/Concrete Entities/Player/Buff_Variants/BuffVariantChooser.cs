@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEditor;
 
 using Hypnos.Entities;
-using UnityEditorInternal;
 
 [ExecuteInEditMode]
 public class BuffVariantChooser : MonoBehaviour

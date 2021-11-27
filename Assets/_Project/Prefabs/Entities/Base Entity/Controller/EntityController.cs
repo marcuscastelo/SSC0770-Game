@@ -51,11 +51,7 @@ namespace Hypnos.Entities
                 yield break;
 
             _state = State.Interacting;
-            
-            interactor.Interact();
-            yield return new WaitForSeconds(5f);
-
-            _state = State.Moving;
+            interactor.Interact((bool _) => _state = State.Moving);
 
             yield break;
         }

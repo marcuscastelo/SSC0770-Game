@@ -74,6 +74,13 @@ public class InteractableObject : MonoBehaviour, IInteractable
     {
         Debug.Log("Interacted by player (id=" + id + ")");
         interaction.StartInteraction();
-        onInteracted?.Invoke(interaction);
+        if (onInteracted != null)
+        {
+            onInteracted.Invoke(interaction);
+        }
+        else
+        {
+            interaction.EndInteraction(false);
+        }
     }
 }

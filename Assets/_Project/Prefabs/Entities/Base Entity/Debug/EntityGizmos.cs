@@ -24,7 +24,7 @@ namespace Hypnos.Entities
             if (Application.isPlaying)
                 return;
 
-            Start();            
+            Start();
         }
 
         void Start()
@@ -32,16 +32,18 @@ namespace Hypnos.Entities
             _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         }
 
+#if UNITY_EDITOR
         void OnDrawGizmos()
         {
             if (!showGizmos)
                 return;
 
             Vector2 headPos = entity.transform.position + Vector3.up * Height;
-            
+
             // Draw text: entity health
             Handles.Label(headPos, $"{entity.name}: ({entity.Health.CurrentHealth})");
 
         }
+#endif
     }
 }
