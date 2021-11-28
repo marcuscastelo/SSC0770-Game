@@ -17,12 +17,12 @@ namespace Hypnos.Audio
 
         private void OnEnable()
         {
-            AudioManager.RegisterAudioSource(audioSource);
+            AudioSystem.RegisterAudioSource(audioSource);
         }
 
         private void OnDisable()
         {
-            AudioManager.UnregisterAudioSource(audioSource);
+            AudioSystem.UnregisterAudioSource(audioSource);
         }
     }
 }

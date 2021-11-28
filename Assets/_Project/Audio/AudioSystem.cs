@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace Hypnos.Audio
 {
-    public static class AudioManager
+    public static class AudioSystem
     {
         public static readonly List<AudioSource> audioSources = new List<AudioSource>();
         public static void RegisterAudioSource(AudioSource audioSource) => audioSources.Add(audioSource);
         public static void UnregisterAudioSource(AudioSource audioSource) => audioSources.Remove(audioSource);
 
-        public static void Play(AudioClip clip)
+        public static void PlayGlobal(AudioClip clip)
         {
             foreach (var audioSource in audioSources)
             {
