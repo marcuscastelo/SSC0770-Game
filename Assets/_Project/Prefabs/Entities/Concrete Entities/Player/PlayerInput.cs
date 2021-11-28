@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 using Hypnos.Entities;
 using Zenject;
@@ -37,5 +38,7 @@ public class PlayerInput : MonoBehaviour
         _controls.Default.Interact.started += ctx => _controller.Interact();
         _controls.Default.Attack.started += ctx => _controller.Attack();
         _controls.Default.Dash.started += ctx => _controller.Dash();
+
+        _controls.Debug.Restart.started += ctx => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

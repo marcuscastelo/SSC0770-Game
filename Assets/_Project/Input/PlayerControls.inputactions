@@ -173,6 +173,17 @@
                 },
                 {
                     "name": "",
+                    "id": "d7b0d8ff-9a01-4a3d-a201-cb0e5ce2ac3b",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "869d95db-d8ac-43e8-8939-a42d1b1f30c9",
                     "path": "<Keyboard>/f",
                     "interactions": "",
@@ -203,6 +214,55 @@
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Debug",
+            "id": "7670bafb-3bbc-4f7a-9bb7-e2fad2cba68e",
+            "actions": [
+                {
+                    "name": "Restart",
+                    "type": "Button",
+                    "id": "3136422c-9b0a-435c-a98c-0beeb514ae04",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold"
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "CTRL + R",
+                    "id": "d7a24970-05b6-4b34-9a67-97e8368ac09d",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "de3cdf80-d6f7-4149-b796-5532cf78e05f",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "button",
+                    "id": "03926843-4cdc-4e62-a96f-41e832b376af",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
