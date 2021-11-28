@@ -7,42 +7,43 @@ namespace Hypnos.Entities.Components
     [Serializable]
     public class HealthComponent
     {
-        private int maxHealth = 100;
-        private int currentHealth = 100;
-        private bool invulnerable = false;
+        private int _maxHealth = 1;
+        private int _currentHealth = 1;
 
-        public int MaxHealth => maxHealth;
-        public int CurrentHealth => currentHealth;
+        public HealthComponent()
+        {
+            //TODO: inject maxHealth from EntityStats
+        }
 
-        private SignalBus _signalBus;
+        public int MaxHealth => _maxHealth;
+        public int CurrentHealth => _currentHealth;
+
+        public event Action OnDeath = delegate { };
 
         public void TakeDamage(int damage)
         {
-            if (invulnerable)
-                return;
-
-            SetHealth(currentHealth - damage);
+            SetHealth(_currentHealth - damage);
         }
 
         public void Heal(int heal)
         {
-            currentHealth = Mathf.Clamp(currentHealth + heal, 0, maxHealth);
+            _currentHealth = Mathf.Clamp(_currentHealth + heal, 0, _maxHealth);
         }
 
         public void SetHealth(int health)
         {
-            currentHealth = Mathf.Clamp(health, 0, maxHealth);
-            if (currentHealth == 0)
+            _currentHealth = Mathf.Clamp(health, 0, _maxHealth);
+            if (_currentHealth == 0)
             {
-                
+                OnDeath();
             }
         }
 
         public void SetMaxHealth(int newMax)
         {
-            maxHealth = Mathf.Clamp(newMax, 0, int.MaxValue);
-            if (currentHealth > maxHealth)
-                SetHealth(maxHealth);
+            _maxHealth = Mathf.Clamp(newMax, 0, int.MaxValue);
+            if (_currentHealth > _maxHealth)
+                SetHealth(_maxHealth);
         }
 
         public void Die() => SetHealth(0);

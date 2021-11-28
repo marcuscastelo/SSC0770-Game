@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   combatStats:
+    maxHealth: 4
     attackDamage: 1
     attackCooldown: 0
     attackDuration: 0.1

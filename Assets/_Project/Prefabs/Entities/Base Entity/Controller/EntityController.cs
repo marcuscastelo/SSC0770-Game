@@ -56,7 +56,10 @@ namespace Hypnos.Entities
             _state = State.Interacting;
             _movement.SetVel(Vector2.zero);       
             UpdateAnimator(Vector2.zero);     
-            _interactor.Interact(_ => _state = State.Moving);
+            _interactor.Interact(_ => {
+                _state = State.Moving;
+                UpdateAnimator(InputDirection);
+            });
 
             yield break;
         }

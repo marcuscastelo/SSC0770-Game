@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DefaultEntityStats
   m_EditorClassIdentifier: 
   combatStats:
+    maxHealth: 2
     attackDamage: 1
     attackCooldown: 1
     attackDuration: 1

@@ -35,6 +35,15 @@ namespace Hypnos.Entities
             _entityAttacker = entityAttacker;
             _entityAttackable = entityAttackable;
             _entityInteractor = entityInteractor;
+
+            //! TODO: remove this and inject on health component
+            _health.SetMaxHealth(_stats.combatStats.maxHealth);
+            _health.SetHealth(_stats.combatStats.maxHealth);
+            _health.OnDeath += () => {
+                _entityMovement.Teleport(Vector2.one * -1000000);
+                if (gameObject.name == "Player") { new MainMenu().PlayGame(); }
+            };
+            //!<
         }
 
         // Facade - IBuffable
