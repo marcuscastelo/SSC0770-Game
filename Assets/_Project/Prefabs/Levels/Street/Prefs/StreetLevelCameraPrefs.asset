@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: StreetLevelCameraPrefs
   m_EditorClassIdentifier: 
   followX: 1
-  followY: 0
-  minX: 4
-  maxX: 5.9
-  minY: 0
-  maxY: 0
+  followY: 1
+  minX: -14.53
+  maxX: 3.34
+  minY: -2.2
+  maxY: -2.2

@@ -13,8 +13,7 @@ public class LevelSwitcher : MonoBehaviour
 
     [SerializeField] private Level[] levels;
 
-    //TODO: Make mutable in editor, and have it update the level in the scene when changed
-    public readonly float LEVEL_X_OFFSET = 10.0f;
+    [SerializeField] private float LEVEL_X_OFFSET = 50.0f;
 
     private void Start()
     {
