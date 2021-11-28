@@ -11,6 +11,7 @@ namespace Hypnos.Entities
     {
         private IInteractor _interactor;
         private IAttacker _attacker;
+        private IAttackable _attackable;
         private IMoveable _movement;
         private Entity _entity;
 
@@ -22,12 +23,13 @@ namespace Hypnos.Entities
         [SerializeField] [ReadOnly] private State _state = State.Moving;
 
         [Inject]
-        public void Construct(IInteractor interactor, IAttacker attacker, IMoveable movement, Entity entity)
+        public void Construct(Entity entity, IInteractor interactor, IAttacker attacker, IAttackable attackable, IMoveable movement)
         {
+            _entity = entity;
             _interactor = interactor;
             _attacker = attacker;
+            _attackable = attackable;
             _movement = movement;
-            _entity = entity;
         }
 
         public void Interact() => StartCoroutine(InteractCoroutine());
@@ -52,6 +54,8 @@ namespace Hypnos.Entities
                 yield break;
 
             _state = State.Interacting;
+            _movement.SetVel(Vector2.zero);       
+            UpdateAnimator(Vector2.zero);     
             _interactor.Interact(_ => _state = State.Moving);
 
             yield break;
@@ -108,6 +112,7 @@ namespace Hypnos.Entities
                 yield break;
 
             _state = State.Dashing;
+            _attackable.SetInvulnerable(true);
             _entity.Animator.SetTrigger("dashTrigger");
             UpdateAnimator(Vector2.zero);
 
@@ -115,6 +120,7 @@ namespace Hypnos.Entities
 
             yield return new WaitForSeconds(_entity.DashStats.dashDuration);
             _movement.SetVel(Vector2.zero);
+            _attackable.SetInvulnerable(false);
             UpdateAnimator(InputDirection);
 
             _state = State.Moving;

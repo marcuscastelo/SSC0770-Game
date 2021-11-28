@@ -11,6 +11,7 @@ namespace Hypnos.Entities.Systems
     {
         [SerializeField] private Collider2D attackerArea;
         [SerializeField] private bool attackAreaAlwaysEnabled = false;
+        [SerializeField] private bool invulnerable = false;
 
         [SerializeField] private int startFrame = 0;
         [SerializeField] private int endFrame = 1;
@@ -22,6 +23,11 @@ namespace Hypnos.Entities.Systems
         public void Construct(Entity thisEntity)
         {
             _thisEntity = thisEntity;
+        }
+
+        public void SetInvulnerable(bool invulnerable)
+        {
+            this.invulnerable = invulnerable;
         }
 
         void Start()
@@ -37,22 +43,21 @@ namespace Hypnos.Entities.Systems
             float frameDuration = duration / totalFrames;
             if (attackerArea != null && !attackAreaAlwaysEnabled)
             {
+                attackerArea.transform.localScale = Vector3.zero;
                 yield return new WaitForSeconds(startFrame * frameDuration);
                 attackerArea.enabled = true;
                 attackerArea.transform.localScale = Vector3.one;
                 yield return new WaitForSeconds((endFrame - startFrame) * frameDuration);
                 attackerArea.enabled = false;
-                attackerArea.transform.localScale = Vector3.zero;
             }
         }
 
-        public void Attack()
-        {
-            StartCoroutine(BlinkAttackAreaCoroutine(_thisEntity.CombatStats.attackDuration));
-        }
+        public void Attack() => StartCoroutine(BlinkAttackAreaCoroutine(_thisEntity.CombatStats.attackDuration));
 
         public void OnHurt(IAttacker attacker, int damage)
         {
+            if (invulnerable) return;
+
             //TODO: knockback
             _thisEntity.Health.TakeDamage(damage);
         }
