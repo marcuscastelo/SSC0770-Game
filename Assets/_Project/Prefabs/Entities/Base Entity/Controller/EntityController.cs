@@ -32,17 +32,39 @@ namespace Hypnos.Entities
             _movement = movement;
         }
 
-        public void Interact() => StartCoroutine(InteractCoroutine());
-        public void Attack() => StartCoroutine(AttackCoroutine());
-        public void Move(Vector2 direction) => StartCoroutine(MoveCoroutine(direction));
-        public void Dash(Vector2 direction) => StartCoroutine(DashCoroutine(direction));
-        public void Dash() => StartCoroutine(DashCoroutine(LastLookDirection));
+        public void Interact()
+        {
+            if (isActiveAndEnabled)
+                StartCoroutine(InteractCoroutine());
+        }
+        public void Attack()
+        {
+            if (isActiveAndEnabled)
+                StartCoroutine(AttackCoroutine());
+        }
+        public void Move(Vector2 direction)
+        {
+            if (isActiveAndEnabled)
+                StartCoroutine(MoveCoroutine(direction));
+        }
+        public void Dash(Vector2 direction)
+        {
+            if (isActiveAndEnabled)
+                StartCoroutine(DashCoroutine(direction));
+        }
+        public void Dash()
+        {
+            if (isActiveAndEnabled)
+                StartCoroutine(DashCoroutine(LastLookDirection));
+        }
         public void LookTo(Vector2 direction)
         {
+            if (!isActiveAndEnabled) return;
+            
             LastLookDirection = direction;
             UpdateAnimator(LastLookDirection.normalized * 0.1f);
         }
-        
+
         public bool CanMove() => _state == State.Moving;
         public bool CanInteract() => _state == State.Moving;
         public bool CanAttack() => _state == State.Moving;
@@ -54,9 +76,10 @@ namespace Hypnos.Entities
                 yield break;
 
             _state = State.Interacting;
-            _movement.SetVel(Vector2.zero);       
-            UpdateAnimator(Vector2.zero);     
-            _interactor.Interact(_ => {
+            _movement.SetVel(Vector2.zero);
+            UpdateAnimator(Vector2.zero);
+            _interactor.Interact(_ =>
+            {
                 _state = State.Moving;
                 UpdateAnimator(InputDirection);
             });
@@ -77,11 +100,12 @@ namespace Hypnos.Entities
             _movement.SetVel(Vector2.zero);
             UpdateAnimator(Vector2.zero);
 
-            _entity.Animator.SetFloat("attackSpeed", (1f / _entity.CombatStats.attackDuration) * _entity.CombatStats.attackAnimatorMultiplier);
+            float speedAttackBuffMultiplier = _entity.HasBuff(Buff.Dexterity) ? 1.5f : 1f; //TODO: modularize
+            _entity.Animator.SetFloat("attackSpeed", (1f / _entity.CombatStats.attackDuration) * _entity.CombatStats.attackAnimatorMultiplier * speedAttackBuffMultiplier);
             _entity.Animator.SetTrigger("attackTrigger");
             _attacker.Attack();
 
-            yield return new WaitForSeconds(_entity.CombatStats.attackDuration);
+            yield return new WaitForSeconds(_entity.CombatStats.attackDuration / speedAttackBuffMultiplier);
             UpdateAnimator(InputDirection);
 
             _state = State.Moving;

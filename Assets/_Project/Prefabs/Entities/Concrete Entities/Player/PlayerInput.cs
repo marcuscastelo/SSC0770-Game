@@ -31,9 +31,10 @@ public class PlayerInput : MonoBehaviour
 
     void SetCallbacks()
     {
-        _controls.Default.Walk.started += ctx => _controller.Move(ctx.ReadValue<Vector2>());
         _controls.Default.Walk.performed += ctx => _controller.Move(ctx.ReadValue<Vector2>());
-        _controls.Default.Walk.canceled += ctx => _controller.Move(Vector2.zero);
+        _controls.Default.Walk.canceled += ctx => {
+            _controller.Move(ctx.ReadValue<Vector2>());
+        };
 
         _controls.Default.Interact.started += ctx => _controller.Interact();
         _controls.Default.Attack.started += ctx => _controller.Attack();

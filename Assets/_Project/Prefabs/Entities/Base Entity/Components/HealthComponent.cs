@@ -19,6 +19,7 @@ namespace Hypnos.Entities.Components
         public int CurrentHealth => _currentHealth;
 
         public event Action OnDeath = delegate { };
+        public event Action<int> OnHealthChanged = delegate { };
 
         public void TakeDamage(int damage)
         {
@@ -33,6 +34,7 @@ namespace Hypnos.Entities.Components
         public void SetHealth(int health)
         {
             _currentHealth = Mathf.Clamp(health, 0, _maxHealth);
+            OnHealthChanged(_currentHealth);
             if (_currentHealth == 0)
             {
                 OnDeath();

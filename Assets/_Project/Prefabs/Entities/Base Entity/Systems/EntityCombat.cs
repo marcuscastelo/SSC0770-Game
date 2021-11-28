@@ -40,6 +40,8 @@ namespace Hypnos.Entities.Systems
 
         private IEnumerator BlinkAttackAreaCoroutine(float duration)
         {
+            float speedAttackBuffMultiplier = _thisEntity.HasBuff(Buff.Dexterity) ? 1.5f : 1f; //TODO: modularize
+            duration /= speedAttackBuffMultiplier;
             float frameDuration = duration / totalFrames;
             if (attackerArea != null && !attackAreaAlwaysEnabled)
             {
