@@ -37,12 +37,24 @@ namespace Hypnos.Entities
             _entityAttackable = entityAttackable;
             _entityInteractor = entityInteractor;
 
+            _buff.ApplyBuff(_stats.initialBuff);
+
             //! TODO: remove this and inject on health component
             _health.SetMaxHealth(_stats.combatStats.maxHealth);
             _health.SetHealth(_stats.combatStats.maxHealth);
             _health.OnDeath += () => {
                 _entityMovement.Teleport(Vector2.one * -1000000);
-                if (gameObject.name == "Player") { SceneManager.LoadScene("Game"); } //TODO death coroutine (allow sound to be played)
+                if (gameObject.name == "Player") { 
+                    Time.timeScale = 0;
+                    DialogInfo dialogInfo = ScriptableObject.CreateInstance<DialogInfo>();
+                    dialogInfo.title = "You died!";
+                    dialogInfo.content = "You died!\nRestart?";
+                    dialogInfo.buttons = DialogButtonCombination.OK;
+                    DialogSystem.ShowDialog(new Dialog(dialogInfo, (result) => {
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                        Time.timeScale = 1;
+                    }));
+                 } //TODO death coroutine (allow sound to be played)
             };
             //!<
         }

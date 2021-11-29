@@ -67,7 +67,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button3
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3478205418986389462
@@ -279,7 +279,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dialog title!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_margin: {x: 10, y: 10, z: 10, w: -13.99408}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &6224081577388703569
@@ -546,7 +546,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button2
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &7394855787009771520
@@ -1063,7 +1063,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1127,7 +1127,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &8672834244524623886
@@ -1235,7 +1235,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: This is the dialog text, underlines do not work :(
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1299,7 +1299,7 @@ MonoBehaviour:
   m_margin: {x: 14.663147, y: 142.96753, z: 17.32904, w: 160.82828}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &9070625237927606559
@@ -1530,20 +1530,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6455072040558294612, guid: 5017392236f93945098ebe37d3b26f9d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 122.900024
-      objectReference: {fileID: 0}
-    - target: {fileID: 6455072040558294612, guid: 5017392236f93945098ebe37d3b26f9d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 6455072040558294612, guid: 5017392236f93945098ebe37d3b26f9d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -40
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5017392236f93945098ebe37d3b26f9d, type: 3}
+--- !u!1 &8176076101668006484 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3414569123365257436, guid: 5017392236f93945098ebe37d3b26f9d, type: 3}
+  m_PrefabInstance: {fileID: 6779533049581234824}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8176076101668006485 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3414569123365257437, guid: 5017392236f93945098ebe37d3b26f9d, type: 3}
@@ -1560,11 +1553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527726bfc310c7f6386e98389180b9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &8176076101668006484 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3414569123365257436, guid: 5017392236f93945098ebe37d3b26f9d, type: 3}
-  m_PrefabInstance: {fileID: 6779533049581234824}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8176076101631984842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1572,22 +1560,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8176076100824891403}
     m_Modifications:
-    - target: {fileID: 1347632975852558750, guid: b78fc99795076ca8b9d83a8b8e9e6087, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1347632975852558750, guid: b78fc99795076ca8b9d83a8b8e9e6087, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563704905508436906, guid: b78fc99795076ca8b9d83a8b8e9e6087, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563704905508436906, guid: b78fc99795076ca8b9d83a8b8e9e6087, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4176619456196577292, guid: b78fc99795076ca8b9d83a8b8e9e6087, type: 3}
       propertyPath: objectsToDisable.Array.data[0]
       value: 
@@ -1680,12 +1652,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 8794807839024864631, guid: b78fc99795076ca8b9d83a8b8e9e6087, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b78fc99795076ca8b9d83a8b8e9e6087, type: 3}
+--- !u!224 &827024903989369273 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8794807839024864627, guid: b78fc99795076ca8b9d83a8b8e9e6087, type: 3}
+  m_PrefabInstance: {fileID: 8176076101631984842}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5224479724562074822 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4176619456196577292, guid: b78fc99795076ca8b9d83a8b8e9e6087, type: 3}
@@ -1697,8 +1670,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c26091d7bc78ae4ab06432b59d42299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &827024903989369273 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8794807839024864627, guid: b78fc99795076ca8b9d83a8b8e9e6087, type: 3}
-  m_PrefabInstance: {fileID: 8176076101631984842}
-  m_PrefabAsset: {fileID: 0}

@@ -41,6 +41,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: e1c0b82b9a9b35dc18174876591f4952, type: 2}
+    - target: {fileID: 4922908142325325520, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 11400000, guid: cf42e5dca9ce7603f8b4e605414b8886, type: 2}
     - target: {fileID: 5561885927183477030, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: maxWalkingSpeed
       value: 2.6
@@ -60,6 +64,18 @@ PrefabInstance:
     - target: {fileID: 6799413793939548662, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: targetPlayer
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237647506844987925, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: endFrame
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237647506844987925, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: startFrame
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237647506844987925, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: totalFrames
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7237647506844987925, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: combatStats.attackCooldown

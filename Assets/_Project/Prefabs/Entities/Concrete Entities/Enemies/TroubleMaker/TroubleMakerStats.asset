@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
-  m_Name: PlayerStats
+  m_Name: TroubleMakerStats
   m_EditorClassIdentifier: 
   combatStats:
-    maxHealth: 4
+    maxHealth: 2
     attackDamage: 1
-    attackCooldown: 0
-    attackDuration: 0.8
-    attackAnimatorMultiplier: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
   walkStats:
     acceleration: 70
-    maxSpeed: 3
+    maxSpeed: 2.3
     deceleration: 14
   dashStats:
-    dashSpeed: 8
+    dashSpeed: 4
     dashDuration: 0.3
-    dashCooldown: 2
+    dashCooldown: 8
   initialBuff: 0

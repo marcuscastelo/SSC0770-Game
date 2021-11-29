@@ -17,6 +17,11 @@ public class WerewolfAI : MonoBehaviour
     {
         while (true)
         {
+            while (!_selfEntity.SpriteRenderer.isVisible) {
+                _selfEntity.Controller.Move(Vector2.zero);
+                yield return null;
+            }
+
             float distance = _vecToTarget.magnitude;
             Vector2 direction = _vecToTarget.normalized;
 

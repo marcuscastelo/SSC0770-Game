@@ -8,6 +8,9 @@ public class EntityStats : ScriptableObject
    public CombatStats combatStats;
    public WalkStats walkStats;
    public DashStats dashStats;
+
+   [EnumFlags]
+   public Buff initialBuff;
 }
 
 [Serializable]

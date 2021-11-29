@@ -6,11 +6,14 @@ using Zenject;
 using Hypnos.Entities;
 
 
-public class TroubleMakerAI : MonoBehaviour 
+public class TroubleMakerAI : MonoBehaviour
 {
+    [SerializeField] private float pushForce = 10f;
     [SerializeField] private Entity _selfEntity;
     [SerializeField] private Entity _targetEntity;
 
+
+    private Vector2 _moveDir;
     private Vector2 _vecToTarget;
 
     void Start() => StartCoroutine(AILoop());
@@ -19,19 +22,24 @@ public class TroubleMakerAI : MonoBehaviour
     {
         while (_selfEntity.Health.CurrentHealth > 0)
         {
+            while (!_selfEntity.SpriteRenderer.isVisible)
+            {
+                _selfEntity.Controller.Move(Vector2.zero);
+                yield return null;
+            }
             float distance = _vecToTarget.magnitude;
-            Vector2 direction = _vecToTarget.normalized;
 
-            if (distance > 1f) {
-                _selfEntity.Controller.Move(direction);
+            if (distance > 1f)
+            {
+                _selfEntity.Controller.Move(_moveDir);
                 _selfEntity.Controller.Dash();
             }
             else
             {
                 _selfEntity.Controller.Move(Vector2.zero);
-                _selfEntity.Controller.LookTo(direction);
+                _selfEntity.Controller.LookTo(_moveDir);
                 yield return _selfEntity.Controller.AttackCoroutine();
-                
+
                 // controller.LookTo(-direction);
                 // controller.Dash(-direction*0.1f);
             }
@@ -42,6 +50,21 @@ public class TroubleMakerAI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _vecToTarget = _targetEntity.transform.position - _selfEntity.transform.position;
+        _vecToTarget = (_targetEntity.transform.position - _selfEntity.transform.position);
+
+        Vector2 pushVec = Vector2.zero;
+
+        Entity[] otherEntities = GameObject.FindObjectsOfType<Entity>();
+        foreach (Entity entity in otherEntities)
+        {
+            if (entity.gameObject != _selfEntity.gameObject && entity.gameObject != _targetEntity.gameObject)
+            {
+                Vector2 vecOutOfEntity = entity.transform.position - _selfEntity.transform.position;
+                pushVec += vecOutOfEntity.normalized * Mathf.Max(0.1f, 1/(vecOutOfEntity.sqrMagnitude+0.01f)) * pushForce;
+            }
+        }
+        
+        _moveDir = _vecToTarget + pushVec;
+        _moveDir = _moveDir.normalized;
     }
 }
