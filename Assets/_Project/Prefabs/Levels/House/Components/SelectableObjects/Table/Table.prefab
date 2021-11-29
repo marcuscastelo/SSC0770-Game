@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c75b8e63d4b099f1b96ceb13c4c2ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectableObject: {fileID: 1344497431428631924}
   buff: 1
+  dialogInfo: {fileID: 11400000, guid: e752dc9a6290b994492d8bf2bac35bca, type: 2}
 --- !u!1001 &4268514844096174596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -160,14 +160,3 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6545600855929423107, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
   m_PrefabInstance: {fileID: 4268514844096174596}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1344497431428631924 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2996110811739395952, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
-  m_PrefabInstance: {fileID: 4268514844096174596}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7055569340891864839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df61eb6439e94c6ef82fc88772c20e8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
