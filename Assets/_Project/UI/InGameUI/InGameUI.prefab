@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button3
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
-  m_sharedMaterial: {fileID: -5280318232380291208, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -279,8 +279,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dialog title!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
-  m_sharedMaterial: {fileID: -5280318232380291208, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -546,8 +546,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button2
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
-  m_sharedMaterial: {fileID: -5280318232380291208, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -880,10 +880,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 32
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1063,8 +1063,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
-  m_sharedMaterial: {fileID: -5280318232380291208, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1235,8 +1235,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: This is the dialog text, underlines do not work :(
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
-  m_sharedMaterial: {fileID: -5280318232380291208, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1530,6 +1530,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6455072040558294612, guid: 5017392236f93945098ebe37d3b26f9d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 122.900024
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455072040558294612, guid: 5017392236f93945098ebe37d3b26f9d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455072040558294612, guid: 5017392236f93945098ebe37d3b26f9d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5017392236f93945098ebe37d3b26f9d, type: 3}
 --- !u!1 &8176076101668006484 stripped
@@ -1560,6 +1572,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8176076100824891403}
     m_Modifications:
+    - target: {fileID: 1347632975852558750, guid: b78fc99795076ca8b9d83a8b8e9e6087, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347632975852558750, guid: b78fc99795076ca8b9d83a8b8e9e6087, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1563704905508436906, guid: b78fc99795076ca8b9d83a8b8e9e6087, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1563704905508436906, guid: b78fc99795076ca8b9d83a8b8e9e6087, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4176619456196577292, guid: b78fc99795076ca8b9d83a8b8e9e6087, type: 3}
       propertyPath: objectsToDisable.Array.data[0]
       value: 

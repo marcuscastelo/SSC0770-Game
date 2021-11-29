@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 20cf569ec7ee125e5b5dcb96f050c3cd
+guid: 3c1af1c51f7eebc4d8f81eda1c024aed
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -10,7 +10,8 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Hypnos
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 20cf569ec7ee125e5b5dcb96f050c3cd, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

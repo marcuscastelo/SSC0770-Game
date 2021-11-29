@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 using Hypnos.Entities.Systems;
 using Hypnos.Entities.Components;
@@ -41,7 +42,7 @@ namespace Hypnos.Entities
             _health.SetHealth(_stats.combatStats.maxHealth);
             _health.OnDeath += () => {
                 _entityMovement.Teleport(Vector2.one * -1000000);
-                if (gameObject.name == "Player") { new MainMenu().PlayGame(); }
+                if (gameObject.name == "Player") { SceneManager.LoadScene("Game"); } //TODO death coroutine (allow sound to be played)
             };
             //!<
         }
