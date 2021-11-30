@@ -131,5 +131,18 @@ namespace Hypnos.Audio
             // }
             _jobTable.Clear();
         }
+
+
+        public void PauseAllGlobals()
+        {
+            _globalSFXSource.Pause();
+            _globalSoundTrackSource.Pause();
+        }
+
+        public void UnpauseAllGlobals()
+        {
+            _globalSFXSource.UnPause();
+            _globalSoundTrackSource.UnPause();
+        }
     }
 }

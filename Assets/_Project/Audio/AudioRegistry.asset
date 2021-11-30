@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: AudioRegistry
   m_EditorClassIdentifier: 
   _audios:
-  - type: 4
-    clip: {fileID: 8300000, guid: 34c638d8d99ccfd44a261f13505ab317, type: 3}
+  - type: 6
+    clip: {fileID: 8300000, guid: 3e18c426e9273a9d3b269ce99323ab2e, type: 3}
+  - type: 5
+    clip: {fileID: 8300000, guid: 9ed1ffb43f3fe006087c84a0ef4212e8, type: 3}
+  - type: 2
+    clip: {fileID: 8300000, guid: 4c857608c00fea5cd8184ee1a91b6131, type: 3}
+  - type: 3
+    clip: {fileID: 8300000, guid: 007ca1c0010c17b8bab2badee305e065, type: 3}
