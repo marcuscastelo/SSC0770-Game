@@ -39,27 +39,48 @@ namespace Hypnos.Entities
             _entityInteractor = entityInteractor;
             _entityAudio = entityAudioPlayer;
 
+            _buff.OnBuffAddedEvent += (addedBuff) =>
+            {
+                if (addedBuff.HasFlag(Buff.Defense))
+                {
+                    Health.SetMaxHealth(Health.MaxHealth + 1);
+                    Health.SetHealth(Health.CurrentHealth + 1);
+                }
+            };
+
+            _buff.OnBuffRemovedEvent += (removedBuff) =>
+            {
+                if (removedBuff.HasFlag(Buff.Defense))
+                {
+                    Health.SetMaxHealth(Health.MaxHealth - 1);
+                }
+            };
+
             _buff.ApplyBuff(_stats.initialBuff);
 
             //! TODO: remove this and inject on health component
             _health.SetMaxHealth(_stats.combatStats.maxHealth);
             _health.SetHealth(_stats.combatStats.maxHealth);
-            _health.OnDeath += () => {
+            _health.OnDeath += () =>
+            {
                 _entityMovement.Teleport(Vector2.one * -1000000);
-                if (gameObject.name == "Player") { 
+                if (gameObject.name == "Player")
+                {
                     Time.timeScale = 0;
                     DialogInfo dialogInfo = ScriptableObject.CreateInstance<DialogInfo>();
                     dialogInfo.title = "You died!";
                     dialogInfo.content = "You died!\nRestart?";
                     dialogInfo.buttons = DialogButtonCombination.OK;
-                    DialogSystem.ShowDialog(new Dialog(dialogInfo, (result) => {
+                    DialogSystem.ShowDialog(new Dialog(dialogInfo, (result) =>
+                    {
                         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                         Time.timeScale = 1;
                     }));
-                 } //TODO death coroutine (allow sound to be played)
+                } //TODO death coroutine (allow sound to be played)
             };
 
-            _health.OnHealthChanged += (newHealth) => {
+            _health.OnHealthChanged += (newHealth) =>
+            {
                 Debug.Log("Health changed: " + newHealth);
                 _entityAudio.PlayAttackSound(this);
             };
@@ -70,12 +91,15 @@ namespace Hypnos.Entities
         public Buff ActiveBuff => _buff.ActiveBuff;
         public void ApplyBuff(Buff buff) => _buff.ApplyBuff(buff);
         public void RemoveBuff(Buff buff) => _buff.RemoveBuff(buff);
+        public void SetBuff(Buff buff) => _buff.SetBuff(buff);
         public bool HasBuff(Buff buff) => _buff.HasBuff(buff);
         public void ClearBuffs() => _buff.ClearBuffs();
+        public event System.Action<Buff> OnBuffAddedEvent { add => _buff.OnBuffAddedEvent += value; remove => _buff.OnBuffAddedEvent -= value; }
+        public event System.Action<Buff> OnBuffRemovedEvent { add => _buff.OnBuffRemovedEvent += value; remove => _buff.OnBuffRemovedEvent -= value; }
 
         // // // Facade - IAttackable
         // // public void OnHurt(int damage) => entityCombat.OnHurt(damage);
-    
+
         public HealthComponent Health => _health;
 
         public SpriteRenderer SpriteRenderer => _spriteRenderer;

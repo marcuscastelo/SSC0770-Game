@@ -21,7 +21,8 @@ public class WerewolfAI : MonoBehaviour
                 _selfEntity.Controller.Move(Vector2.zero);
                 yield return null;
             }
-
+            
+            UpdateVectors();
             float distance = _vecToTarget.magnitude;
             Vector2 direction = _vecToTarget.normalized;
 
@@ -43,7 +44,7 @@ public class WerewolfAI : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void UpdateVectors()
     {
         _vecToTarget = _targetEntity.transform.position - _selfEntity.transform.position;
     }
