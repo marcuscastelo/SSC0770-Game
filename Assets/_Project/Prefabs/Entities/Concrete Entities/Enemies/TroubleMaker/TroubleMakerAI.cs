@@ -27,6 +27,8 @@ public class TroubleMakerAI : MonoBehaviour
                 _selfEntity.Controller.Move(Vector2.zero);
                 yield return null;
             }
+
+            UpdateVectors();
             float distance = _vecToTarget.magnitude;
 
             if (distance > 1f)
@@ -48,7 +50,7 @@ public class TroubleMakerAI : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void UpdateVectors()
     {
         _vecToTarget = (_targetEntity.transform.position - _selfEntity.transform.position);
 
