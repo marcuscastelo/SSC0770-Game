@@ -3,12 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using Hypnos.Audio;
+using Zenject;
+
 public class PauseMenu : UILayer
 {
 	public GameObject[] objectsToDisable;
 	bool[] objectsToDisableOldState;
 
     bool paused = false;
+
+	private AudioSystem _audioSystem;
+
+	[Inject]
+	public void Construct(AudioSystem audioSystem)
+	{
+		this._audioSystem = audioSystem;
+	}
 
 	void DisableObjects()
 	{
@@ -33,6 +44,12 @@ public class PauseMenu : UILayer
 	{
 		if (pause)
 		{
+			if (Time.timeScale == 0) {
+				Debug.LogWarning("[PauseMenu] SetPaused(true) called with Time.timeScale already set to 0");
+				return;
+			}
+
+			_audioSystem.PauseAllGlobals();
 			this.Show();
 			Time.timeScale = 0.0f;
 			paused = true;
@@ -40,6 +57,12 @@ public class PauseMenu : UILayer
 		}
 		else
 		{
+			if (Time.timeScale != 0) {
+				Debug.LogWarning("[PauseMenu] SetPaused(false) called with Time.timeScale already set to non-zero");
+				return;
+			}
+
+			_audioSystem.UnpauseAllGlobals();
 			this.Hide();
 			Time.timeScale = 1.0f;
 			paused = false;
