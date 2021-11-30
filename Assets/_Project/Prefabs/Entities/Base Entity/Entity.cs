@@ -23,9 +23,10 @@ namespace Hypnos.Entities
         private IAttacker _entityAttacker;
         private IAttackable _entityAttackable;
         private IInteractor _entityInteractor;
+        private IEntityAudio<Entity> _entityAudio;
 
         [Inject]
-        public void Construct(SpriteRenderer spriteRenderer, Animator animator, HealthComponent health, IBuffable buff, EntityController entityController, IMoveable entityMovement, IAttacker entityAttacker, IAttackable entityAttackable, IInteractor entityInteractor)
+        public void Construct(SpriteRenderer spriteRenderer, Animator animator, HealthComponent health, IBuffable buff, EntityController entityController, IMoveable entityMovement, IAttacker entityAttacker, IAttackable entityAttackable, IInteractor entityInteractor, IEntityAudio<Entity> entityAudioPlayer)
         {
             _spriteRenderer = spriteRenderer;
             _animator = animator;
@@ -36,6 +37,7 @@ namespace Hypnos.Entities
             _entityAttacker = entityAttacker;
             _entityAttackable = entityAttackable;
             _entityInteractor = entityInteractor;
+            _entityAudio = entityAudioPlayer;
 
             _buff.ApplyBuff(_stats.initialBuff);
 
@@ -55,6 +57,11 @@ namespace Hypnos.Entities
                         Time.timeScale = 1;
                     }));
                  } //TODO death coroutine (allow sound to be played)
+            };
+
+            _health.OnHealthChanged += (newHealth) => {
+                Debug.Log("Health changed: " + newHealth);
+                _entityAudio.PlayAttackSound(this);
             };
             //!<
         }
