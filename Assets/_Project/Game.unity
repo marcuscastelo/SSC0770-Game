@@ -195,24 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3e407b2296d3dd0ac0a4d4dcb3da66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &463433589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d405728c5b16f1a0b5615859406a7f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followX: 1
-  followY: 1
-  minX: -2.52
-  maxX: 0.5855
-  minY: 0
-  maxY: 0
 --- !u!1 &500244434
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +769,24 @@ PrefabInstance:
       objectReference: {fileID: 554855077}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5108ce230a98d8f3ab2df518e69b7d70, type: 3}
+--- !u!114 &1206387984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d405728c5b16f1a0b5615859406a7f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followX: 1
+  followY: 1
+  minX: -2.52
+  maxX: 0.5855
+  minY: 0
+  maxY: 0
 --- !u!224 &1291844768 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 540635028087315676, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
@@ -1161,6 +1161,10 @@ PrefabInstance:
       propertyPath: xOffset
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 2751567253383492536, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
+      propertyPath: _heartSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c1931b556bafb1d4bb2d592740c1c349, type: 3}
     - target: {fileID: 8176076100824891403, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
