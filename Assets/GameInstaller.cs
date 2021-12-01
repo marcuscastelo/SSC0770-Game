@@ -24,5 +24,8 @@ public class GameInstaller : MonoInstaller
 
         Container.Bind<AudioSource>().WithId(GlobalAudioSourceType.SoundTrack).FromInstance(globalSoundTrackSource).AsCached();
         Container.Bind<AudioSource>().WithId(GlobalAudioSourceType.SFX).FromInstance(globalSFXSource).AsCached();
+
+        Container.Bind<PlayerControls>().AsSingle().NonLazy();
+        Container.Bind<UIControls>().AsSingle().NonLazy();
     }
 }

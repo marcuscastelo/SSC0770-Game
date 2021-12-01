@@ -12,14 +12,14 @@ public class PlayerInput : MonoBehaviour
     private PlayerControls _controls;
 
     [Inject]
-    public void Construct(EntityController controller)
+    public void Construct(EntityController controller, PlayerControls controls)
     {
         _controller = controller;
+        _controls = controls;
     }
 
     void OnEnable()
     {
-        _controls = new PlayerControls();
         SetCallbacks();
         _controls.Enable();
     }
