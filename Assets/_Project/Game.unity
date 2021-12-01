@@ -195,6 +195,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3e407b2296d3dd0ac0a4d4dcb3da66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &463433589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d405728c5b16f1a0b5615859406a7f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followX: 1
+  followY: 1
+  minX: -2.52
+  maxX: 0.5855
+  minY: 0
+  maxY: 0
 --- !u!1 &500244434
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,6 +480,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4119677745783956767, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: confirmationDialogInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 73b85065ffd5035449018ce61bd31476, type: 2}
+    - target: {fileID: 4119677745783956767, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: alreadyHasBuffDialogInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 09a408d995b049b4780d5643159f0d1f, type: 2}
+    - target: {fileID: 4928217617529542393, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: confirmationDialogInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: e752dc9a6290b994492d8bf2bac35bca, type: 2}
+    - target: {fileID: 4928217617529542393, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: alreadyHasBuffDialogInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: e217e4aa4ff45d3409010b16302a064c, type: 2}
+    - target: {fileID: 7216530976463489674, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: confirmationDialogInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 9dcd37df19fe852479fe0fe121b36d3a, type: 2}
+    - target: {fileID: 7216530976463489674, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: alreadyHasBuffDialogInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 776cac85635a6ba40895b2c3a3092d12, type: 2}
+    - target: {fileID: 8873955642789850953, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: confirmationDialogInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: d378552249b4e0c469b7d52d3ae08359, type: 2}
+    - target: {fileID: 8873955642789850953, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: alreadyHasBuffDialogInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 4477fb0f04dfd3d4aaf8b5c7b1b89086, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
 --- !u!114 &751611494
