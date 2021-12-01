@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8aac6e82079d467083604e584f7868a, type: 3}
   m_Name: DeathMessageDI
   m_EditorClassIdentifier: 
-  title: 
-  content: 
+  title: Perdestes!!
+  content: "Voce foi derrotado pelos seus pesadelos e ficou preso no sonho...\nClique
+    em OK para come\xE7ar um outro dia."
   buttons: 5

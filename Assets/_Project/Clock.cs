@@ -1,22 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Clock : MonoBehaviour
+public class Timer : MonoBehaviour
 {
-    // public bool paused = false;
-    // public float time = 0;
-    // public float timeScale = 1;
-    public bool late = false; // TODO: remove this and determine if late in the update loop
-    public Animator animator;
-    // Start is called before the first frame update
-    void Start()
+    public float timeRemaining = 120;
+    public bool timerIsRunning = false;
+    public Text timeText;
+
+    private void Start()
     {
+        // Starts the timer automatically
+        timerIsRunning = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // animator.SetBool("late", late);
+        if (timerIsRunning)
+        {
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+                DisplayTime(timeRemaining);
+            }
+            else
+            {
+                Debug.Log("Time has run out!");
+                timeRemaining = 0;
+                timerIsRunning = false;
+            }
+        }
+    }
+
+    void DisplayTime(float timeToDisplay)
+    {
+        timeToDisplay += 1;
+
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+
+        timeText.text = string.Format("{000}", seconds);
     }
 }
