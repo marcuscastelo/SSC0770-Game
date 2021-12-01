@@ -46,6 +46,11 @@ namespace Hypnos.Entities
                     Health.SetMaxHealth(Health.MaxHealth + 1);
                     Health.SetHealth(Health.CurrentHealth + 1);
                 }
+
+                if (addedBuff.HasFlag(Buff.Damage))
+                {
+                    Stats.combatStats.attackDamage = 5;
+                }
             };
 
             _buff.OnBuffRemovedEvent += (removedBuff) =>
@@ -53,6 +58,11 @@ namespace Hypnos.Entities
                 if (removedBuff.HasFlag(Buff.Defense))
                 {
                     Health.SetMaxHealth(Health.MaxHealth - 1);
+                }
+
+                if (removedBuff.HasFlag(Buff.Damage))
+                {
+                    Stats.combatStats.attackDamage = 3;
                 }
             };
 

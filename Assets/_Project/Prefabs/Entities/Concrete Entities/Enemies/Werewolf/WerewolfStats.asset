@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
-  m_Name: TroubleMakerStats
+  m_Name: WerewolfStats
   m_EditorClassIdentifier: 
   combatStats:
-    maxHealth: 10
-    attackDamage: 1
-    attackCooldown: 1
-    attackDuration: 1
+    maxHealth: 13
+    attackDamage: 2
+    attackCooldown: 2
+    attackDuration: 1.3
     attackAnimatorMultiplier: 0.5
   walkStats:
     acceleration: 70
-    maxSpeed: 2.3
-    deceleration: 14
+    maxSpeed: 1.8
+    deceleration: 1.9
   dashStats:
-    dashSpeed: 4
-    dashDuration: 0.3
-    dashCooldown: 8
+    dashSpeed: 1
+    dashDuration: 0
+    dashCooldown: 99999
   initialBuff: 0

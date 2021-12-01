@@ -65,14 +65,14 @@ namespace Hypnos.Entities
             UpdateAnimator(LastLookDirection.normalized * 0.1f);
         }
 
-        public bool CanMove() => _state == State.Moving;
-        public bool CanInteract() => _state == State.Moving;
-        public bool CanAttack() => _state == State.Moving;
-        public bool CanDash() => _entity.HasBuff(Buff.Dash) && _state == State.Moving;
+        public bool CanStartMovement() => _state == State.Moving;
+        public bool CanStartInteraction() => _state == State.Moving;
+        public bool CanStartAttack() => _state == State.Moving;
+        public bool CanStartDash() => _entity.HasBuff(Buff.Dash) && _state == State.Moving;
 
         public IEnumerator InteractCoroutine()
         {
-            if (!CanInteract())
+            if (!CanStartInteraction())
                 yield break;
 
             _state = State.Interacting;
@@ -87,13 +87,9 @@ namespace Hypnos.Entities
             yield break;
         }
 
-        private float _attackLastTime = float.MinValue;
         public IEnumerator AttackCoroutine()
         {
-            if (!CanAttack())
-                yield break;
-
-            if (Time.time - _attackLastTime < _entity.CombatStats.attackCooldown)
+            if (!_attacker.CanAttack() || !this.CanStartAttack())
                 yield break;
 
             _state = State.Attacking;
@@ -109,7 +105,6 @@ namespace Hypnos.Entities
             UpdateAnimator(InputDirection);
 
             _state = State.Moving;
-            _attackLastTime = Time.time;
             yield break;
         }
 
@@ -120,7 +115,7 @@ namespace Hypnos.Entities
             if (InputDirection.sqrMagnitude > 0)
                 LastLookDirection = InputDirection;
 
-            if (!CanMove())
+            if (!CanStartMovement())
                 yield break;
 
             UpdateAnimator(InputDirection);
@@ -132,7 +127,7 @@ namespace Hypnos.Entities
         private float _dashLastTime = float.MinValue;
         public IEnumerator DashCoroutine(Vector2 direction)
         {
-            if (!CanDash())
+            if (!CanStartDash())
                 yield break;
 
             if (Time.time - _dashLastTime < _entity.DashStats.dashCooldown)

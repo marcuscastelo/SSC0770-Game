@@ -21,6 +21,8 @@ namespace Hypnos.Entities.Systems
         private Entity _thisEntity;
         private AudioSystem _audioSystem;
         private AudioSource _audioSource;
+        private bool _attacking;
+        private float _lastAttackTime = float.MinValue;
 
         [Inject]
         public void Construct(Entity thisEntity, AudioSystem audioSystem)
@@ -49,6 +51,9 @@ namespace Hypnos.Entities.Systems
 
         private IEnumerator BlinkAttackAreaCoroutine(float duration)
         {
+            if (!CanAttack())
+                yield break;
+            _attacking = true;
             float speedAttackBuffMultiplier = _thisEntity.HasBuff(Buff.Dexterity) ? 1.5f : 1f; //TODO: modularize
             duration /= speedAttackBuffMultiplier;
             float frameDuration = duration / totalFrames;
@@ -70,6 +75,8 @@ namespace Hypnos.Entities.Systems
                 yield return new WaitForSeconds((endFrame - startFrame) * frameDuration);
                 attackerArea.enabled = false;
             }
+            _attacking = false;
+            _lastAttackTime = Time.time;
         }
 
         public void Attack() => StartCoroutine(BlinkAttackAreaCoroutine(_thisEntity.CombatStats.attackDuration));
@@ -126,6 +133,11 @@ namespace Hypnos.Entities.Systems
 
         public void OnHitboxExit(Collider2D other)
         {
+        }
+
+        public bool CanAttack()
+        {
+            return !_attacking && Time.time - _lastAttackTime > _thisEntity.CombatStats.attackCooldown;
         }
 
     }
