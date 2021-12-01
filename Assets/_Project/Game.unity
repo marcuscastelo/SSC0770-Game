@@ -407,24 +407,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576667838}
   m_CullTransparentMesh: 1
---- !u!114 &608505936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d405728c5b16f1a0b5615859406a7f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followX: 1
-  followY: 1
-  minX: -2.52
-  maxX: 0.5855
-  minY: 0
-  maxY: 0
 --- !u!1001 &669022334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -482,6 +464,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+--- !u!114 &751611494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d405728c5b16f1a0b5615859406a7f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followX: 1
+  followY: 1
+  minX: -2.52
+  maxX: 0.5855
+  minY: 0
+  maxY: 0
 --- !u!1001 &1127045064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -581,6 +581,10 @@ PrefabInstance:
       propertyPath: _targetEntity
       value: 
       objectReference: {fileID: 1183041677}
+    - target: {fileID: 6896223771541380626, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: m_Name
+      value: Empresa
+      objectReference: {fileID: 0}
     - target: {fileID: 6989203468712084938, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -900,6 +904,7 @@ MonoBehaviour:
   audioRegistry: {fileID: 11400000, guid: 259fd3854a146628cac0e69dd2b4a0d5, type: 2}
   globalSoundTrackSource: {fileID: 1657401565}
   globalSFXSource: {fileID: 1446303035}
+  initialClockTime: 60
 --- !u!114 &1876886979
 MonoBehaviour:
   m_ObjectHideFlags: 0

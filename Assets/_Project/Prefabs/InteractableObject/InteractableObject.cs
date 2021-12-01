@@ -10,9 +10,9 @@ using Zenject;
 public class InteractableObject : MonoBehaviour, IInteractable
 {
     [Header("References")]
-    [SerializeField] [ReadOnly] private SpriteRenderer spriteRenderer;
-    [SerializeField] [ReadOnly] private Sprite spriteWhenUnselected;
-    [SerializeField] [ReadOnly] private Sprite spriteWhenSelected;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Sprite spriteWhenUnselected;
+    [SerializeField] private Sprite spriteWhenSelected;
 
     [Header("Config")]
     public string id;
