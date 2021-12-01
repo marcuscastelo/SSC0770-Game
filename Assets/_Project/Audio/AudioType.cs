@@ -1,6 +1,9 @@
 public enum AudioType
 {
     None = 0,
+    ST_MainMenu,
+    ST_House,
+    ST_Street,
     SFX_Hypnos_Attack_Hand,
     SFX_Hypnos_Attack_Hand_Hit,
     SFX_Hypnos_Attack_Hand_Miss,
