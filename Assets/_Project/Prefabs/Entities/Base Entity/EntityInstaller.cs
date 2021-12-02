@@ -29,6 +29,9 @@ public class EntityInstaller : MonoInstaller
         Container.Bind<SpriteRenderer>().FromInstance(spriteRenderer).AsSingle();
         Container.Bind<Entity>().FromInstance(entity).AsSingle();
         Container.Bind<EntityController>().FromInstance(controller).AsSingle();
-        
+
+
+        //Mock for testing and prototyping
+        Container.Bind<IEntityAudio<Entity>>().To<TestEntityAudio>().AsSingle();
     }
 }

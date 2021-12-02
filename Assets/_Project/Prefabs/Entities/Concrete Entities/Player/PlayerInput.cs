@@ -12,14 +12,14 @@ public class PlayerInput : MonoBehaviour
     private PlayerControls _controls;
 
     [Inject]
-    public void Construct(EntityController controller)
+    public void Construct(EntityController controller, PlayerControls controls)
     {
         _controller = controller;
+        _controls = controls;
     }
 
     void OnEnable()
     {
-        _controls = new PlayerControls();
         SetCallbacks();
         _controls.Enable();
     }
@@ -37,9 +37,10 @@ public class PlayerInput : MonoBehaviour
         };
 
         _controls.Default.Interact.started += ctx => _controller.Interact();
-        _controls.Default.Attack.started += ctx => _controller.Attack();
+        _controls.Default.Attack.started += ctx => { if (Time.timeScale > 0) _controller.Attack(); }; //TODO: remove this bad hack
         _controls.Default.Dash.started += ctx => _controller.Dash();
 
         _controls.Debug.Restart.started += ctx => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
 }

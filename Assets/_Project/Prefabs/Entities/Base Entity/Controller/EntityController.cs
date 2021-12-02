@@ -4,6 +4,7 @@ using UnityEngine;
 using Zenject;
 
 using Hypnos.Core;
+using Hypnos.Audio;
 
 namespace Hypnos.Entities
 {
@@ -15,6 +16,20 @@ namespace Hypnos.Entities
         private IMoveable _movement;
         private Entity _entity;
 
+        private AudioSystem _audioSystem;
+        private AudioSource _sfxAudioSource;
+
+        void Awake()
+        {
+            _sfxAudioSource = GetComponent<AudioSource>();
+            if (_sfxAudioSource == null)
+            {
+                _sfxAudioSource = gameObject.AddComponent<AudioSource>();
+                _sfxAudioSource.playOnAwake = false;
+                _sfxAudioSource.loop = false;
+            }
+        }
+
         public Vector2 InputDirection { get; private set; }
         public Vector2 LastLookDirection { get; private set; }
         public Vector2 CurrentVelocity => _movement.CurrentVelocity;
@@ -23,13 +38,14 @@ namespace Hypnos.Entities
         [SerializeField] [ReadOnly] private State _state = State.Moving;
 
         [Inject]
-        public void Construct(Entity entity, IInteractor interactor, IAttacker attacker, IAttackable attackable, IMoveable movement)
+        public void Construct(Entity entity, IInteractor interactor, IAttacker attacker, IAttackable attackable, IMoveable movement, AudioSystem audioSystem)
         {
             _entity = entity;
             _interactor = interactor;
             _attacker = attacker;
             _attackable = attackable;
             _movement = movement;
+            _audioSystem = audioSystem;
         }
 
         public void Interact()
@@ -65,14 +81,14 @@ namespace Hypnos.Entities
             UpdateAnimator(LastLookDirection.normalized * 0.1f);
         }
 
-        public bool CanMove() => _state == State.Moving;
-        public bool CanInteract() => _state == State.Moving;
-        public bool CanAttack() => _state == State.Moving;
-        public bool CanDash() => _entity.HasBuff(Buff.Dash) && _state == State.Moving;
+        public bool CanStartMovement() => _state == State.Moving;
+        public bool CanStartInteraction() => _state == State.Moving;
+        public bool CanStartAttack() => _state == State.Moving;
+        public bool CanStartDash() => _entity.HasBuff(Buff.Dash) && _state == State.Moving;
 
         public IEnumerator InteractCoroutine()
         {
-            if (!CanInteract())
+            if (!CanStartInteraction())
                 yield break;
 
             _state = State.Interacting;
@@ -87,13 +103,9 @@ namespace Hypnos.Entities
             yield break;
         }
 
-        private float _attackLastTime = float.MinValue;
         public IEnumerator AttackCoroutine()
         {
-            if (!CanAttack())
-                yield break;
-
-            if (Time.time - _attackLastTime < _entity.CombatStats.attackCooldown)
+            if (!_attacker.CanAttack() || !this.CanStartAttack())
                 yield break;
 
             _state = State.Attacking;
@@ -109,7 +121,6 @@ namespace Hypnos.Entities
             UpdateAnimator(InputDirection);
 
             _state = State.Moving;
-            _attackLastTime = Time.time;
             yield break;
         }
 
@@ -120,7 +131,7 @@ namespace Hypnos.Entities
             if (InputDirection.sqrMagnitude > 0)
                 LastLookDirection = InputDirection;
 
-            if (!CanMove())
+            if (!CanStartMovement())
                 yield break;
 
             UpdateAnimator(InputDirection);
@@ -132,7 +143,7 @@ namespace Hypnos.Entities
         private float _dashLastTime = float.MinValue;
         public IEnumerator DashCoroutine(Vector2 direction)
         {
-            if (!CanDash())
+            if (!CanStartDash())
                 yield break;
 
             if (Time.time - _dashLastTime < _entity.DashStats.dashCooldown)
@@ -141,6 +152,7 @@ namespace Hypnos.Entities
             _state = State.Dashing;
             _attackable.SetInvulnerable(true);
             _entity.Animator.SetTrigger("dashTrigger");
+            _audioSystem.PlayAudio(AudioType.SFX_Dash, _sfxAudioSource);
             UpdateAnimator(Vector2.zero);
 
             _movement.SetVel(direction * _entity.DashStats.dashSpeed);

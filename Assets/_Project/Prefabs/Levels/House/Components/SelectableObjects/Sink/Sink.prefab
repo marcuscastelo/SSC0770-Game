@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff: 8
-  dialogInfo: {fileID: 0}
+  dialogInfo: {fileID: 11400000, guid: d378552249b4e0c469b7d52d3ae08359, type: 2}
 --- !u!1001 &8187396006568254076
 PrefabInstance:
   m_ObjectHideFlags: 0

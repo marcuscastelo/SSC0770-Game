@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ecb305beed7e34acb6f7977f68a3ab3, type: 3}
   m_Name: StreetLevel
   m_EditorClassIdentifier: 
-  level: 0
-  playerPosition: {x: 1, y: 0}
+  level: 2
+  playerPosition: {x: -17, y: -4}
   playerXScale: 1
-  cameraPosition: {x: 4, y: 1}
+  cameraPosition: {x: -17, y: -4}
   cameraPrefs: {fileID: 11400000, guid: c503e052169fcf6cdbde5775d4501623, type: 2}

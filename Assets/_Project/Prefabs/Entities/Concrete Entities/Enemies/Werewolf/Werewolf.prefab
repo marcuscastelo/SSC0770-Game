@@ -85,6 +85,22 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: e0b1cd2b7a94c04aab02a9aeee27a974, type: 2}
+    - target: {fileID: 4823950163360476024, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2324
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823950163360476024, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2324
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823950163360476024, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2324
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922908142325325520, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 11400000, guid: de583469f673fc14db6d8b396b5113d4, type: 2}
     - target: {fileID: 5561885927183477030, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: maxWalkingSpeed
       value: 2
@@ -96,6 +112,18 @@ PrefabInstance:
     - target: {fileID: 5561885927183477030, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: walkingDeceleration
       value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866350093269526191, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2324
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866350093269526191, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2324
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866350093269526191, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2324
       objectReference: {fileID: 0}
     - target: {fileID: 6799413793939548662, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: controller
@@ -180,6 +208,18 @@ PrefabInstance:
     - target: {fileID: 7382652399878320185, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651571894188747349, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2324
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651571894188747349, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2324
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651571894188747349, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2324
       objectReference: {fileID: 0}
     - target: {fileID: 8651571894188747349, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: m_LocalPosition.x

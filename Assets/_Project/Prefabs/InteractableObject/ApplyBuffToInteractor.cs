@@ -2,22 +2,50 @@ using UnityEngine;
 using UnityEngine.Assertions;
 
 using Hypnos.Core;
+using Zenject;
 
 public class ApplyBuffToInteractor : MonoBehaviour, IInteractionResponse
 {
     [Header("Config")]
     public Buff buff;
 
-    public DialogInfo dialogInfo = null;
+    public DialogInfo confirmationDialogInfo = null;
+    public DialogInfo alreadyHasBuffDialogInfo = null;
+
+    [SerializeField] private float buffTimeConsumption = 0.0f;
+
+    [Inject] private Clock _clock;
 
     void Awake()
     {
-        if (dialogInfo == null)
+        if (confirmationDialogInfo == null)
         {
-            dialogInfo = ScriptableObject.CreateInstance<DialogInfo>();
-            dialogInfo.title = "Select Buff";
-            dialogInfo.content = "Do you want to select " + buff.ToString() + " as a buff?";
-            dialogInfo.buttons = DialogButtonCombination.YesNo;
+            Debug.LogWarning("ApplyBuffToInteractor: No confirmation dialog info set, using default.");
+            confirmationDialogInfo = ScriptableObject.CreateInstance<DialogInfo>();
+            confirmationDialogInfo.title = "Select Buff";
+            confirmationDialogInfo.content = "Do you want to select " + buff.ToString() + " as a buff?";
+            confirmationDialogInfo.buttons = DialogButtonCombination.YesNo;
+        }
+
+        if (alreadyHasBuffDialogInfo == null)
+        {
+            Debug.LogWarning("ApplyBuffToInteractor: No already has buff dialog info set, using default.");
+            alreadyHasBuffDialogInfo = ScriptableObject.CreateInstance<DialogInfo>();
+            alreadyHasBuffDialogInfo.title = "Already has buff";
+            alreadyHasBuffDialogInfo.content = "You already have " + buff.ToString() + " as a buff.";
+            alreadyHasBuffDialogInfo.buttons = DialogButtonCombination.OK;
+        }
+
+        if (confirmationDialogInfo.buttons != DialogButtonCombination.YesNo)
+        {
+            Debug.LogError("ApplyBuffToInteractor: Confirmation dialog info has wrong button combination, overwriting to YesNo.");
+            confirmationDialogInfo.buttons = DialogButtonCombination.YesNo;
+        }
+
+        if (alreadyHasBuffDialogInfo.buttons != DialogButtonCombination.OK)
+        {
+            Debug.LogError("ApplyBuffToInteractor: Already has buff dialog info has wrong button combination, overwriting to OK.");
+            alreadyHasBuffDialogInfo.buttons = DialogButtonCombination.OK;
         }
     }
 
@@ -45,22 +73,16 @@ public class ApplyBuffToInteractor : MonoBehaviour, IInteractionResponse
 
         if (buffable.HasBuff(buff))
         {
-            DialogInfo buffAlreadyActiveDI = ScriptableObject.CreateInstance<DialogInfo>(); // TODO: make this a scriptable object reference
-            buffAlreadyActiveDI.title = "Buff already active";
-            buffAlreadyActiveDI.content = $"{buff} is already active";
-            buffAlreadyActiveDI.buttons = DialogButtonCombination.OK;
-            DialogSystem.ShowDialog(new Dialog(buffAlreadyActiveDI, _ => { interaction.EndInteraction(false); }));
+            DialogSystem.ShowDialog(new Dialog(alreadyHasBuffDialogInfo, _ => { interaction.EndInteraction(false); }));
             return;
         }
 
-        if (dialogInfo.buttons != DialogButtonCombination.YesNo)
-            Debug.LogWarning($"Buff confirmation dialog is not configured correctly. Please set {nameof(dialogInfo.buttons)} to {nameof(DialogButtonCombination.YesNo)}");
-
-        Dialog buffConfirmationDialog = new Dialog(dialogInfo, (DialogButton pressedButton) =>
+        Dialog buffConfirmationDialog = new Dialog(confirmationDialogInfo, (DialogButton pressedButton) =>
         {
             if (pressedButton == DialogButton.Yes)
             {
                 buffable.ApplyBuff(buff);
+                _clock.Decrement(buffTimeConsumption);
                 interaction.EndInteraction(true);
             }
             else

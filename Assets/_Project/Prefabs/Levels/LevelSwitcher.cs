@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Hypnos.Audio;
+using Zenject;
+
 [ExecuteInEditMode]
 public class LevelSwitcher : MonoBehaviour
 {
@@ -13,8 +16,17 @@ public class LevelSwitcher : MonoBehaviour
 
     [SerializeField] private Level[] levels;
 
-    //TODO: Make mutable in editor, and have it update the level in the scene when changed
-    public readonly float LEVEL_X_OFFSET = 10.0f;
+    [SerializeField] private float LEVEL_X_OFFSET = 50.0f;
+
+    private Clock _clock;
+    private AudioSystem _audioSystem;
+
+    [Inject]
+    public void Construct(Clock clock, AudioSystem audioSystem)
+    {
+        _clock = clock;
+        _audioSystem = audioSystem;
+    }
 
     private void Start()
     {
@@ -25,7 +37,7 @@ public class LevelSwitcher : MonoBehaviour
     {
         if (!isActiveAndEnabled)
             return;
-            
+
         Debug.Assert(levels.Length > 0, "Levels array is empty");
         Debug.Assert(player != null, "Player is null");
         Debug.Assert(mainCamera != null, "Main camera is null");
@@ -44,6 +56,7 @@ public class LevelSwitcher : MonoBehaviour
 
     private float CalculateLevelXOffset(int level) => (level - 1) * LEVEL_X_OFFSET;
 
+
     public void SwitchToLevel(int level)
     {
         if (level < 1 || level > levels.Length)
@@ -53,9 +66,36 @@ public class LevelSwitcher : MonoBehaviour
         }
 
         currentLevel = level;
+        InitializeLevelPlayMode(level);
         UpdateCameraPrefs(level);
         MovePlayerToLevel(level);
         MoveCameraToLevel(level);
+    }
+
+    private void InitializeLevelPlayMode(int level)
+    {
+        if (!Application.isPlaying) return; //TODO: inject on edit mode
+
+        if (level == 1) InitializeLevel1();
+        else if (level == 2) InitializeLevel2();
+        else 
+        {
+            Debug.LogWarning("Level " + level + " is not initializable");
+            return;
+        }   
+    }
+
+    private void InitializeLevel1()
+    {
+        _clock.Paused = true;
+        _clock.Reset();
+        _audioSystem.PlaySoundTrack(AudioType.ST_House);
+    }
+
+    private void InitializeLevel2()
+    {
+        _clock.Paused = false;
+        _audioSystem.PlaySoundTrack(AudioType.ST_Street);
     }
 
     private void MovePlayerToLevel(int level)
@@ -74,7 +114,6 @@ public class LevelSwitcher : MonoBehaviour
             mainCamera.transform.position.z
         );
     }
-
 
     private void UpdateCameraPrefs(int level)
     {

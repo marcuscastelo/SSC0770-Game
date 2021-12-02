@@ -20,9 +20,8 @@ namespace Hypnos.Entities
             Entity entity = (Entity)target;
             Buff buff = entity.ActiveBuff;
     
-            Buff newBuff = (Buff)EditorGUILayout.EnumFlagsField(buff);
-            entity.ClearBuffs();
-            entity.ApplyBuff(newBuff);
+            Buff buffs = (Buff)EditorGUILayout.EnumFlagsField(buff);
+            entity.SetBuff(buffs);
 
             EditorGUILayout.LabelField("Health", entity.Health.CurrentHealth.ToString());
         }

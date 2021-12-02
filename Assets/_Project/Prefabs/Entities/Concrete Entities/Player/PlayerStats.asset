@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatStats:
     maxHealth: 4
-    attackDamage: 1
+    attackDamage: 3
     attackCooldown: 0
     attackDuration: 0.8
     attackAnimatorMultiplier: 1
@@ -26,3 +26,4 @@ MonoBehaviour:
     dashSpeed: 8
     dashDuration: 0.3
     dashCooldown: 2
+  initialBuff: 0

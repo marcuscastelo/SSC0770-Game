@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: ArmorSelectionDI
   m_EditorClassIdentifier: 
   title: "Arm\xE1rio de Roupas"
-  content: Deseja se vestir melhor?
+  content: 'Deseja se vestir melhor?
+
+    -5 segundos'
   buttons: 11

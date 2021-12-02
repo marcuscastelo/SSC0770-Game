@@ -1,6 +1,6 @@
 public enum Buff
 {
-    NoItem = 0,
+    None = 0,
     Damage = 1 << 0,  // 1
     Defense = 1 << 1, // 2
     Dash = 1 << 2,    // 4

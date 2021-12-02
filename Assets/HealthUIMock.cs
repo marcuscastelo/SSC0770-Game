@@ -21,7 +21,7 @@ public class HealthUIMock : MonoBehaviour
 
     private void UpdateHealthDisplay(int currentHealth)
     {
-        Debug.Log("HealthUIMock: " + currentHealth);
+        // Debug.Log("HealthUIMock: " + currentHealth);
         //Delete all children
         GameObject[] children = new GameObject[transform.childCount];
 

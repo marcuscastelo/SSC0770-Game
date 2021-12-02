@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: 2
+  confirmationDialogInfo: {fileID: 11400000, guid: 63a0a84b1efc32e4f98e22923be2c959, type: 2}
 --- !u!1001 &1574530269889007057
 PrefabInstance:
   m_ObjectHideFlags: 0
