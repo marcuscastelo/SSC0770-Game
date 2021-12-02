@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SwordPicked
   m_EditorClassIdentifier: 
   title: "Op\xE7\xE3o j\xE1 escolhida!"
-  content: "Voce j\xE1 tomou se caf\xE9 da manh\xE3!"
+  content: "Voce j\xE1 tomou seu caf\xE9 da manh\xE3!"
   buttons: 5
