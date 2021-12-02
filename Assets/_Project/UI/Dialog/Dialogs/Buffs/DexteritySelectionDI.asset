@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: DexteritySelectionDI
   m_EditorClassIdentifier: 
   title: Escova
-  content: Deseja escovar os dentes?
+  content: 'Deseja escovar os dentes?
+
+    -15 segundos'
   buttons: 11

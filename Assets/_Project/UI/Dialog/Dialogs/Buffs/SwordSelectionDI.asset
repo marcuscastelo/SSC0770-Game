@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SwordSelectionDI
   m_EditorClassIdentifier: 
   title: "Caf\xE9 da manh\xE3"
-  content: "Deseja passar manteiga no p\xE3o?"
+  content: "Deseja passar manteiga no p\xE3o?\n-10 segundos"
   buttons: 11

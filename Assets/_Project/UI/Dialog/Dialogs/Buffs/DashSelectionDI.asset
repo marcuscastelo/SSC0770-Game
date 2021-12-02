@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: DashSelectionDI
   m_EditorClassIdentifier: 
   title: Banho
-  content: Deseja se banhar antes de trabalhar?
+  content: 'Deseja se banhar antes de trabalhar?
+
+    -25 segundos'
   buttons: 11
