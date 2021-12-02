@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 
 using Hypnos.Core;
+using Zenject;
 
 public class ApplyBuffToInteractor : MonoBehaviour, IInteractionResponse
 {
@@ -10,6 +11,10 @@ public class ApplyBuffToInteractor : MonoBehaviour, IInteractionResponse
 
     public DialogInfo confirmationDialogInfo = null;
     public DialogInfo alreadyHasBuffDialogInfo = null;
+
+    [SerializeField] private float buffTimeConsumption = 0.0f;
+
+    [Inject] private Clock _clock;
 
     void Awake()
     {
@@ -77,6 +82,7 @@ public class ApplyBuffToInteractor : MonoBehaviour, IInteractionResponse
             if (pressedButton == DialogButton.Yes)
             {
                 buffable.ApplyBuff(buff);
+                _clock.Decrement(buffTimeConsumption);
                 interaction.EndInteraction(true);
             }
             else

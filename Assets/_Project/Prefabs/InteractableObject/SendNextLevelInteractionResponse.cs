@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 
+using Hypnos.Audio;
 using Hypnos.Core;
 using Zenject;
 
@@ -22,11 +23,13 @@ public class SendNextLevelInteractionResponse : MonoBehaviour, IInteractionRespo
         Assert.IsTrue(nextLevel > 0);
         if (confirmationDialogInfo != null)
             Assert.AreEqual(confirmationDialogInfo.buttons, DialogButtonCombination.YesNo, "Only Yes/No buttons are supported for this interaction response");
+
     }
 
     void Awake()
     {
-        if (confirmationDialogInfo == null) {
+        if (confirmationDialogInfo == null)
+        {
             confirmationDialogInfo = ScriptableObject.CreateInstance<DialogInfo>();
             confirmationDialogInfo.title = "Go to next level?";
             confirmationDialogInfo.content = "Are you sure you want to go to the next level?";

@@ -14,6 +14,8 @@ public class GameInstaller : MonoInstaller
     [SerializeField] private AudioSource globalSoundTrackSource;
     [SerializeField] private AudioSource globalSFXSource;
 
+    [SerializeField] private float initialClockTime = 60f;
+
     public override void InstallBindings()
     {
         Container.Bind<LevelSwitcher>().FromComponentInHierarchy().AsSingle();
@@ -27,5 +29,8 @@ public class GameInstaller : MonoInstaller
 
         Container.Bind<PlayerControls>().AsSingle().NonLazy();
         Container.Bind<UIControls>().AsSingle().NonLazy();
+
+        Container.BindInterfacesAndSelfTo<Clock>().AsSingle().NonLazy();
+        Container.Bind<float>().FromInstance(initialClockTime).WhenInjectedInto<Clock>();
     }
 }
