@@ -24,6 +24,16 @@ namespace Hypnos.Entities
         private IAttackable _entityAttackable;
         private IInteractor _entityInteractor;
         private IEntityAudio<Entity> _entityAudio;
+        private Rigidbody2D _rigidbody;
+
+        private void Awake()
+        {
+            _rigidbody = GetComponent<Rigidbody2D>();
+            if (_rigidbody == null)
+            {
+                _rigidbody = gameObject.AddComponent<Rigidbody2D>();
+            }
+        }
 
         [Inject]
         public void Construct(SpriteRenderer spriteRenderer, Animator animator, HealthComponent health, IBuffable buff, EntityController entityController, IMoveable entityMovement, IAttacker entityAttacker, IAttackable entityAttackable, IInteractor entityInteractor, IEntityAudio<Entity> entityAudioPlayer)
@@ -113,6 +123,8 @@ namespace Hypnos.Entities
         public DashStats DashStats => _stats.dashStats;
         //!<
 
+        public Rigidbody2D Rigidbody => _rigidbody;
+
         [Inject]
         public void Construct(HealthComponent health, IBuffable buff)
         {
@@ -120,17 +132,17 @@ namespace Hypnos.Entities
             _buff = buff;
         }
 
-        [ContextMenu("Update Refs")]
-        public void Awake()
-        {
-            _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            _animator = GetComponentInChildren<Animator>();
+        // [ContextMenu("Update Refs")]
+        // public void Awake()
+        // {
+        //     _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        //     _animator = GetComponentInChildren<Animator>();
 
-            _entityController = GetComponentInChildren<EntityController>();
-            _entityMovement = GetComponentInChildren<EntityMovement>();
-            _entityAttacker = GetComponentInChildren<EntityCombat>();
-            _entityInteractor = GetComponentInChildren<AreaInteractor>();
-        }
+        //     _entityController = GetComponentInChildren<EntityController>();
+        //     _entityMovement = GetComponentInChildren<EntityMovement>();
+        //     _entityAttacker = GetComponentInChildren<EntityCombat>();
+        //     _entityInteractor = GetComponentInChildren<AreaInteractor>();
+        // }
 
     }
 

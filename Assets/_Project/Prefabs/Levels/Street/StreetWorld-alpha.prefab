@@ -3234,7 +3234,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 310695649071504594, guid: 10e3b19738f1d27d2a08cbf4273dabe7, type: 3}
       propertyPath: m_Name
-      value: InteractableObject
+      value: Empresa
       objectReference: {fileID: 0}
     - target: {fileID: 935554022787299081, guid: 10e3b19738f1d27d2a08cbf4273dabe7, type: 3}
       propertyPath: m_RootOrder
@@ -3392,10 +3392,6 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.89684564
       objectReference: {fileID: 0}
-    - target: {fileID: 4039093787254172773, guid: b287b120d80efdab79483c292174b31b, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -6852339416649635789, guid: 02798206f31937993ad78b6b79101595, type: 3}
     - target: {fileID: 4668394279058254457, guid: b287b120d80efdab79483c292174b31b, type: 3}
       propertyPath: m_Size.x
       value: 0.57858944

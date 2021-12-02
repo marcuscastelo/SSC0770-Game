@@ -3,30 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using Hypnos.Core;
+using Hypnos.Entities;
+using Zenject;
 
 namespace Hypnos.Entities.Systems
 {
     //TODO: use strategy pattern for movement (Walk, Dash)
     public class EntityMovement : MonoBehaviour, IMoveable
     {
-        [SerializeField] private Rigidbody2D rb;
-        [SerializeField] private WalkStats walkStats;
-        [SerializeField] private DashStats dashStats;
+        private Entity _entity;
 
-        public WalkStats WalkStats => walkStats;
-        public DashStats DashStats => dashStats;
+        public WalkStats WalkStats => _entity.WalkStats;
+        public DashStats DashStats => _entity.DashStats;
 
-        public Vector2 Position { get { return rb.position; } }
+        public Vector2 Position { get { return _entity.Rigidbody.position; } }
         public Vector2 CurrentVelocity { get; private set; }
         public bool VelocitySetManually { get; private set; } //* Represents DASH (for now it's a little bit of a hack)
 
         private Vector2 _targetVelocity;
         private float _acceleration;
 
+        [Inject]
+        public void Construct(Entity entity)
+        {
+            _entity = entity;
+        }
+
         #region IMoveable
         public void Teleport(Vector2 position)
         {
-            rb.position = position;
+            _entity.Rigidbody.position = position;
         }
 
         public void SetVel(Vector2 velocity)
@@ -47,15 +53,6 @@ namespace Hypnos.Entities.Systems
         #endregion
 
         #region Unity Functions
-        private void Awake()
-        {
-            if (walkStats == null)
-                walkStats = new WalkStats();
-
-
-            Debug.Assert(rb != null, "EntityMovement.Awake() - rb is null");
-            Debug.Assert(walkStats != null, "EntityMovement.Awake() - movementStats is null");
-        }
 
         private void FixedUpdate()
         {
@@ -64,9 +61,9 @@ namespace Hypnos.Entities.Systems
 
             bool capVelocity = !VelocitySetManually;
             if (capVelocity)
-                CurrentVelocity = Vector2.ClampMagnitude(CurrentVelocity, walkStats.maxSpeed);
+                CurrentVelocity = Vector2.ClampMagnitude(CurrentVelocity, WalkStats.maxSpeed);
 
-            rb.MovePosition(rb.position + CurrentVelocity * Time.fixedDeltaTime);
+            _entity.Rigidbody.MovePosition(_entity.Rigidbody.position + CurrentVelocity * Time.fixedDeltaTime);
         }
         #endregion
 

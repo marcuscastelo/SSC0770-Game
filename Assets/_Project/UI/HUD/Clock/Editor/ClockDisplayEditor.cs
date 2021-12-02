@@ -15,5 +15,10 @@ public class ClockDisplayEditor : Editor {
         ClockDisplay clockDisplay = (ClockDisplay)target;
         bool isPaused = clockDisplay.Clock.Paused;
         clockDisplay.Clock.Paused = EditorGUILayout.Toggle("Paused", isPaused);
+
+        float newTime = EditorGUILayout.FloatField("Time", clockDisplay.Clock.CurrentTime);
+        if (newTime != clockDisplay.Clock.CurrentTime) {
+            clockDisplay.Clock.SetTime(newTime);
+        }
     }
 }

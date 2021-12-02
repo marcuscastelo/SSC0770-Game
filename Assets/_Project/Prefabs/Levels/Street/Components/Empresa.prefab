@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1361579953626833175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310695649071504594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe30154a7b46ba9e5a7d413f3e117bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winDialog: {fileID: 0}
+  loseDialog: {fileID: 0}
+  nextSceneIfWin: MainMenu
+  nextSceneIfLose: Game
 --- !u!1 &6374006938769309518
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +227,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+--- !u!1 &310695649071504594 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6545600855929423107, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}
+  m_PrefabInstance: {fileID: 6816608461338450385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &935554022787299081 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5936505354990694104, guid: 9eae75b01ae1e4364b25fa2aa0d58861, type: 3}

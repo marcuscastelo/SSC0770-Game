@@ -20,7 +20,7 @@ MonoBehaviour:
     attackAnimatorMultiplier: 1
   walkStats:
     acceleration: 70
-    maxSpeed: 3
+    maxSpeed: 30
     deceleration: 14
   dashStats:
     dashSpeed: 8
