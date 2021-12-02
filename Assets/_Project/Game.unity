@@ -123,6 +123,60 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &8656653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
+--- !u!114 &99142374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: WerewolfStats(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 13
+    attackDamage: 2
+    attackCooldown: 2
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 1.8
+    deceleration: 1.9
+  dashStats:
+    dashSpeed: 1
+    dashDuration: 0
+    dashCooldown: 99999
+  initialBuff: 0
 --- !u!1 &102077810
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +484,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &229696982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
 --- !u!1 &315836412
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +604,132 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3e407b2296d3dd0ac0a4d4dcb3da66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &342152977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: WerewolfStats(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 13
+    attackDamage: 2
+    attackCooldown: 2
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 1.8
+    deceleration: 1.9
+  dashStats:
+    dashSpeed: 1
+    dashDuration: 0
+    dashCooldown: 99999
+  initialBuff: 0
+--- !u!114 &370841237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d405728c5b16f1a0b5615859406a7f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followX: 1
+  followY: 1
+  minX: -2.52
+  maxX: 0.5855
+  minY: 0
+  maxY: 0
+--- !u!114 &374024789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
+--- !u!114 &432330991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
+--- !u!114 &434123416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: WerewolfStats(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 13
+    attackDamage: 2
+    attackCooldown: 2
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 1.8
+    deceleration: 1.9
+  dashStats:
+    dashSpeed: 1
+    dashDuration: 0
+    dashCooldown: 99999
+  initialBuff: 0
 --- !u!114 &499687344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,6 +872,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7418833812455731141, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
   m_PrefabInstance: {fileID: 669022334}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &550280372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
 --- !u!1 &576667838
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +974,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576667838}
   m_CullTransparentMesh: 1
+--- !u!114 &635377173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
+--- !u!114 &642355281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: WerewolfStats(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 13
+    attackDamage: 2
+    attackCooldown: 2
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 1.8
+    deceleration: 1.9
+  dashStats:
+    dashSpeed: 1
+    dashDuration: 0
+    dashCooldown: 99999
+  initialBuff: 0
 --- !u!1001 &669022334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -845,6 +1133,87 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 4477fb0f04dfd3d4aaf8b5c7b1b89086, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+--- !u!114 &673460389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
+--- !u!114 &749795643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: WerewolfStats(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 13
+    attackDamage: 2
+    attackCooldown: 2
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 1.8
+    deceleration: 1.9
+  dashStats:
+    dashSpeed: 1
+    dashDuration: 0
+    dashCooldown: 99999
+  initialBuff: 0
+--- !u!114 &753406601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: WerewolfStats(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 13
+    attackDamage: 2
+    attackCooldown: 2
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 1.8
+    deceleration: 1.9
+  dashStats:
+    dashSpeed: 1
+    dashDuration: 0
+    dashCooldown: 99999
+  initialBuff: 0
 --- !u!1 &768231599
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,6 +1296,114 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &788335025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
+--- !u!114 &823056703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
+--- !u!114 &852316736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: WerewolfStats(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 13
+    attackDamage: 2
+    attackCooldown: 2
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 1.8
+    deceleration: 1.9
+  dashStats:
+    dashSpeed: 1
+    dashDuration: 0
+    dashCooldown: 99999
+  initialBuff: 0
+--- !u!114 &880314426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: WerewolfStats(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 13
+    attackDamage: 2
+    attackCooldown: 2
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 1.8
+    deceleration: 1.9
+  dashStats:
+    dashSpeed: 1
+    dashDuration: 0
+    dashCooldown: 99999
+  initialBuff: 0
 --- !u!1 &938970106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,24 +1486,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &941453637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d405728c5b16f1a0b5615859406a7f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followX: 1
-  followY: 1
-  minX: -2.52
-  maxX: 0.5855
-  minY: 0
-  maxY: 0
 --- !u!1 &960829652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,6 +1650,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1089341895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
 --- !u!1001 &1127045064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1206,42 +1692,38 @@ PrefabInstance:
       propertyPath: _targetEntity
       value: 
       objectReference: {fileID: 1183041677}
-    - target: {fileID: 635483937670154020, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: pushForce
-      value: 0.2
-      objectReference: {fileID: 0}
+    - target: {fileID: 490208125133458846, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 1530344939}
     - target: {fileID: 635483937670154020, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: _targetEntity
       value: 
       objectReference: {fileID: 1183041677}
-    - target: {fileID: 826214450733217781, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2182988
-      objectReference: {fileID: 0}
-    - target: {fileID: 826214450733217781, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.2182988
-      objectReference: {fileID: 0}
-    - target: {fileID: 826214450733217781, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.2182988
-      objectReference: {fileID: 0}
-    - target: {fileID: 826214450733217781, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 826214450733217781, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.38
-      objectReference: {fileID: 0}
+    - target: {fileID: 906611969324289107, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 434123416}
     - target: {fileID: 1212072852008264476, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: _targetEntity
       value: 
       objectReference: {fileID: 1183041677}
+    - target: {fileID: 1298785013776901036, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 1232348873}
     - target: {fileID: 2024956141437004054, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: _targetEntity
       value: 
       objectReference: {fileID: 1183041677}
+    - target: {fileID: 2219717306572089766, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 229696982}
+    - target: {fileID: 2502183198923159391, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 8656653}
     - target: {fileID: 2870468145905991127, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: _targetEntity
       value: 
@@ -1250,30 +1732,22 @@ PrefabInstance:
       propertyPath: _targetEntity
       value: 
       objectReference: {fileID: 1183041677}
-    - target: {fileID: 3089907530239487192, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0479
-      objectReference: {fileID: 0}
-    - target: {fileID: 3089907530239487192, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0479
-      objectReference: {fileID: 0}
-    - target: {fileID: 3089907530239487192, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.0479
-      objectReference: {fileID: 0}
-    - target: {fileID: 3089907530239487192, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 13.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 3089907530239487192, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.17
-      objectReference: {fileID: 0}
+    - target: {fileID: 3010595185123402327, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 374024789}
     - target: {fileID: 3217165163717148133, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: _targetEntity
       value: 
       objectReference: {fileID: 1183041677}
+    - target: {fileID: 3258180197880599352, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 642355281}
+    - target: {fileID: 3561795915538682001, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 880314426}
     - target: {fileID: 4290972439396007550, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: _targetEntity
       value: 
@@ -1282,42 +1756,26 @@ PrefabInstance:
       propertyPath: _targetEntity
       value: 
       objectReference: {fileID: 1183041677}
-    - target: {fileID: 5268880819518628823, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: winDialog
+    - target: {fileID: 5714109474753187155, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _stats
       value: 
-      objectReference: {fileID: 11400000, guid: 3b45113ed5e670b4597fc39a92e51166, type: 2}
-    - target: {fileID: 5268880819518628823, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: loseDialog
-      value: 
-      objectReference: {fileID: 11400000, guid: a85242c0b6bbd9c498ee85cdf5ef9351, type: 2}
-    - target: {fileID: 5705006897497922927, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 749795643}
     - target: {fileID: 5776461951711927293, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: _targetEntity
       value: 
       objectReference: {fileID: 1183041677}
-    - target: {fileID: 5820311157816564932, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: m_Color.b
-      value: 0.47086322
-      objectReference: {fileID: 0}
-    - target: {fileID: 5820311157816564932, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5820311157816564932, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: m_Color.r
-      value: 0.4575472
-      objectReference: {fileID: 0}
+    - target: {fileID: 5922850479367957428, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 1242221694}
+    - target: {fileID: 6541636492638762258, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 1203876958}
     - target: {fileID: 6642266111534850318, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: _targetEntity
       value: 
       objectReference: {fileID: 1183041677}
-    - target: {fileID: 6896223771541380626, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: m_Name
-      value: Empresa
-      objectReference: {fileID: 0}
     - target: {fileID: 6989203468712084938, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1366,34 +1824,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: StreetWorld-alpha
       objectReference: {fileID: 0}
-    - target: {fileID: 7507239719810203545, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: pushForce
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7507239719810203545, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: _targetEntity
+    - target: {fileID: 7364285027595676513, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _stats
       value: 
-      objectReference: {fileID: 1183041677}
-    - target: {fileID: 7507239720085758843, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: pushForce
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7507239720085758843, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: _targetEntity
+      objectReference: {fileID: 1981094521}
+    - target: {fileID: 7364285029356218299, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _stats
       value: 
-      objectReference: {fileID: 1183041677}
-    - target: {fileID: 7507239720202398977, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: pushForce
-      value: 0.2
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1513193992}
     - target: {fileID: 7507239720202398977, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: _targetEntity
       value: 
       objectReference: {fileID: 1183041677}
-    - target: {fileID: 7507239721694503387, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
-      propertyPath: pushForce
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 7507239721694503387, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: _targetEntity
       value: 
@@ -1402,6 +1844,14 @@ PrefabInstance:
       propertyPath: _targetEntity
       value: 
       objectReference: {fileID: 1183041677}
+    - target: {fileID: 8213757817862997742, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 432330991}
+    - target: {fileID: 8299020347135996410, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 852316736}
     - target: {fileID: 8492830800282364911, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: _targetEntity
       value: 
@@ -1410,6 +1860,14 @@ PrefabInstance:
       propertyPath: _targetEntity
       value: 
       objectReference: {fileID: 1183041677}
+    - target: {fileID: 8917330031316787541, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 550280372}
+    - target: {fileID: 9214380646959344249, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 1924656163}
     - target: {fileID: 9214648240967978068, guid: 6c0794752c711fc848e2086b0cb66851, type: 3}
       propertyPath: _targetEntity
       value: 
@@ -1496,6 +1954,87 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5108ce230a98d8f3ab2df518e69b7d70, type: 3}
+--- !u!114 &1203876958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: WerewolfStats(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 13
+    attackDamage: 2
+    attackCooldown: 2
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 1.8
+    deceleration: 1.9
+  dashStats:
+    dashSpeed: 1
+    dashDuration: 0
+    dashCooldown: 99999
+  initialBuff: 0
+--- !u!114 &1232348873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
+--- !u!114 &1242221694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
 --- !u!224 &1291844768 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 540635028087315676, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
@@ -1522,6 +2061,168 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7948958333459480979, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
   m_PrefabInstance: {fileID: 116491947}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1450443058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
+--- !u!114 &1467358665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
+--- !u!114 &1513193992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
+--- !u!114 &1530344939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
+--- !u!114 &1669887018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
+--- !u!114 &1677189822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
 --- !u!1 &1851518165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,6 +2298,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851518165}
   m_CullTransparentMesh: 1
+--- !u!114 &1860576304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: WerewolfStats(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 13
+    attackDamage: 2
+    attackCooldown: 2
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 1.8
+    deceleration: 1.9
+  dashStats:
+    dashSpeed: 1
+    dashDuration: 0
+    dashCooldown: 99999
+  initialBuff: 0
 --- !u!1 &1876886977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,7 +2484,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2056955849
+--- !u!114 &1911548535
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1766,22 +2494,157 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
-  m_Name: PlayerStats(Clone)
+  m_Name: WerewolfStats(Clone)(Clone)
   m_EditorClassIdentifier: 
   combatStats:
-    maxHealth: 4
-    attackDamage: 3
-    attackCooldown: 0
-    attackDuration: 0.8
-    attackAnimatorMultiplier: 1
+    maxHealth: 13
+    attackDamage: 2
+    attackCooldown: 2
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
   walkStats:
     acceleration: 70
-    maxSpeed: 3
+    maxSpeed: 1.8
+    deceleration: 1.9
+  dashStats:
+    dashSpeed: 1
+    dashDuration: 0
+    dashCooldown: 99999
+  initialBuff: 0
+--- !u!114 &1924656163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
     deceleration: 14
   dashStats:
-    dashSpeed: 8
+    dashSpeed: 4
     dashDuration: 0.3
-    dashCooldown: 2
+    dashCooldown: 8
+  initialBuff: 0
+--- !u!114 &1981094521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
+--- !u!114 &2054799169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
+  initialBuff: 0
+--- !u!114 &2060633018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: WerewolfStats(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 13
+    attackDamage: 2
+    attackCooldown: 2
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 1.8
+    deceleration: 1.9
+  dashStats:
+    dashSpeed: 1
+    dashDuration: 0
+    dashCooldown: 99999
+  initialBuff: 0
+--- !u!114 &2113468084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0605d77778762a9e5b78b1fff6126, type: 3}
+  m_Name: TroubleMakerStats(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  combatStats:
+    maxHealth: 10
+    attackDamage: 1
+    attackCooldown: 1
+    attackDuration: 1
+    attackAnimatorMultiplier: 0.5
+  walkStats:
+    acceleration: 70
+    maxSpeed: 2.3
+    deceleration: 14
+  dashStats:
+    dashSpeed: 4
+    dashDuration: 0.3
+    dashCooldown: 8
   initialBuff: 0
 --- !u!1 &2125202531
 GameObject:
@@ -1958,6 +2821,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 308104564570355736, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3787089609928840930, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
+    - target: {fileID: 308104564570355736, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 308104564570355736, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2751567253383492536, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
       propertyPath: player
       value: 
@@ -1966,13 +2841,53 @@ PrefabInstance:
       propertyPath: xOffset
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 3478205418986389462, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3861563132996078280, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3787089609928840930, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
+    - target: {fileID: 3861563132996078280, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4037039307980177963, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4168721432311466281, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -159.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168721432311466281, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.3500061
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220095051878935680, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3787089609928840930, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
+    - target: {fileID: 4220095051878935680, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894252530487174939, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3787089609928840930, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
+    - target: {fileID: 4894252530487174939, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7850180532648288928, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
       propertyPath: flashingInterval
       value: 1.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7998665284871001374, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8176076100824891403, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
       propertyPath: m_Pivot.x
@@ -2069,6 +2984,14 @@ PrefabInstance:
     - target: {fileID: 8262705016953476038, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
       propertyPath: m_text
       value: ?''
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487226104698206261, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3787089609928840930, guid: 8d4a70f76f6130c3c8fe3c6b9ffbca8d, type: 2}
+    - target: {fileID: 8487226104698206261, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}

@@ -1605,6 +1605,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fdfb7fd5a0e6d49a5d5653f8f1ff9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startButton: {fileID: 2035866027}
+  controlsButton: {fileID: 799942531}
+  quitButton: {fileID: 968725192}
 --- !u!1 &1507326805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,10 +1833,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca594ab1a308917abb0312b673ee301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerEntity: {fileID: 0}
-  audioRegistry: {fileID: 11400000, guid: 259fd3854a146628cac0e69dd2b4a0d5, type: 2}
-  globalSoundTrackSource: {fileID: 1824353662}
-  globalSFXSource: {fileID: 1206940710}
   initialClockTime: 60
 --- !u!114 &1582647348
 MonoBehaviour:

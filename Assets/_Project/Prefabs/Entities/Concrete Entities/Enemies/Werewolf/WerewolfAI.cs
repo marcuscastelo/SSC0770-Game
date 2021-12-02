@@ -37,7 +37,7 @@ public class WerewolfAI : MonoBehaviour
             UpdateVectors();
             float distance = _vecToTarget.magnitude;
 
-            if (distance > 1.2f || !_selfEntity.AttackerSystem.CanAttack())
+            if (distance > 1.2f || (distance > 0.2f && !_selfEntity.AttackerSystem.CanAttack()))
             {
                 _selfEntity.Controller.Move(_moveDir);
                 _selfEntity.Controller.Dash();

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf3394ea18a4b2dabf215735df83771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushForce: 10
   _selfEntity: {fileID: 7364285028629216632}
   _targetEntity: {fileID: 0}
 --- !u!1001 &2477715265941808040
@@ -24,6 +25,22 @@ PrefabInstance:
     - target: {fileID: 469112482189067681, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: m_Name
       value: TroubleMaker
+      objectReference: {fileID: 0}
+    - target: {fileID: 784586750060675052, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0402038
+      objectReference: {fileID: 0}
+    - target: {fileID: 784586750060675052, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Size.y
+      value: 0.19022277
+      objectReference: {fileID: 0}
+    - target: {fileID: 784586750060675052, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.31698504
+      objectReference: {fileID: 0}
+    - target: {fileID: 784586750060675052, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.89684564
       objectReference: {fileID: 0}
     - target: {fileID: 1023342101732596485, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: show
@@ -65,6 +82,22 @@ PrefabInstance:
       propertyPath: targetPlayer
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7110035049528789457, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Size.x
+      value: 0.57858944
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110035049528789457, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Size.y
+      value: 1.9406717
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110035049528789457, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.03900957
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110035049528789457, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.9776269
+      objectReference: {fileID: 0}
     - target: {fileID: 7237647506844987925, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: endFrame
       value: 3
@@ -75,7 +108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7237647506844987925, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: totalFrames
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7237647506844987925, guid: f1640be3dbc0bdc0bb8f586746b9e614, type: 3}
       propertyPath: combatStats.attackCooldown

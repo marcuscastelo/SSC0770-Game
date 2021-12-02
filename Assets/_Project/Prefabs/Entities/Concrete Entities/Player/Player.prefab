@@ -24,7 +24,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4495780047c7d4d53acdb4fa8b0dd446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathDialogInfo: {fileID: 0}
+  deathDialogInfo: {fileID: 11400000, guid: c8cfa54bcb3b7a44ea89de9f7a5c56f7, type: 2}
 --- !u!114 &4802638200433128092
 MonoBehaviour:
   m_ObjectHideFlags: 0
