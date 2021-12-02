@@ -100,8 +100,7 @@ namespace Hypnos.Entities.Systems
             yield return new WaitForSeconds(duration);
             Debug.Log("BlinkHurtRedCoroutine time: " + duration);
             spriteRenderer.color = originalColor;
-
-            yield return null;
+            yield break;
         }
 
         public void OnValidate()

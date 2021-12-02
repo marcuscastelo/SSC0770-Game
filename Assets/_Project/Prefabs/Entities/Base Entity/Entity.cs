@@ -29,6 +29,7 @@ namespace Hypnos.Entities
 
         private void Awake()
         {
+            _stats = ScriptableObject.Instantiate<EntityStats>(_stats);
             _rigidbody = GetComponent<Rigidbody2D>();
             if (_rigidbody == null)
             {

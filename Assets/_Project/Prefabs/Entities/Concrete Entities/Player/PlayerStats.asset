@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatStats:
     maxHealth: 4
-    attackDamage: 5
+    attackDamage: 3
     attackCooldown: 0
     attackDuration: 0.8
     attackAnimatorMultiplier: 1
