@@ -15,6 +15,9 @@ namespace Hypnos.Audio
         private AudioSource _globalSFXSource;
         private AudioSource _globalSoundTrackSource;
 
+        private float _volume = 1.0f;
+        public float Volume => _volume;
+
         [Inject]
         public AudioSystem(
             AudioRegistry audioRegistry,
@@ -31,6 +34,7 @@ namespace Hypnos.Audio
         public void PlaySoundTrack(AudioType type) => PlayAudio(type, _globalSoundTrackSource);
         public void PlayAudio(AudioType type, AudioSource source)
         {
+            ApplyVolumeToTransientAudio(source);
             if (!_audioRegistry.AudioTable.ContainsKey(type))
             {
                 Debug.LogWarning($"[AudioSystem]: AudioType {type} not found in AudioRegistry");
@@ -53,6 +57,7 @@ namespace Hypnos.Audio
         public void RestartSoundTrack(AudioType type) => RestartAudio(type, _globalSoundTrackSource);
         public void RestartAudio(AudioType type, AudioSource source)
         {
+            ApplyVolumeToTransientAudio(source);
             AddJob(new AudioJob(AudioJob.AudioAction.Restart, type, source));
         }
 
@@ -143,6 +148,17 @@ namespace Hypnos.Audio
         {
             _globalSFXSource.UnPause();
             _globalSoundTrackSource.UnPause();
+        }
+
+        public void SetVolume(float volume) {
+            _volume = volume;
+            _globalSFXSource.volume = _volume;
+            _globalSoundTrackSource.volume = _volume;
+        }
+
+        private void ApplyVolumeToTransientAudio(AudioSource source)
+        {
+            source.volume = _volume;
         }
     }
 }

@@ -123,24 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &45189225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d405728c5b16f1a0b5615859406a7f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followX: 1
-  followY: 1
-  minX: -2.52
-  maxX: 0.5855
-  minY: 0
-  maxY: 0
 --- !u!1001 &116491947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -284,7 +266,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &222896342
+--- !u!114 &322611221 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6521030684132829334, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
+  m_PrefabInstance: {fileID: 116491947}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3e407b2296d3dd0ac0a4d4dcb3da66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &499687344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,17 +295,6 @@ MonoBehaviour:
   maxX: 0.5855
   minY: 0
   maxY: 0
---- !u!114 &322611221 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6521030684132829334, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
-  m_PrefabInstance: {fileID: 116491947}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b3e407b2296d3dd0ac0a4d4dcb3da66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &500244434
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,24 +419,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7418833812455731141, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
   m_PrefabInstance: {fileID: 669022334}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &554855077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d405728c5b16f1a0b5615859406a7f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followX: 1
-  followY: 1
-  minX: -2.52
-  maxX: 0.5855
-  minY: 0
-  maxY: 0
 --- !u!1 &576667838
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +557,10 @@ PrefabInstance:
       propertyPath: alreadyHasBuffDialogInfo
       value: 
       objectReference: {fileID: 11400000, guid: 09a408d995b049b4780d5643159f0d1f, type: 2}
+    - target: {fileID: 4928217617529542393, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
+      propertyPath: buffTimeConsumption
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4928217617529542393, guid: 97a071a6ffe61ae258f2a1c821df1405, type: 3}
       propertyPath: confirmationDialogInfo
       value: 
@@ -893,7 +861,11 @@ PrefabInstance:
     - target: {fileID: 5965685057920765931, guid: 5108ce230a98d8f3ab2df518e69b7d70, type: 3}
       propertyPath: prefs
       value: 
-      objectReference: {fileID: 518452709}
+      objectReference: {fileID: 499687344}
+    - target: {fileID: 5965685057920765931, guid: 5108ce230a98d8f3ab2df518e69b7d70, type: 3}
+      propertyPath: showGizmos
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5108ce230a98d8f3ab2df518e69b7d70, type: 3}
 --- !u!224 &1291844768 stripped
@@ -922,16 +894,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7948958333459480979, guid: 1796c4d27bbaecfac9d762e84dc16a28, type: 3}
   m_PrefabInstance: {fileID: 116491947}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1446303035 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 3269299954725990383, guid: 5108ce230a98d8f3ab2df518e69b7d70, type: 3}
-  m_PrefabInstance: {fileID: 1186466764}
+--- !u!114 &1746208405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1657401565 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 3629298759377261835, guid: 5108ce230a98d8f3ab2df518e69b7d70, type: 3}
-  m_PrefabInstance: {fileID: 1186466764}
-  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d405728c5b16f1a0b5615859406a7f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followX: 1
+  followY: 1
+  minX: -2.52
+  maxX: 0.5855
+  minY: 0
+  maxY: 0
 --- !u!1 &1851518165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,11 +1017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca594ab1a308917abb0312b673ee301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerEntity: {fileID: 0}
-  audioRegistry: {fileID: 11400000, guid: 259fd3854a146628cac0e69dd2b4a0d5, type: 2}
-  globalSoundTrackSource: {fileID: 1657401565}
-  globalSFXSource: {fileID: 1446303035}
-  initialClockTime: 60
+  initialClockTime: 120
 --- !u!114 &1876886979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1366,6 +1342,10 @@ PrefabInstance:
     - target: {fileID: 8176076100824891447, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8262705016953476038, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
+      propertyPath: m_text
+      value: ?''
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b41b1f724e4023c9f8be9b93066aea2c, type: 3}
