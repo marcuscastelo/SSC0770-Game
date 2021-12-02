@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b986ed8fad7fa57ca93b18632509a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showGizmos: 1
+  showGizmos: 0
   obj: {fileID: 0}
   prefs: {fileID: 0}
   thisCamera: {fileID: 5965685057920765929}

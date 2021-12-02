@@ -4,6 +4,7 @@ using UnityEngine;
 using Zenject;
 
 using Hypnos.Core;
+using Hypnos.Audio;
 
 namespace Hypnos.Entities
 {
@@ -15,6 +16,20 @@ namespace Hypnos.Entities
         private IMoveable _movement;
         private Entity _entity;
 
+        private AudioSystem _audioSystem;
+        private AudioSource _sfxAudioSource;
+
+        void Awake()
+        {
+            _sfxAudioSource = GetComponent<AudioSource>();
+            if (_sfxAudioSource == null)
+            {
+                _sfxAudioSource = gameObject.AddComponent<AudioSource>();
+                _sfxAudioSource.playOnAwake = false;
+                _sfxAudioSource.loop = false;
+            }
+        }
+
         public Vector2 InputDirection { get; private set; }
         public Vector2 LastLookDirection { get; private set; }
         public Vector2 CurrentVelocity => _movement.CurrentVelocity;
@@ -23,13 +38,14 @@ namespace Hypnos.Entities
         [SerializeField] [ReadOnly] private State _state = State.Moving;
 
         [Inject]
-        public void Construct(Entity entity, IInteractor interactor, IAttacker attacker, IAttackable attackable, IMoveable movement)
+        public void Construct(Entity entity, IInteractor interactor, IAttacker attacker, IAttackable attackable, IMoveable movement, AudioSystem audioSystem)
         {
             _entity = entity;
             _interactor = interactor;
             _attacker = attacker;
             _attackable = attackable;
             _movement = movement;
+            _audioSystem = audioSystem;
         }
 
         public void Interact()
@@ -136,6 +152,7 @@ namespace Hypnos.Entities
             _state = State.Dashing;
             _attackable.SetInvulnerable(true);
             _entity.Animator.SetTrigger("dashTrigger");
+            _audioSystem.PlayAudio(AudioType.SFX_Dash, _sfxAudioSource);
             UpdateAnimator(Vector2.zero);
 
             _movement.SetVel(direction * _entity.DashStats.dashSpeed);

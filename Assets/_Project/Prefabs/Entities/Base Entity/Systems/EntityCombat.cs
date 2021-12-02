@@ -87,6 +87,21 @@ namespace Hypnos.Entities.Systems
 
             //TODO: knockback
             _thisEntity.Health.TakeDamage(damage);
+            StartCoroutine(BlinkAttackAreaCoroutine(3f));
+        }
+
+        private IEnumerator BlinkHurtRedCoroutine(float duration)
+        {
+            Debug.Log("BlinkHurtRedCoroutine called");
+            SpriteRenderer spriteRenderer = _thisEntity.SpriteRenderer;
+            Color originalColor = spriteRenderer.color;
+            Color newColor = new Color(1, 0, 0, 1);
+            spriteRenderer.color = newColor;
+            yield return new WaitForSeconds(duration);
+            Debug.Log("BlinkHurtRedCoroutine time: " + duration);
+            spriteRenderer.color = originalColor;
+
+            yield return null;
         }
 
         public void OnValidate()

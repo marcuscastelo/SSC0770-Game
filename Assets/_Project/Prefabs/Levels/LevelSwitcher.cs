@@ -77,7 +77,7 @@ public class LevelSwitcher : MonoBehaviour
         if (!Application.isPlaying) return; //TODO: inject on edit mode
 
         if (level == 1) InitializeLevel1();
-        if (level == 2) InitializeLevel2();
+        else if (level == 2) InitializeLevel2();
         else 
         {
             Debug.LogWarning("Level " + level + " is not initializable");

@@ -11,4 +11,5 @@ public enum AudioType
     SFX_Hypnos_Attack_Sword_Hit,
     SFX_Hypnos_Attack_Sword_Miss,
     SFX_Hypnos_Hurt,
+    SFX_Dash,
 }

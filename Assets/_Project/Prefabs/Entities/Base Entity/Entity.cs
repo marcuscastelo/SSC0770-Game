@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 using Hypnos.Entities.Systems;
@@ -81,7 +82,7 @@ namespace Hypnos.Entities
             //! TODO: remove this and inject on health component
             _health.SetMaxHealth(_stats.combatStats.maxHealth);
             _health.SetHealth(_stats.combatStats.maxHealth);
-            _health.OnDeath += () => _entityMovement.Teleport(Vector2.one * -1000000);
+            _health.OnDeath += () => StartCoroutine(OnDeathCoroutine());
             
             _health.OnHealthChanged += (newHealth) =>
             {
@@ -89,6 +90,24 @@ namespace Hypnos.Entities
                 _entityAudio.PlayAttackSound(this);
             };
             //!<
+        }
+
+        private IEnumerator OnDeathCoroutine()
+        {
+            float transition = 1f;
+
+            while (transition > 0)
+            {
+                transition = Mathf.Max(0, transition - 0.1f);
+
+                transform.localScale = new Vector3(transition, transition, 1);
+                _spriteRenderer.color = new Color(1, 0, 0, transition);
+                yield return new WaitForSeconds(0.025f);
+            }
+
+            _entityMovement.Teleport(Vector2.one * -1000000);
+            this.enabled = false;
+            yield return null;
         }
 
         // Facade - IBuffable

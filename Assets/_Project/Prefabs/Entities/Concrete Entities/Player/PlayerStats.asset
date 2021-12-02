@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatStats:
     maxHealth: 4
-    attackDamage: 3
+    attackDamage: 5
     attackCooldown: 0
     attackDuration: 0.8
     attackAnimatorMultiplier: 1
   walkStats:
     acceleration: 70
-    maxSpeed: 30
+    maxSpeed: 3
     deceleration: 14
   dashStats:
     dashSpeed: 8
