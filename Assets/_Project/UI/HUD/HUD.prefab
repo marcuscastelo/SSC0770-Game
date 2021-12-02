@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xOffset: 80
-  _heartSprite: {fileID: 21300000, guid: 82aff284ca338b5e09eaba93663de3f4, type: 3}
+  _heartSprite: {fileID: 21300000, guid: c1931b556bafb1d4bb2d592740c1c349, type: 3}
   player: {fileID: 0}
 --- !u!1001 &6417322349108332916
 PrefabInstance:
